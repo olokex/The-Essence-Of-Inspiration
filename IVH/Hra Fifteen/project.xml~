@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project outputprefix="test">
+
+	<!--  Project description -->
+	<name>Hra patnact</name>
+	<author>Autor</author>
+	<authoremail>email@fit.vutbr.cz</authoremail>
+	<revision>1</revision>
+	<description>Popis projektu</description>
+
+	<!--  MCU part -->
+	<mcu>
+	    <file>main.c</file>
+	</mcu>
+
+	<!-- FPGA part -->
+	<fpga architecture="pc" dcmfrequency="25MHz">
+        <include>fpga/ctrls/vga/package.xml</include>
+        <include>fpga/ctrls/keyboard/package.xml</include>
+
+	    <file>top.vhd</file>
+	    <file>symbol_rom.vhd</file>
+	    <file>game_pack.vhd</file>
+	    <file>cell.vhd</file>
+	</fpga>
+
+</project>

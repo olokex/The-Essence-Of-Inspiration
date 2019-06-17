@@ -1,0 +1,187 @@
+Release 14.4 Map P.49d (lin64)
+Xilinx Map Application Log File for Design 'fpga'
+
+Design Information
+------------------
+Command Line   : map -o build/fpga/test.map.ncd build/fpga/test.ngd
+build/fpga/test.pcf 
+Target Device  : xc3s50
+Target Package : pq208
+Target Speed   : -4
+Mapper Version : spartan3 -- $Revision: 1.55 $
+Mapped Date    : Sun May  6 19:07:17 2018
+
+Mapping design into LUTs...
+WARNING:MapLib:701 - Signal X<25> connected to top level port X<25> has been
+   removed.
+WARNING:MapLib:701 - Signal X<26> connected to top level port X<26> has been
+   removed.
+WARNING:MapLib:701 - Signal X<6> connected to top level port X<6> has been
+   removed.
+WARNING:MapLib:701 - Signal X<7> connected to top level port X<7> has been
+   removed.
+WARNING:MapLib:701 - Signal X<8> connected to top level port X<8> has been
+   removed.
+WARNING:MapLib:701 - Signal X<9> connected to top level port X<9> has been
+   removed.
+WARNING:MapLib:701 - Signal X<10> connected to top level port X<10> has been
+   removed.
+WARNING:MapLib:701 - Signal X<11> connected to top level port X<11> has been
+   removed.
+WARNING:MapLib:701 - Signal X<12> connected to top level port X<12> has been
+   removed.
+WARNING:MapLib:701 - Signal X<13> connected to top level port X<13> has been
+   removed.
+WARNING:MapLib:701 - Signal X<14> connected to top level port X<14> has been
+   removed.
+WARNING:MapLib:701 - Signal X<20> connected to top level port X<20> has been
+   removed.
+WARNING:MapLib:701 - Signal X<15> connected to top level port X<15> has been
+   removed.
+WARNING:MapLib:701 - Signal X<16> connected to top level port X<16> has been
+   removed.
+WARNING:MapLib:701 - Signal X<21> connected to top level port X<21> has been
+   removed.
+WARNING:MapLib:701 - Signal X<22> connected to top level port X<22> has been
+   removed.
+WARNING:MapLib:701 - Signal X<17> connected to top level port X<17> has been
+   removed.
+WARNING:MapLib:701 - Signal X<23> connected to top level port X<23> has been
+   removed.
+WARNING:MapLib:701 - Signal X<18> connected to top level port X<18> has been
+   removed.
+WARNING:MapLib:701 - Signal X<24> connected to top level port X<24> has been
+   removed.
+WARNING:MapLib:701 - Signal X<19> connected to top level port X<19> has been
+   removed.
+WARNING:MapLib:701 - Signal AFBUS<11> connected to top level port AFBUS<11> has
+   been removed.
+WARNING:MapLib:701 - Signal AFBUS<10> connected to top level port AFBUS<10> has
+   been removed.
+WARNING:MapLib:701 - Signal AFBUS<9> connected to top level port AFBUS<9> has
+   been removed.
+WARNING:MapLib:701 - Signal AFBUS<8> connected to top level port AFBUS<8> has
+   been removed.
+WARNING:MapLib:701 - Signal AFBUS<7> connected to top level port AFBUS<7> has
+   been removed.
+WARNING:MapLib:701 - Signal AFBUS<6> connected to top level port AFBUS<6> has
+   been removed.
+WARNING:MapLib:701 - Signal AFBUS<5> connected to top level port AFBUS<5> has
+   been removed.
+WARNING:MapLib:701 - Signal AFBUS<4> connected to top level port AFBUS<4> has
+   been removed.
+WARNING:MapLib:701 - Signal AFBUS<3> connected to top level port AFBUS<3> has
+   been removed.
+WARNING:MapLib:701 - Signal AFBUS<2> connected to top level port AFBUS<2> has
+   been removed.
+WARNING:MapLib:701 - Signal AFBUS<1> connected to top level port AFBUS<1> has
+   been removed.
+WARNING:MapLib:701 - Signal AFBUS<0> connected to top level port AFBUS<0> has
+   been removed.
+WARNING:MapLib:701 - Signal P3M<7> connected to top level port P3M<7> has been
+   removed.
+WARNING:MapLib:701 - Signal P3M<6> connected to top level port P3M<6> has been
+   removed.
+WARNING:MapLib:701 - Signal P3M<5> connected to top level port P3M<5> has been
+   removed.
+WARNING:MapLib:701 - Signal P3M<4> connected to top level port P3M<4> has been
+   removed.
+WARNING:MapLib:701 - Signal P3M<3> connected to top level port P3M<3> has been
+   removed.
+WARNING:MapLib:701 - Signal P3M<2> connected to top level port P3M<2> has been
+   removed.
+WARNING:MapLib:701 - Signal P3M<1> connected to top level port P3M<1> has been
+   removed.
+WARNING:MapLib:701 - Signal LD<7> connected to top level port LD<7> has been
+   removed.
+WARNING:MapLib:701 - Signal LD<6> connected to top level port LD<6> has been
+   removed.
+WARNING:MapLib:701 - Signal LD<5> connected to top level port LD<5> has been
+   removed.
+WARNING:MapLib:701 - Signal LD<4> connected to top level port LD<4> has been
+   removed.
+WARNING:MapLib:701 - Signal LD<3> connected to top level port LD<3> has been
+   removed.
+WARNING:MapLib:701 - Signal LD<2> connected to top level port LD<2> has been
+   removed.
+WARNING:MapLib:701 - Signal LD<1> connected to top level port LD<1> has been
+   removed.
+WARNING:MapLib:701 - Signal LD<0> connected to top level port LD<0> has been
+   removed.
+WARNING:MapLib:701 - Signal RD<7> connected to top level port RD<7> has been
+   removed.
+WARNING:MapLib:701 - Signal RD<6> connected to top level port RD<6> has been
+   removed.
+WARNING:MapLib:701 - Signal RD<5> connected to top level port RD<5> has been
+   removed.
+WARNING:MapLib:701 - Signal RD<4> connected to top level port RD<4> has been
+   removed.
+WARNING:MapLib:701 - Signal RD<3> connected to top level port RD<3> has been
+   removed.
+WARNING:MapLib:701 - Signal RD<2> connected to top level port RD<2> has been
+   removed.
+WARNING:MapLib:701 - Signal RD<1> connected to top level port RD<1> has been
+   removed.
+WARNING:MapLib:701 - Signal RD<0> connected to top level port RD<0> has been
+   removed.
+WARNING:MapLib:39 - The timing specification "PERIOD=166666.666667 pS HIGH 50%"
+   on net "AFBUS<0>" has been discarded, because the net was optimized out of
+   the design.
+Writing file build/fpga/test.map.ngm...
+Running directed packing...
+Running delay-based LUT packing...
+Running related packing...
+Updating timing models...
+Writing design file "build/fpga/test.map.ncd"...
+
+Design Summary
+--------------
+
+Design Summary:
+Number of errors:      0
+Number of warnings:   57
+Logic Utilization:
+  Number of Slice Flip Flops:           177 out of   1,536   11%
+  Number of 4 input LUTs:               589 out of   1,536   38%
+Logic Distribution:
+  Number of occupied Slices:            361 out of     768   47%
+    Number of Slices containing only related logic:     361 out of     361 100%
+    Number of Slices containing unrelated logic:          0 out of     361   0%
+      *See NOTES below for an explanation of the effects of unrelated logic.
+  Total Number of 4 input LUTs:         667 out of   1,536   43%
+    Number used as logic:               589
+    Number used as a route-thru:         78
+
+  The Slice Logic Distribution report is not meaningful if the design is
+  over-mapped for a non-slice resource or if Placement fails.
+
+  Number of bonded IOBs:                 68 out of     124   54%
+  Number of BUFGMUXs:                     2 out of       8   25%
+  Number of DCMs:                         1 out of       2   50%
+
+Average Fanout of Non-Clock Nets:                3.83
+
+Peak Memory Usage:  520 MB
+Total REAL time to MAP completion:  2 secs 
+Total CPU time to MAP completion:   2 secs 
+
+NOTES:
+
+   Related logic is defined as being logic that shares connectivity - e.g. two
+   LUTs are "related" if they share common inputs.  When assembling slices,
+   Map gives priority to combine logic that is related.  Doing so results in
+   the best timing performance.
+
+   Unrelated logic shares no connectivity.  Map will only begin packing
+   unrelated logic into a slice once 99% of the slices are occupied through
+   related logic packing.
+
+   Note that once logic distribution reaches the 99% level through related
+   logic packing, this does not mean the device is completely utilized.
+   Unrelated logic packing will then begin, continuing until all usable LUTs
+   and FFs are occupied.  Depending on your timing budget, increased levels of
+   unrelated logic packing may adversely affect the overall timing performance
+   of your design.
+
+Mapping completed.
+See MAP report file "build/fpga/test.map.mrp" for details.

@@ -1,0 +1,205 @@
+Release 14.4 par P.49d (lin64)
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+
+fitkit-build.fit.vutbr.cz::  Sun May 06 19:07:22 2018
+
+par -w -ol std build/fpga/test.map.ncd build/fpga/test.par.ncd
+build/fpga/test.pcf 
+
+
+Constraints file: build/fpga/test.pcf.
+Loading device for application Rf_Device from file '3s50.nph' in environment
+/mnt/data/tools/Xilinx/14.4/14.4/ISE_DS/ISE/:/mnt/data/tools/Xilinx/14.4/ISE.
+   "fpga" is an NCD, version 3.2, device xc3s50, package pq208, speed -4
+INFO:Par:469 - Although the Overall Effort Level (-ol) for this implementation has been set to Standard, Placer will run
+   at effort level High. To override this, please set the Placer Effort Level (-pl) to Standard.
+
+Initializing temperature to 85.000 Celsius. (default - Range: 0.000 to 85.000 Celsius)
+Initializing voltage to 1.140 Volts. (default - Range: 1.140 to 1.260 Volts)
+
+
+Device speed data version:  "PRODUCTION 1.39 2012-12-04".
+
+
+Device Utilization Summary:
+
+   Number of BUFGMUXs                        2 out of 8      25%
+   Number of DCMs                            1 out of 2      50%
+   Number of External IOBs                  68 out of 124    54%
+      Number of LOCed IOBs                  68 out of 68    100%
+
+   Number of Slices                        361 out of 768    47%
+      Number of SLICEMs                      4 out of 384     1%
+
+
+
+Overall effort level (-ol):   Standard 
+Placer effort level (-pl):    High 
+Placer cost table entry (-t): 1
+Router effort level (-rl):    Standard 
+
+Starting initial Timing Analysis.  REAL time: 1 secs 
+Finished initial Timing Analysis.  REAL time: 1 secs 
+
+WARNING:Par:288 - The signal ACLK_IBUF has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal FCLK_IBUF has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal X<4>_IBUF has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal X<42>_IBUF has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal X<45>_IBUF has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal SPI_CS_IBUF has no load.  PAR will not attempt to route this signal.
+
+Starting Placer
+Total REAL time at the beginning of Placer: 1 secs 
+Total CPU  time at the beginning of Placer: 1 secs 
+
+Phase 1.1  Initial Placement Analysis
+Phase 1.1  Initial Placement Analysis (Checksum:a3ce573d) REAL time: 1 secs 
+
+Phase 2.7  Design Feasibility Check
+Phase 2.7  Design Feasibility Check (Checksum:a3ce573d) REAL time: 1 secs 
+
+Phase 3.31  Local Placement Optimization
+Phase 3.31  Local Placement Optimization (Checksum:a3ce573d) REAL time: 1 secs 
+
+Phase 4.2  Initial Clock and IO Placement
+
+Phase 4.2  Initial Clock and IO Placement (Checksum:ae79c9ff) REAL time: 1 secs 
+
+Phase 5.36  Local Placement Optimization
+Phase 5.36  Local Placement Optimization (Checksum:ae79c9ff) REAL time: 1 secs 
+
+Phase 6.8  Global Placement
+.............................
+..........
+.............
+Phase 6.8  Global Placement (Checksum:5324db35) REAL time: 2 secs 
+
+Phase 7.5  Local Placement Optimization
+Phase 7.5  Local Placement Optimization (Checksum:5324db35) REAL time: 2 secs 
+
+Phase 8.18  Placement Optimization
+Phase 8.18  Placement Optimization (Checksum:8ec6851a) REAL time: 3 secs 
+
+Phase 9.5  Local Placement Optimization
+Phase 9.5  Local Placement Optimization (Checksum:8ec6851a) REAL time: 3 secs 
+
+Total REAL time to Placer completion: 3 secs 
+Total CPU  time to Placer completion: 3 secs 
+Writing design to file build/fpga/test.par.ncd
+
+
+
+Starting Router
+
+
+Phase  1  : 2648 unrouted;      REAL time: 3 secs 
+
+Phase  2  : 2496 unrouted;      REAL time: 3 secs 
+
+Phase  3  : 1220 unrouted;      REAL time: 3 secs 
+
+Phase  4  : 1220 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 3 secs 
+
+Phase  5  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 4 secs 
+
+Updating file: build/fpga/test.par.ncd with current fully routed design.
+
+Phase  6  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 4 secs 
+
+Phase  7  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 4 secs 
+
+Phase  8  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 4 secs 
+
+Total REAL time to Router completion: 4 secs 
+Total CPU time to Router completion: 4 secs 
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+Generating "PAR" statistics.
+
+**************************
+Generating Clock Report
+**************************
+
++---------------------+--------------+------+------+------------+-------------+
+|        Clock Net    |   Resource   |Locked|Fanout|Net Skew(ns)|Max Delay(ns)|
++---------------------+--------------+------+------+------------+-------------+
+|                 clk |      BUFGMUX3| No   |   39 |  0.125     |  0.738      |
++---------------------+--------------+------+------+------------+-------------+
+|fpga_inst/get_gen_cl |              |      |      |            |             |
+|                k/EN |      BUFGMUX4| No   |   96 |  0.122     |  0.726      |
++---------------------+--------------+------+------+------------+-------------+
+
+* Net Skew is the difference between the minimum and maximum routing
+only delays for the net. Note this is different from Clock Skew which
+is reported in TRCE timing report. Clock Skew is the difference between
+the minimum and maximum path delays which includes logic delays.
+
+* The fanout is the number of component pins not the individual BEL loads,
+for example SLICE loads not FF loads.
+
+Timing Score: 0 (Setup: 0, Hold: 0, Component Switching Limit: 0)
+
+Number of Timing Constraints that were not applied: 1
+
+Asterisk (*) preceding a constraint indicates it was not met.
+   This may be due to a setup or hold violation.
+
+----------------------------------------------------------------------------------------------------------
+  Constraint                                |    Check    | Worst Case |  Best Case | Timing |   Timing   
+                                            |             |    Slack   | Achievable | Errors |    Score   
+----------------------------------------------------------------------------------------------------------
+  PERIOD analysis for net "DCMclkgen/CLKFX_ | SETUP       |    15.136ns|    19.864ns|       0|           0
+  BUF" derived from  NET "smclk_x1" PERIOD  | HOLD        |     0.827ns|            |       0|           0
+  = 125 ns HIGH 50%                         |             |            |            |        |            
+----------------------------------------------------------------------------------------------------------
+  NET "smclk_x1" PERIOD = 125 ns HIGH 50%   | MINLOWPULSE |    75.000ns|    50.000ns|       0|           0
+----------------------------------------------------------------------------------------------------------
+
+
+Derived Constraint Report
+Review Timing Report for more details on the following derived constraints.
+To create a Timing Report, run "trce -v 12 -fastpaths -o design_timing_report design.ncd design.pcf"
+or "Run Timing Analysis" from Timing Analyzer (timingan).
+Derived Constraints for smclk_x1
++-------------------------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+
+|                               |   Period    |       Actual Period       |      Timing Errors        |      Paths Analyzed       |
+|           Constraint          | Requirement |-------------+-------------|-------------+-------------|-------------+-------------|
+|                               |             |   Direct    | Derivative  |   Direct    | Derivative  |   Direct    | Derivative  |
++-------------------------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+
+|smclk_x1                       |    125.000ns|     50.000ns|     70.943ns|            0|            0|            0|       174837|
+| DCMclkgen/CLKFX_BUF           |     35.000ns|     19.864ns|          N/A|            0|            0|       174837|            0|
++-------------------------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+
+
+All constraints were met.
+
+
+Generating Pad Report.
+
+All signals are completely routed.
+
+WARNING:Par:283 - There are 6 loadless signals in this design. This design will cause Bitgen to issue DRC warnings.
+
+Total REAL time to PAR completion: 5 secs 
+Total CPU time to PAR completion: 4 secs 
+
+Peak Memory Usage:  505 MB
+
+Placement: Completed - No errors found.
+Routing: Completed - No errors found.
+Timing: Completed - No errors found.
+
+Number of error messages: 0
+Number of warning messages: 8
+Number of info messages: 1
+
+Writing design to file build/fpga/test.par.ncd
+
+
+
+PAR done!

@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<document OS="nt" product="ISE" version="13.1">
+
+  <!--The data in this file is primarily intended for consumption by Xilinx tools.
+    The structure and the elements are likely to change over the next few releases.
+    This means code written to parse this file will need to be revisited each subsequent release.-->
+
+  <application stringID="Xst" timeStamp="Sun May 06 17:27:14 2018">
+    <section stringID="User_Env">
+      <table stringID="User_EnvVar">
+        <column stringID="variable"/>
+        <column stringID="value"/>
+        <row stringID="row" value="0">
+          <item stringID="variable" value="PATH"/>
+          <item stringID="value" value="c:\XilinxISE\\lib\nt;c:\XilinxISE\\bin\nt;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;c:\mspgcc\bin;C:\ModelSIM\win32;c:\XilinxISE\bin\nt\;c:\Program Files\FITkit\bin\;C:/Program Files/FITkit/bin"/>
+        </row>
+        <row stringID="row" value="1">
+          <item stringID="variable" value="PATHEXT"/>
+          <item stringID="value" value=".COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH"/>
+        </row>
+        <row stringID="row" value="2">
+          <item stringID="variable" value="XILINX"/>
+          <item stringID="value" value="c:\XilinxISE\"/>
+        </row>
+        <row stringID="row" value="3">
+          <item stringID="variable" value="XILINXD_LICENSE_FILE"/>
+          <item stringID="value" value="2100@localhost;2100@semik.fit.vutbr.cz"/>
+        </row>
+      </table>
+      <item stringID="User_EnvOs" value="OS Information">
+        <item stringID="User_EnvOsname" value="Microsoft Windows XP Professional"/>
+        <item stringID="User_EnvOsrelease" value="Service Pack 3  (build 2600)"/>
+      </item>
+      <item stringID="User_EnvHost" value="fitkit-projekt"/>
+      <table stringID="User_EnvCpu">
+        <column stringID="arch"/>
+        <column stringID="speed"/>
+        <row stringID="row" value="0">
+          <item stringID="arch" value="AMD Phenom(tm) 9650 Quad-Core Processor"/>
+          <item stringID="speed" value="2309 MHz"/>
+        </row>
+      </table>
+    </section>
+    <section stringID="XST_OPTION_SUMMARY">
+      <item DEFAULT="" label="-ifn" stringID="XST_IFN" value="build/fpga/test.prj"/>
+      <item DEFAULT="MIXED" label="-ifmt" stringID="XST_IFMT" value="mixed"/>
+      <item DEFAULT="SPEED" label="-opt_mode" stringID="XST_OPTMODE" value="SPEED"/>
+      <item DEFAULT="1" label="-opt_level" stringID="XST_OPTLEVEL" value="1"/>
+      <item DEFAULT="" label="-ofn" stringID="XST_OFN" value="build/fpga/test.ngc"/>
+      <item DEFAULT="NGC" label="-ofmt" stringID="XST_OFMT" value="NGC"/>
+      <item DEFAULT="" label="-lso" stringID="XST_LSO" value="build/fpga/test.lso"/>
+      <item DEFAULT="" label="-p" stringID="XST_P" value="xc3s50-4-pq208"/>
+      <item DEFAULT="" label="-top" stringID="XST_TOP" value="fpga"/>
+      <item DEFAULT="NO" label="-rtlview" stringID="XST_RTLVIEW" value="yes"/>
+    </section>
+    <section stringID="XST_HDL_SYNTHESIS_REPORT">
+      <item dataType="int" stringID="XST_ROMS" value="1"></item>
+      <item dataType="int" stringID="XST_ADDERSSUBTRACTORS" value="2"></item>
+      <item dataType="int" stringID="XST_COUNTERS" value="4"></item>
+      <item dataType="int" stringID="XST_REGISTERS" value="46">
+        <item dataType="int" stringID="XST_1BIT_REGISTER" value="28"/>
+        <item dataType="int" stringID="XST_4BIT_REGISTER" value="16"/>
+        <item dataType="int" stringID="XST_9BIT_REGISTER" value="1"/>
+      </item>
+      <item dataType="int" stringID="XST_COMPARATORS" value="9">
+        <item dataType="int" stringID="XST_4BIT_COMPARATOR_EQUAL" value="2"/>
+      </item>
+      <item dataType="int" stringID="XST_MULTIPLEXERS" value="1"></item>
+      <item dataType="int" stringID="XST_TRISTATES" value="62">
+        <item dataType="int" stringID="XST_1BIT_TRISTATE_BUFFER" value="62"/>
+      </item>
+    </section>
+    <section stringID="XST_ADVANCED_HDL_SYNTHESIS_REPORT">
+      <item dataType="int" stringID="XST_FSMS" value="4"/>
+      <item dataType="int" stringID="XST_ROMS" value="1"></item>
+      <item dataType="int" stringID="XST_ADDERSSUBTRACTORS" value="2">
+        <item dataType="int" stringID="XST_6BIT_SUBTRACTOR" value="2"/>
+      </item>
+      <item dataType="int" stringID="XST_COUNTERS" value="4"></item>
+      <item dataType="int" stringID="XST_REGISTERS" value="165">
+        <item dataType="int" stringID="XST_FLIPFLOPS" value="165"/>
+      </item>
+      <item dataType="int" stringID="XST_COMPARATORS" value="9">
+        <item dataType="int" stringID="XST_4BIT_COMPARATOR_EQUAL" value="2"/>
+      </item>
+      <item dataType="int" stringID="XST_MULTIPLEXERS" value="1"></item>
+    </section>
+    <section stringID="XST_ERRORS_STATISTICS">
+      <item dataType="int" filtered="0" stringID="XST_NUMBER_OF_ERRORS" value="4"/>
+      <item dataType="int" filtered="0" stringID="XST_NUMBER_OF_WARNINGS" value="159"/>
+      <item dataType="int" filtered="0" stringID="XST_NUMBER_OF_INFOS" value="8"/>
+    </section>
+  </application>
+
+</document>

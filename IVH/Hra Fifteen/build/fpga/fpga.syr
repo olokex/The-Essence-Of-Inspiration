@@ -1,0 +1,981 @@
+Release 13.1 - xst O.40d (nt)
+Copyright (c) 1995-2011 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.12 secs
+ 
+--> Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.12 secs
+ 
+--> Reading design: fpga.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Compilation
+  3) Design Hierarchy Analysis
+  4) HDL Analysis
+  5) HDL Synthesis
+     5.1) HDL Synthesis Report
+  6) Advanced HDL Synthesis
+     6.1) Advanced HDL Synthesis Report
+  7) Low Level Synthesis
+  8) Partition Report
+  9) Final Report
+	9.1) Device utilization summary
+	9.2) Partition Resource Summary
+	9.3) TIMING REPORT
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "fpga.prj"
+Input Format                       : mixed
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "fpga"
+Output Format                      : NGC
+Target Device                      : xc3s50-4-pq208
+
+---- Source Options
+Top Module Name                    : fpga
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Mux Style                          : Auto
+Decoder Extraction                 : YES
+Priority Encoder Extraction        : Yes
+Shift Register Extraction          : YES
+Logical Shifter Extraction         : YES
+XOR Collapsing                     : YES
+ROM Style                          : Auto
+Mux Extraction                     : Yes
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Multiplier Style                   : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 500
+Add Generic Clock Buffer(BUFG)     : 8
+Register Duplication               : YES
+Slice Packing                      : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Yes
+Use Synchronous Set                : Yes
+Use Synchronous Reset              : Yes
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+Verilog 2001                       : YES
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling vhdl file "C:/FitkitSVN/fpga/ctrls/vga/vga_config.vhd" in Library work.
+Architecture vga_controller_cfg of Entity vga_controller_cfg is up to date.
+Compiling vhdl file "C:/FitkitSVN/apps/demo/Hra_15/fpga/game_pack.vhd" in Library work.
+Architecture game_pack of Entity game_pack is up to date.
+Compiling vhdl file "C:/FitkitSVN/fpga/units/clkgen/clkgen_config.vhd" in Library work.
+Architecture clkgen_cfg of Entity clkgen_cfg is up to date.
+Compiling vhdl file "C:/FitkitSVN/fpga/chips/architecture_pc/tlv_pc_ifc.vhd" in Library work.
+Compiling vhdl file "C:/FitkitSVN/apps/demo/Hra_15/fpga/cell.vhd" in Library work.
+Architecture behavioral of Entity cell is up to date.
+Compiling vhdl file "C:/FitkitSVN/apps/demo/Hra_15/fpga/engen.vhd" in Library work.
+Architecture main of Entity engen is up to date.
+Compiling vhdl file "C:/FitkitSVN/fpga/ctrls/vga/vga_ctrl.vhd" in Library work.
+Architecture arch_vga_controller of Entity vga_controller is up to date.
+Compiling vhdl file "C:/FitkitSVN/apps/demo/Hra_15/fpga/symbol_rom.vhd" in Library work.
+Architecture behavioral of Entity symbol_rom is up to date.
+Compiling vhdl file "C:/FitkitSVN/fpga/ctrls/keyboard/keyboard_ctrl.vhd" in Library work.
+Architecture arch_keyboard of Entity keyboard_controller is up to date.
+Compiling vhdl file "C:/FitkitSVN/fpga/chips/fpga_xc3s50.vhd" in Library work.
+Compiling vhdl file "C:/FitkitSVN/apps/demo/Hra_15/build/fpga/test_config.vhd" in Library work.
+Architecture fpga_cfg of Entity fpga_cfg is up to date.
+Compiling vhdl file "C:/FitkitSVN/fpga/units/clkgen/clkgen.vhd" in Library work.
+Architecture behavioral of Entity clkgen is up to date.
+Compiling vhdl file "C:/FitkitSVN/fpga/ctrls/spi/spi_ctrl.vhd" in Library work.
+Architecture arch_spi_ctrl2 of Entity spi_ctrl is up to date.
+Compiling vhdl file "C:/FitkitSVN/fpga/chips/architecture_pc/arch_pc_ifc.vhd" in Library work.
+Architecture arch_pc_ifc of Entity fpga is up to date.
+Compiling vhdl file "C:/FitkitSVN/apps/demo/Hra_15/fpga/top.vhd" in Library work.
+Entity <tlv_pc_ifc> (Architecture <main>) compiled.
+
+=========================================================================
+*                     Design Hierarchy Analysis                         *
+=========================================================================
+Analyzing hierarchy for entity <fpga> in library <work> (architecture <arch_pc_ifc>).
+
+Analyzing hierarchy for entity <clkgen> in library <work> (architecture <BEHAVIORAL>) with generics.
+	FREQ = "dcm_25mhz"
+	GENIBUF = true
+
+Analyzing hierarchy for entity <SPI_ctrl> in library <work> (architecture <arch_spi_ctrl2>).
+
+Analyzing hierarchy for entity <tlv_pc_ifc> in library <work> (architecture <main>).
+
+Analyzing hierarchy for entity <cell> in library <work> (architecture <Behavioral>) with generics.
+	MASK = (top => '0'
+	        left => '0'
+	        right => '1'
+	        bottom => '1')
+
+Analyzing hierarchy for entity <cell> in library <work> (architecture <Behavioral>) with generics.
+	MASK = (top => '1'
+	        left => '0'
+	        right => '1'
+	        bottom => '1')
+
+Analyzing hierarchy for entity <cell> in library <work> (architecture <Behavioral>) with generics.
+	MASK = (top => '1'
+	        left => '0'
+	        right => '1'
+	        bottom => '0')
+
+Analyzing hierarchy for entity <cell> in library <work> (architecture <Behavioral>) with generics.
+	MASK = (top => '0'
+	        left => '1'
+	        right => '1'
+	        bottom => '1')
+
+Analyzing hierarchy for entity <cell> in library <work> (architecture <Behavioral>) with generics.
+	MASK = (top => '1'
+	        left => '1'
+	        right => '1'
+	        bottom => '1')
+
+Analyzing hierarchy for entity <cell> in library <work> (architecture <Behavioral>) with generics.
+	MASK = (top => '1'
+	        left => '1'
+	        right => '1'
+	        bottom => '0')
+
+Analyzing hierarchy for entity <cell> in library <work> (architecture <Behavioral>) with generics.
+	MASK = (top => '0'
+	        left => '1'
+	        right => '0'
+	        bottom => '1')
+
+Analyzing hierarchy for entity <cell> in library <work> (architecture <Behavioral>) with generics.
+	MASK = (top => '1'
+	        left => '1'
+	        right => '0'
+	        bottom => '1')
+
+Analyzing hierarchy for entity <cell> in library <work> (architecture <Behavioral>) with generics.
+	MASK = (top => '1'
+	        left => '1'
+	        right => '0'
+	        bottom => '0')
+
+Analyzing hierarchy for entity <engen> in library <work> (architecture <main>) with generics.
+	MAXVALUE = 25
+
+Analyzing hierarchy for entity <vga_controller> in library <work> (architecture <arch_vga_controller>) with generics.
+	REQ_DELAY = 1
+
+Analyzing hierarchy for entity <symbol_rom> in library <work> (architecture <Behavioral>).
+
+Analyzing hierarchy for entity <keyboard_controller> in library <work> (architecture <arch_keyboard>) with generics.
+	READ_INTERVAL = 1000000
+
+
+=========================================================================
+*                            HDL Analysis                               *
+=========================================================================
+Analyzing Entity <fpga> in library <work> (Architecture <arch_pc_ifc>).
+Entity <fpga> analyzed. Unit <fpga> generated.
+
+Analyzing generic Entity <clkgen> in library <work> (Architecture <BEHAVIORAL>).
+	FREQ = "dcm_25mhz"
+	GENIBUF = true
+WARNING:Xst:2211 - "C:/FitkitSVN/fpga/units/clkgen/clkgen.vhd" line 96: Instantiating black box module <BUFG>.
+WARNING:Xst:2211 - "C:/FitkitSVN/fpga/units/clkgen/clkgen.vhd" line 106: Instantiating black box module <IBUFG>.
+WARNING:Xst:753 - "C:/FitkitSVN/fpga/units/clkgen/clkgen.vhd" line 114: Unconnected output port 'CLK0' of component 'DCM'.
+WARNING:Xst:753 - "C:/FitkitSVN/fpga/units/clkgen/clkgen.vhd" line 114: Unconnected output port 'CLK90' of component 'DCM'.
+WARNING:Xst:753 - "C:/FitkitSVN/fpga/units/clkgen/clkgen.vhd" line 114: Unconnected output port 'CLK180' of component 'DCM'.
+WARNING:Xst:753 - "C:/FitkitSVN/fpga/units/clkgen/clkgen.vhd" line 114: Unconnected output port 'CLK270' of component 'DCM'.
+WARNING:Xst:753 - "C:/FitkitSVN/fpga/units/clkgen/clkgen.vhd" line 114: Unconnected output port 'CLKDV' of component 'DCM'.
+WARNING:Xst:753 - "C:/FitkitSVN/fpga/units/clkgen/clkgen.vhd" line 114: Unconnected output port 'CLK2X' of component 'DCM'.
+WARNING:Xst:753 - "C:/FitkitSVN/fpga/units/clkgen/clkgen.vhd" line 114: Unconnected output port 'CLK2X180' of component 'DCM'.
+WARNING:Xst:753 - "C:/FitkitSVN/fpga/units/clkgen/clkgen.vhd" line 114: Unconnected output port 'CLKFX180' of component 'DCM'.
+WARNING:Xst:753 - "C:/FitkitSVN/fpga/units/clkgen/clkgen.vhd" line 114: Unconnected output port 'STATUS' of component 'DCM'.
+WARNING:Xst:753 - "C:/FitkitSVN/fpga/units/clkgen/clkgen.vhd" line 114: Unconnected output port 'PSDONE' of component 'DCM'.
+WARNING:Xst:2211 - "C:/FitkitSVN/fpga/units/clkgen/clkgen.vhd" line 114: Instantiating black box module <DCM>.
+    Set user-defined property "CLKDV_DIVIDE =  2.0000000000000000" for instance <DCM_INST> in unit <clkgen>.
+    Set user-defined property "CLKFX_DIVIDE =  7" for instance <DCM_INST> in unit <clkgen>.
+    Set user-defined property "CLKFX_MULTIPLY =  25" for instance <DCM_INST> in unit <clkgen>.
+    Set user-defined property "CLKIN_DIVIDE_BY_2 =  FALSE" for instance <DCM_INST> in unit <clkgen>.
+    Set user-defined property "CLKIN_PERIOD =  135.6339999999999900" for instance <DCM_INST> in unit <clkgen>.
+    Set user-defined property "CLKOUT_PHASE_SHIFT =  NONE" for instance <DCM_INST> in unit <clkgen>.
+    Set user-defined property "CLK_FEEDBACK =  NONE" for instance <DCM_INST> in unit <clkgen>.
+    Set user-defined property "DESKEW_ADJUST =  SYSTEM_SYNCHRONOUS" for instance <DCM_INST> in unit <clkgen>.
+    Set user-defined property "DFS_FREQUENCY_MODE =  LOW" for instance <DCM_INST> in unit <clkgen>.
+    Set user-defined property "DLL_FREQUENCY_MODE =  LOW" for instance <DCM_INST> in unit <clkgen>.
+    Set user-defined property "DSS_MODE =  NONE" for instance <DCM_INST> in unit <clkgen>.
+    Set user-defined property "DUTY_CYCLE_CORRECTION =  TRUE" for instance <DCM_INST> in unit <clkgen>.
+    Set user-defined property "FACTORY_JF =  C080" for instance <DCM_INST> in unit <clkgen>.
+    Set user-defined property "PHASE_SHIFT =  0" for instance <DCM_INST> in unit <clkgen>.
+    Set user-defined property "STARTUP_WAIT =  FALSE" for instance <DCM_INST> in unit <clkgen>.
+Entity <clkgen> analyzed. Unit <clkgen> generated.
+
+Analyzing Entity <SPI_ctrl> in library <work> (Architecture <arch_spi_ctrl2>).
+Entity <SPI_ctrl> analyzed. Unit <SPI_ctrl> generated.
+
+Analyzing Entity <tlv_pc_ifc> in library <work> (Architecture <main>).
+WARNING:Xst:753 - "C:/FitkitSVN/apps/demo/Hra_15/fpga/top.vhd" line 127: Unconnected output port 'STATUS_H' of component 'vga_controller'.
+WARNING:Xst:753 - "C:/FitkitSVN/apps/demo/Hra_15/fpga/top.vhd" line 127: Unconnected output port 'STATUS_V' of component 'vga_controller'.
+Entity <tlv_pc_ifc> analyzed. Unit <tlv_pc_ifc> generated.
+
+Analyzing generic Entity <cell.1> in library <work> (Architecture <Behavioral>).
+	MASK = (top => '0'
+	        left => '0'
+	        right => '1'
+	        bottom => '1')
+Entity <cell.1> analyzed. Unit <cell.1> generated.
+
+Analyzing generic Entity <cell.2> in library <work> (Architecture <Behavioral>).
+	MASK = (top => '1'
+	        left => '0'
+	        right => '1'
+	        bottom => '1')
+Entity <cell.2> analyzed. Unit <cell.2> generated.
+
+Analyzing generic Entity <cell.3> in library <work> (Architecture <Behavioral>).
+	MASK = (top => '1'
+	        left => '0'
+	        right => '1'
+	        bottom => '0')
+Entity <cell.3> analyzed. Unit <cell.3> generated.
+
+Analyzing generic Entity <cell.4> in library <work> (Architecture <Behavioral>).
+	MASK = (top => '0'
+	        left => '1'
+	        right => '1'
+	        bottom => '1')
+Entity <cell.4> analyzed. Unit <cell.4> generated.
+
+Analyzing generic Entity <cell.5> in library <work> (Architecture <Behavioral>).
+	MASK = (top => '1'
+	        left => '1'
+	        right => '1'
+	        bottom => '1')
+Entity <cell.5> analyzed. Unit <cell.5> generated.
+
+Analyzing generic Entity <cell.6> in library <work> (Architecture <Behavioral>).
+	MASK = (top => '1'
+	        left => '1'
+	        right => '1'
+	        bottom => '0')
+Entity <cell.6> analyzed. Unit <cell.6> generated.
+
+Analyzing generic Entity <cell.7> in library <work> (Architecture <Behavioral>).
+	MASK = (top => '0'
+	        left => '1'
+	        right => '0'
+	        bottom => '1')
+Entity <cell.7> analyzed. Unit <cell.7> generated.
+
+Analyzing generic Entity <cell.8> in library <work> (Architecture <Behavioral>).
+	MASK = (top => '1'
+	        left => '1'
+	        right => '0'
+	        bottom => '1')
+Entity <cell.8> analyzed. Unit <cell.8> generated.
+
+Analyzing generic Entity <cell.9> in library <work> (Architecture <Behavioral>).
+	MASK = (top => '1'
+	        left => '1'
+	        right => '0'
+	        bottom => '0')
+Entity <cell.9> analyzed. Unit <cell.9> generated.
+
+Analyzing generic Entity <engen> in library <work> (Architecture <main>).
+	MAXVALUE = 25
+Entity <engen> analyzed. Unit <engen> generated.
+
+Analyzing generic Entity <vga_controller> in library <work> (Architecture <arch_vga_controller>).
+	REQ_DELAY = 1
+Entity <vga_controller> analyzed. Unit <vga_controller> generated.
+
+Analyzing Entity <symbol_rom> in library <work> (Architecture <Behavioral>).
+Entity <symbol_rom> analyzed. Unit <symbol_rom> generated.
+
+Analyzing generic Entity <keyboard_controller> in library <work> (Architecture <arch_keyboard>).
+	READ_INTERVAL = 1000000
+Entity <keyboard_controller> analyzed. Unit <keyboard_controller> generated.
+
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Performing bidirectional port resolution...
+
+Synthesizing Unit <SPI_ctrl>.
+    Related source file is "C:/FitkitSVN/fpga/ctrls/spi/spi_ctrl.vhd".
+    Found finite state machine <FSM_0> for signal <pstate>.
+    -----------------------------------------------------------------------
+    | States             | 6                                              |
+    | Transitions        | 10                                             |
+    | Inputs             | 1                                              |
+    | Outputs            | 1                                              |
+    | Clock              | CLK                       (rising_edge)        |
+    | Clock enable       | dovld                     (positive)           |
+    | Reset              | SPI_CS                    (positive)           |
+    | Reset type         | asynchronous                                   |
+    | Reset State        | sinit                                          |
+    | Power Up State     | sinit                                          |
+    | Encoding           | automatic                                      |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found 1-bit tristate buffer for signal <SPI_MISO>.
+    Found 1-bit register for signal <spi_clk_1>.
+    Found 1-bit register for signal <spi_clk_2>.
+    Summary:
+	inferred   1 Finite State Machine(s).
+	inferred   2 D-type flip-flop(s).
+	inferred   1 Tristate(s).
+Unit <SPI_ctrl> synthesized.
+
+
+Synthesizing Unit <cell_1>.
+    Related source file is "C:/FitkitSVN/apps/demo/Hra_15/fpga/cell.vhd".
+WARNING:Xst:647 - Input <NEIG_LEFT> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <NEIG_TOP> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+    Found 4-bit register for signal <CUR_STATE>.
+    Summary:
+	inferred   4 D-type flip-flop(s).
+Unit <cell_1> synthesized.
+
+
+Synthesizing Unit <cell_2>.
+    Related source file is "C:/FitkitSVN/apps/demo/Hra_15/fpga/cell.vhd".
+WARNING:Xst:647 - Input <NEIG_LEFT> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+    Found 4-bit register for signal <CUR_STATE>.
+    Summary:
+	inferred   4 D-type flip-flop(s).
+Unit <cell_2> synthesized.
+
+
+Synthesizing Unit <cell_3>.
+    Related source file is "C:/FitkitSVN/apps/demo/Hra_15/fpga/cell.vhd".
+WARNING:Xst:647 - Input <NEIG_LEFT> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <NEIG_BOTTOM> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+    Found 4-bit register for signal <CUR_STATE>.
+    Summary:
+	inferred   4 D-type flip-flop(s).
+Unit <cell_3> synthesized.
+
+
+Synthesizing Unit <cell_4>.
+    Related source file is "C:/FitkitSVN/apps/demo/Hra_15/fpga/cell.vhd".
+WARNING:Xst:647 - Input <NEIG_TOP> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+    Found 4-bit register for signal <CUR_STATE>.
+    Summary:
+	inferred   4 D-type flip-flop(s).
+Unit <cell_4> synthesized.
+
+
+Synthesizing Unit <cell_5>.
+    Related source file is "C:/FitkitSVN/apps/demo/Hra_15/fpga/cell.vhd".
+    Found 4-bit register for signal <CUR_STATE>.
+    Summary:
+	inferred   4 D-type flip-flop(s).
+Unit <cell_5> synthesized.
+
+
+Synthesizing Unit <cell_6>.
+    Related source file is "C:/FitkitSVN/apps/demo/Hra_15/fpga/cell.vhd".
+WARNING:Xst:647 - Input <NEIG_BOTTOM> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+    Found 4-bit register for signal <CUR_STATE>.
+    Summary:
+	inferred   4 D-type flip-flop(s).
+Unit <cell_6> synthesized.
+
+
+Synthesizing Unit <cell_7>.
+    Related source file is "C:/FitkitSVN/apps/demo/Hra_15/fpga/cell.vhd".
+WARNING:Xst:647 - Input <NEIG_TOP> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <NEIG_RIGHT> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+    Found 4-bit register for signal <CUR_STATE>.
+    Summary:
+	inferred   4 D-type flip-flop(s).
+Unit <cell_7> synthesized.
+
+
+Synthesizing Unit <cell_8>.
+    Related source file is "C:/FitkitSVN/apps/demo/Hra_15/fpga/cell.vhd".
+WARNING:Xst:647 - Input <NEIG_RIGHT> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+    Found 4-bit register for signal <CUR_STATE>.
+    Summary:
+	inferred   4 D-type flip-flop(s).
+Unit <cell_8> synthesized.
+
+
+Synthesizing Unit <cell_9>.
+    Related source file is "C:/FitkitSVN/apps/demo/Hra_15/fpga/cell.vhd".
+WARNING:Xst:647 - Input <NEIG_BOTTOM> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <NEIG_RIGHT> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+    Found 4-bit register for signal <CUR_STATE>.
+    Summary:
+	inferred   4 D-type flip-flop(s).
+Unit <cell_9> synthesized.
+
+
+Synthesizing Unit <engen>.
+    Related source file is "C:/FitkitSVN/apps/demo/Hra_15/fpga/engen.vhd".
+    Found 1-bit register for signal <EN>.
+    Found 5-bit up counter for signal <cnt>.
+    Summary:
+	inferred   1 Counter(s).
+	inferred   1 D-type flip-flop(s).
+Unit <engen> synthesized.
+
+
+Synthesizing Unit <vga_controller>.
+    Related source file is "C:/FitkitSVN/fpga/ctrls/vga/vga_ctrl.vhd".
+    Found finite state machine <FSM_1> for signal <hfsm_cst>.
+    -----------------------------------------------------------------------
+    | States             | 8                                              |
+    | Transitions        | 14                                             |
+    | Inputs             | 5                                              |
+    | Outputs            | 10                                             |
+    | Clock              | CLK                       (rising_edge)        |
+    | Reset              | ireset                    (positive)           |
+    | Reset type         | asynchronous                                   |
+    | Reset State        | hstdisabled                                    |
+    | Power Up State     | hstdisabled                                    |
+    | Encoding           | automatic                                      |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found finite state machine <FSM_2> for signal <vfsm_cst>.
+    -----------------------------------------------------------------------
+    | States             | 5                                              |
+    | Transitions        | 9                                              |
+    | Inputs             | 4                                              |
+    | Outputs            | 5                                              |
+    | Clock              | CLK                       (rising_edge)        |
+    | Reset              | ireset                    (positive)           |
+    | Reset type         | asynchronous                                   |
+    | Reset State        | vstprepare                                     |
+    | Power Up State     | vstprepare                                     |
+    | Encoding           | automatic                                      |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found 7-bit comparator equal for signal <h_period_mx$cmp_eq0000> created at line 340.
+    Found 12-bit comparator equal for signal <h_pixels_mx$cmp_eq0000> created at line 336.
+    Found 7-bit comparator equal for signal <h_syncend_mx$cmp_eq0000> created at line 339.
+    Found 7-bit comparator equal for signal <h_syncstart_mx$cmp_eq0000> created at line 338.
+    Found 12-bit up counter for signal <hcnt>.
+    Found 1-bit register for signal <ienable>.
+    Found 12-bit comparator equal for signal <v_lines_mx$cmp_eq0000> created at line 337.
+    Found 6-bit comparator equal for signal <v_period_mx$cmp_eq0000> created at line 343.
+    Found 4-bit comparator equal for signal <v_syncend_mx$cmp_eq0000> created at line 342.
+    Found 6-bit comparator equal for signal <v_syncstart_mx$cmp_eq0000> created at line 341.
+    Found 12-bit up counter for signal <vcnt>.
+    Summary:
+	inferred   2 Finite State Machine(s).
+	inferred   2 Counter(s).
+	inferred   1 D-type flip-flop(s).
+	inferred   8 Comparator(s).
+Unit <vga_controller> synthesized.
+
+
+Synthesizing Unit <symbol_rom>.
+    Related source file is "C:/FitkitSVN/apps/demo/Hra_15/fpga/symbol_rom.vhd".
+    Found 16x64-bit ROM for signal <DATA$rom0000> created at line 38.
+    Found 1-bit 64-to-1 multiplexer for signal <DATA>.
+    Summary:
+	inferred   1 ROM(s).
+	inferred   1 Multiplexer(s).
+Unit <symbol_rom> synthesized.
+
+
+Synthesizing Unit <keyboard_controller>.
+    Related source file is "C:/FitkitSVN/fpga/ctrls/keyboard/keyboard_ctrl.vhd".
+    Found finite state machine <FSM_3> for signal <pstate>.
+    -----------------------------------------------------------------------
+    | States             | 6                                              |
+    | Transitions        | 7                                              |
+    | Inputs             | 1                                              |
+    | Outputs            | 8                                              |
+    | Clock              | CLK                       (rising_edge)        |
+    | Reset              | RST                       (positive)           |
+    | Reset type         | asynchronous                                   |
+    | Reset State        | sinit                                          |
+    | Power Up State     | sinit                                          |
+    | Encoding           | automatic                                      |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Using one-hot encoding for signal <data_sel>.
+    Found 4-bit tristate buffer for signal <KB_KIN>.
+    Found 15-bit up counter for signal <cntr_reg>.
+    Found 4-bit comparator equal for signal <data_cmp$cmp_eq0000> created at line 185.
+    Found 16-bit register for signal <data_reg>.
+    Found 1-bit register for signal <eq_reg>.
+    Summary:
+	inferred   1 Finite State Machine(s).
+	inferred   1 Counter(s).
+	inferred  17 D-type flip-flop(s).
+	inferred   1 Comparator(s).
+	inferred   4 Tristate(s).
+Unit <keyboard_controller> synthesized.
+
+
+Synthesizing Unit <clkgen>.
+    Related source file is "C:/FitkitSVN/fpga/units/clkgen/clkgen.vhd".
+WARNING:Xst:1780 - Signal <CLK1X_BUF> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+Unit <clkgen> synthesized.
+
+
+Synthesizing Unit <tlv_pc_ifc>.
+    Related source file is "C:/FitkitSVN/apps/demo/Hra_15/fpga/top.vhd".
+WARNING:Xst:1305 - Output <IRQ> is never assigned. Tied to value 0.
+WARNING:Xst:2563 - Inout <RD<3>> is never assigned. Tied to value Z.
+WARNING:Xst:2563 - Inout <X<25>> is never assigned. Tied to value Z.
+WARNING:Xst:2563 - Inout <RD<4>> is never assigned. Tied to value Z.
+WARNING:Xst:2563 - Inout <X<26>> is never assigned. Tied to value Z.
+WARNING:Xst:2563 - Inout <RD<5>> is never assigned. Tied to value Z.
+WARNING:Xst:1305 - Output <RTS_232> is never assigned. Tied to value 0.
+WARNING:Xst:2563 - Inout <RD<6>> is never assigned. Tied to value Z.
+WARNING:Xst:1305 - Output <RCKE> is never assigned. Tied to value 0.
+WARNING:Xst:2563 - Inout <RD<7>> is never assigned. Tied to value Z.
+WARNING:Xst:647 - Input <ACLK> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:1305 - Output <RCLK> is never assigned. Tied to value 0.
+WARNING:Xst:1305 - Output <TXD_232> is never assigned. Tied to value 0.
+WARNING:Xst:1305 - Output <ADIN> is never assigned. Tied to value 0.
+WARNING:Xst:1305 - Output <RWE> is never assigned. Tied to value 0.
+WARNING:Xst:2563 - Inout <AFBUS<10>> is never assigned. Tied to value Z.
+WARNING:Xst:647 - Input <RXD_232> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:2563 - Inout <ABCLK> is never assigned. Tied to value 0.
+WARNING:Xst:2563 - Inout <AFBUS<11>> is never assigned. Tied to value Z.
+WARNING:Xst:1305 - Output <LEDF> is never assigned. Tied to value 0.
+WARNING:Xst:1305 - Output <LE> is never assigned. Tied to value 0.
+WARNING:Xst:647 - Input <FCLK> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:2563 - Inout <M_DATA> is never assigned. Tied to value 0.
+WARNING:Xst:1305 - Output <LRS> is never assigned. Tied to value 0.
+WARNING:Xst:647 - Input <ADOUT> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:1305 - Output <RDQM> is never assigned. Tied to value 0.
+WARNING:Xst:1305 - Output <LRW> is never assigned. Tied to value 0.
+WARNING:Xst:2563 - Inout <K_CLK> is never assigned. Tied to value 0.
+WARNING:Xst:1305 - Output <RA> is never assigned. Tied to value 000000000000000.
+WARNING:Xst:2563 - Inout <X<6>> is never assigned. Tied to value Z.
+WARNING:Xst:2563 - Inout <LD<0>> is never assigned. Tied to value Z.
+WARNING:Xst:2563 - Inout <X<7>> is never assigned. Tied to value Z.
+WARNING:Xst:2563 - Inout <LD<1>> is never assigned. Tied to value Z.
+WARNING:Xst:2563 - Inout <X<8>> is never assigned. Tied to value Z.
+WARNING:Xst:2563 - Inout <LD<2>> is never assigned. Tied to value Z.
+WARNING:Xst:2563 - Inout <X<9>> is never assigned. Tied to value Z.
+WARNING:Xst:2563 - Inout <LD<3>> is never assigned. Tied to value Z.
+WARNING:Xst:2563 - Inout <LD<4>> is never assigned. Tied to value Z.
+WARNING:Xst:2563 - Inout <LD<5>> is never assigned. Tied to value Z.
+WARNING:Xst:2563 - Inout <AFBUS<0>> is never assigned. Tied to value Z.
+WARNING:Xst:2563 - Inout <LD<6>> is never assigned. Tied to value Z.
+WARNING:Xst:2563 - Inout <ALRCIN> is never assigned. Tied to value 0.
+WARNING:Xst:2563 - Inout <AFBUS<1>> is never assigned. Tied to value Z.
+WARNING:Xst:2563 - Inout <LD<7>> is never assigned. Tied to value Z.
+WARNING:Xst:2563 - Inout <ALRCOUT> is never assigned. Tied to value 0.
+WARNING:Xst:2563 - Inout <AFBUS<2>> is never assigned. Tied to value Z.
+WARNING:Xst:647 - Input <SMCLK> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <CTS_232> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:2563 - Inout <P3M<0>> is never assigned. Tied to value Z.
+WARNING:Xst:1305 - Output <SPI_DI> is never assigned. Tied to value 0.
+WARNING:Xst:2563 - Inout <AFBUS<3>> is never assigned. Tied to value Z.
+WARNING:Xst:2563 - Inout <P3M<1>> is never assigned. Tied to value Z.
+WARNING:Xst:647 - Input <SPI_CS> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <SPI_DO> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:2563 - Inout <AFBUS<4>> is never assigned. Tied to value Z.
+WARNING:Xst:2563 - Inout <X<10>> is never assigned. Tied to value Z.
+WARNING:Xst:2563 - Inout <P3M<2>> is never assigned. Tied to value Z.
+WARNING:Xst:2563 - Inout <AFBUS<5>> is never assigned. Tied to value Z.
+WARNING:Xst:647 - Input <SPI_DI_REQ> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:2563 - Inout <X<11>> is never assigned. Tied to value Z.
+WARNING:Xst:2563 - Inout <P3M<3>> is never assigned. Tied to value Z.
+WARNING:Xst:1305 - Output <RCS> is never assigned. Tied to value 0.
+WARNING:Xst:2563 - Inout <AFBUS<6>> is never assigned. Tied to value Z.
+WARNING:Xst:2563 - Inout <X<12>> is never assigned. Tied to value Z.
+WARNING:Xst:2563 - Inout <P3M<4>> is never assigned. Tied to value Z.
+WARNING:Xst:2563 - Inout <AFBUS<7>> is never assigned. Tied to value Z.
+WARNING:Xst:2563 - Inout <X<13>> is never assigned. Tied to value Z.
+WARNING:Xst:2563 - Inout <P3M<5>> is never assigned. Tied to value Z.
+WARNING:Xst:647 - Input <SPI_DO_VLD> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:2563 - Inout <AFBUS<8>> is never assigned. Tied to value Z.
+WARNING:Xst:1305 - Output <RRAS> is never assigned. Tied to value 0.
+WARNING:Xst:2563 - Inout <X<14>> is never assigned. Tied to value Z.
+WARNING:Xst:2563 - Inout <P3M<6>> is never assigned. Tied to value Z.
+WARNING:Xst:2563 - Inout <AFBUS<9>> is never assigned. Tied to value Z.
+WARNING:Xst:2563 - Inout <X<20>> is never assigned. Tied to value Z.
+WARNING:Xst:2563 - Inout <X<15>> is never assigned. Tied to value Z.
+WARNING:Xst:2563 - Inout <P3M<7>> is never assigned. Tied to value Z.
+WARNING:Xst:1305 - Output <RCAS> is never assigned. Tied to value 0.
+WARNING:Xst:2563 - Inout <X<16>> is never assigned. Tied to value Z.
+WARNING:Xst:2563 - Inout <X<21>> is never assigned. Tied to value Z.
+WARNING:Xst:2563 - Inout <M_CLK> is never assigned. Tied to value 0.
+WARNING:Xst:2563 - Inout <RD<0>> is never assigned. Tied to value Z.
+WARNING:Xst:2563 - Inout <X<22>> is never assigned. Tied to value Z.
+WARNING:Xst:2563 - Inout <X<17>> is never assigned. Tied to value Z.
+WARNING:Xst:2563 - Inout <RD<1>> is never assigned. Tied to value Z.
+WARNING:Xst:2563 - Inout <X<23>> is never assigned. Tied to value Z.
+WARNING:Xst:2563 - Inout <X<18>> is never assigned. Tied to value Z.
+WARNING:Xst:2563 - Inout <RD<2>> is never assigned. Tied to value Z.
+WARNING:Xst:2563 - Inout <X<24>> is never assigned. Tied to value Z.
+WARNING:Xst:2563 - Inout <X<19>> is never assigned. Tied to value Z.
+WARNING:Xst:2563 - Inout <K_DATA> is never assigned. Tied to value 0.
+WARNING:Xst:653 - Signal <white> is used but never assigned. This sourceless signal will be automatically connected to value 111111111.
+WARNING:Xst:646 - Signal <row_cen<11:6>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <row_cen<2:0>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <k_data_out<11:10>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <k_data_out<8:7>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <k_data_out<5>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <k_data_out<3:2>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <k_data_out<0>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <col_cen<11:6>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <col_cen<2:0>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:653 - Signal <blue> is used but never assigned. This sourceless signal will be automatically connected to value 000000111.
+WARNING:Xst:653 - Signal <black> is used but never assigned. This sourceless signal will be automatically connected to value 000000000.
+WARNING:Xst:1780 - Signal <STATE_WIN> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:653 - Signal <STATE_D> is used but never assigned. This sourceless signal will be automatically connected to value 0001100100110000110001000111111110100010010110000110111011011011.
+WARNING:Xst:653 - Signal <STATE_C> is used but never assigned. This sourceless signal will be automatically connected to value 0110001101111100010100001011110100011000010011110010100110101110.
+WARNING:Xst:653 - Signal <STATE_B> is used but never assigned. This sourceless signal will be automatically connected to value 0000001101011100011000011010110101111000001011110100100110111110.
+WARNING:Xst:653 - Signal <STATE_A> is used but never assigned. This sourceless signal will be automatically connected to value 1010011100010100011000101000101100000011010111001001111111011110.
+    Found 1-bit tristate buffer for signal <AFBUS<11>>.
+    Found 1-bit tristate buffer for signal <AFBUS<10>>.
+    Found 1-bit tristate buffer for signal <AFBUS<9>>.
+    Found 1-bit tristate buffer for signal <AFBUS<8>>.
+    Found 1-bit tristate buffer for signal <AFBUS<7>>.
+    Found 1-bit tristate buffer for signal <AFBUS<6>>.
+    Found 1-bit tristate buffer for signal <AFBUS<5>>.
+    Found 1-bit tristate buffer for signal <AFBUS<4>>.
+    Found 1-bit tristate buffer for signal <AFBUS<3>>.
+    Found 1-bit tristate buffer for signal <AFBUS<2>>.
+    Found 1-bit tristate buffer for signal <AFBUS<1>>.
+    Found 1-bit tristate buffer for signal <AFBUS<0>>.
+    Found 1-bit tristate buffer for signal <P3M<7>>.
+    Found 1-bit tristate buffer for signal <P3M<6>>.
+    Found 1-bit tristate buffer for signal <P3M<5>>.
+    Found 1-bit tristate buffer for signal <P3M<4>>.
+    Found 1-bit tristate buffer for signal <P3M<3>>.
+    Found 1-bit tristate buffer for signal <P3M<2>>.
+    Found 1-bit tristate buffer for signal <P3M<1>>.
+    Found 1-bit tristate buffer for signal <P3M<0>>.
+    Found 1-bit tristate buffer for signal <LD<7>>.
+    Found 1-bit tristate buffer for signal <LD<6>>.
+    Found 1-bit tristate buffer for signal <LD<5>>.
+    Found 1-bit tristate buffer for signal <LD<4>>.
+    Found 1-bit tristate buffer for signal <LD<3>>.
+    Found 1-bit tristate buffer for signal <LD<2>>.
+    Found 1-bit tristate buffer for signal <LD<1>>.
+    Found 1-bit tristate buffer for signal <LD<0>>.
+    Found 1-bit tristate buffer for signal <X<26>>.
+    Found 1-bit tristate buffer for signal <X<25>>.
+    Found 1-bit tristate buffer for signal <X<24>>.
+    Found 1-bit tristate buffer for signal <X<23>>.
+    Found 1-bit tristate buffer for signal <X<22>>.
+    Found 1-bit tristate buffer for signal <X<21>>.
+    Found 1-bit tristate buffer for signal <X<20>>.
+    Found 1-bit tristate buffer for signal <X<19>>.
+    Found 1-bit tristate buffer for signal <X<18>>.
+    Found 1-bit tristate buffer for signal <X<17>>.
+    Found 1-bit tristate buffer for signal <X<16>>.
+    Found 1-bit tristate buffer for signal <X<15>>.
+    Found 1-bit tristate buffer for signal <X<14>>.
+    Found 1-bit tristate buffer for signal <X<13>>.
+    Found 1-bit tristate buffer for signal <X<12>>.
+    Found 1-bit tristate buffer for signal <X<11>>.
+    Found 1-bit tristate buffer for signal <X<10>>.
+    Found 1-bit tristate buffer for signal <X<9>>.
+    Found 1-bit tristate buffer for signal <X<8>>.
+    Found 1-bit tristate buffer for signal <X<7>>.
+    Found 1-bit tristate buffer for signal <X<6>>.
+    Found 1-bit tristate buffer for signal <RD<7>>.
+    Found 1-bit tristate buffer for signal <RD<6>>.
+    Found 1-bit tristate buffer for signal <RD<5>>.
+    Found 1-bit tristate buffer for signal <RD<4>>.
+    Found 1-bit tristate buffer for signal <RD<3>>.
+    Found 1-bit tristate buffer for signal <RD<2>>.
+    Found 1-bit tristate buffer for signal <RD<1>>.
+    Found 1-bit tristate buffer for signal <RD<0>>.
+    Found 12-bit subtractor for signal <col_cen>.
+    Found 64-bit register for signal <INIT_STATE>.
+    Found 1-bit register for signal <inx>.
+    Found 1-bit register for signal <iny>.
+    Found 9-bit register for signal <irgb>.
+    Found 4-bit register for signal <KEYS>.
+    Found 1-bit register for signal <RESET_CELL>.
+    Found 12-bit subtractor for signal <row_cen>.
+    Summary:
+	inferred  80 D-type flip-flop(s).
+	inferred   2 Adder/Subtractor(s).
+	inferred  57 Tristate(s).
+Unit <tlv_pc_ifc> synthesized.
+
+
+Synthesizing Unit <fpga>.
+    Related source file is "C:/FitkitSVN/fpga/chips/architecture_pc/arch_pc_ifc.vhd".
+WARNING:Xst:647 - Input <SPI_CS> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:1780 - Signal <ispi_rst> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <ispi_clk> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+Unit <fpga> synthesized.
+
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# ROMs                                                 : 1
+ 16x64-bit ROM                                         : 1
+# Adders/Subtractors                                   : 2
+ 12-bit subtractor                                     : 2
+# Counters                                             : 4
+ 12-bit up counter                                     : 2
+ 15-bit up counter                                     : 1
+ 5-bit up counter                                      : 1
+# Registers                                            : 46
+ 1-bit register                                        : 28
+ 4-bit register                                        : 16
+ 64-bit register                                       : 1
+ 9-bit register                                        : 1
+# Comparators                                          : 9
+ 12-bit comparator equal                               : 2
+ 4-bit comparator equal                                : 2
+ 6-bit comparator equal                                : 2
+ 7-bit comparator equal                                : 3
+# Multiplexers                                         : 1
+ 1-bit 64-to-1 multiplexer                             : 1
+# Tristates                                            : 62
+ 1-bit tristate buffer                                 : 62
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+Analyzing FSM <FSM_3> for best encoding.
+Optimizing FSM <fpga_inst/kbrd_ctrl/pstate/FSM> on signal <pstate[1:6]> with one-hot encoding.
+--------------------
+ State  | Encoding
+--------------------
+ sinit  | 000001
+ sscan0 | 000010
+ sscan1 | 000100
+ sscan2 | 001000
+ sscan3 | 010000
+ swe    | 100000
+--------------------
+Analyzing FSM <FSM_2> for best encoding.
+Optimizing FSM <fpga_inst/vga/vfsm_cst/FSM> on signal <vfsm_cst[1:5]> with one-hot encoding.
+---------------------------
+ State         | Encoding
+---------------------------
+ vstprepare    | 00001
+ vstdraw       | 00010
+ vstwaitsync   | 00100
+ vstsync       | 01000
+ vstwaitperiod | 10000
+---------------------------
+Analyzing FSM <FSM_1> for best encoding.
+Optimizing FSM <fpga_inst/vga/hfsm_cst/FSM> on signal <hfsm_cst[1:8]> with one-hot encoding.
+----------------------------
+ State          | Encoding
+----------------------------
+ hstdisabled    | 00000001
+ hstprepare     | 00000010
+ hstrequestonly | 00000100
+ hstdraw        | 00001000
+ hstdrawonly    | 00010000
+ hstwaitsync    | 00100000
+ hstsync        | 01000000
+ hstwaitperiod  | 10000000
+----------------------------
+Analyzing FSM <FSM_0> for best encoding.
+Optimizing FSM <spictrl/pstate/FSM> on signal <pstate[1:6]> with one-hot encoding.
+----------------------
+ State    | Encoding
+----------------------
+ sinit    | 000001
+ srcv1    | 000010
+ srcv2    | 001000
+ srcv3    | 010000
+ sactive  | 100000
+ snactive | 000100
+----------------------
+INFO:Xst:2261 - The FF/Latch <INIT_STATE_13> in Unit <fpga_inst> is equivalent to the following 2 FFs/Latches, which will be removed : <INIT_STATE_36> <INIT_STATE_53> 
+INFO:Xst:2261 - The FF/Latch <INIT_STATE_2> in Unit <fpga_inst> is equivalent to the following 5 FFs/Latches, which will be removed : <INIT_STATE_8> <INIT_STATE_18> <INIT_STATE_39> <INIT_STATE_50> <INIT_STATE_57> 
+INFO:Xst:2261 - The FF/Latch <INIT_STATE_44> in Unit <fpga_inst> is equivalent to the following FF/Latch, which will be removed : <INIT_STATE_62> 
+INFO:Xst:2261 - The FF/Latch <INIT_STATE_0> in Unit <fpga_inst> is equivalent to the following 6 FFs/Latches, which will be removed : <INIT_STATE_31> <INIT_STATE_38> <INIT_STATE_42> <INIT_STATE_47> <INIT_STATE_59> <INIT_STATE_60> 
+INFO:Xst:2261 - The FF/Latch <INIT_STATE_23> in Unit <fpga_inst> is equivalent to the following 5 FFs/Latches, which will be removed : <INIT_STATE_26> <INIT_STATE_43> <INIT_STATE_48> <INIT_STATE_49> <INIT_STATE_55> 
+INFO:Xst:2261 - The FF/Latch <irgb_0> in Unit <fpga_inst> is equivalent to the following 2 FFs/Latches, which will be removed : <irgb_1> <irgb_2> 
+INFO:Xst:2261 - The FF/Latch <irgb_3> in Unit <fpga_inst> is equivalent to the following 5 FFs/Latches, which will be removed : <irgb_4> <irgb_5> <irgb_6> <irgb_7> <irgb_8> 
+INFO:Xst:2261 - The FF/Latch <INIT_STATE_1> in Unit <fpga_inst> is equivalent to the following 9 FFs/Latches, which will be removed : <INIT_STATE_3> <INIT_STATE_7> <INIT_STATE_11> <INIT_STATE_19> <INIT_STATE_32> <INIT_STATE_35> <INIT_STATE_46> <INIT_STATE_52> <INIT_STATE_56> 
+WARNING:Xst:1293 - FF/Latch <ienable> has a constant value of 1 in block <vga>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <INIT_STATE_1> has a constant value of 1 in block <fpga_inst>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <INIT_STATE_23> has a constant value of 0 in block <fpga_inst>. This FF/Latch will be trimmed during the optimization process.
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# FSMs                                                 : 4
+# ROMs                                                 : 1
+ 16x64-bit ROM                                         : 1
+# Adders/Subtractors                                   : 2
+ 6-bit subtractor                                      : 2
+# Counters                                             : 4
+ 12-bit up counter                                     : 2
+ 15-bit up counter                                     : 1
+ 5-bit up counter                                      : 1
+# Registers                                            : 165
+ Flip-Flops                                            : 165
+# Comparators                                          : 9
+ 12-bit comparator equal                               : 2
+ 4-bit comparator equal                                : 2
+ 6-bit comparator equal                                : 2
+ 7-bit comparator equal                                : 3
+# Multiplexers                                         : 1
+ 1-bit 64-to-1 multiplexer                             : 1
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+WARNING:Xst:1293 - FF/Latch <ienable> has a constant value of 1 in block <vga_controller>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <INIT_STATE_1> has a constant value of 1 in block <tlv_pc_ifc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <INIT_STATE_3> has a constant value of 1 in block <tlv_pc_ifc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <INIT_STATE_7> has a constant value of 1 in block <tlv_pc_ifc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <INIT_STATE_11> has a constant value of 1 in block <tlv_pc_ifc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <INIT_STATE_19> has a constant value of 1 in block <tlv_pc_ifc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <INIT_STATE_23> has a constant value of 0 in block <tlv_pc_ifc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <INIT_STATE_26> has a constant value of 0 in block <tlv_pc_ifc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <INIT_STATE_32> has a constant value of 1 in block <tlv_pc_ifc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <INIT_STATE_35> has a constant value of 1 in block <tlv_pc_ifc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <INIT_STATE_43> has a constant value of 0 in block <tlv_pc_ifc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <INIT_STATE_46> has a constant value of 1 in block <tlv_pc_ifc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <INIT_STATE_48> has a constant value of 0 in block <tlv_pc_ifc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <INIT_STATE_49> has a constant value of 0 in block <tlv_pc_ifc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <INIT_STATE_52> has a constant value of 1 in block <tlv_pc_ifc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <INIT_STATE_55> has a constant value of 0 in block <tlv_pc_ifc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <INIT_STATE_56> has a constant value of 1 in block <tlv_pc_ifc>. This FF/Latch will be trimmed during the optimization process.
+
+ERROR:Xst:528 - Multi-source in Unit <tlv_pc_ifc> on signal <STATE<63>>; this signal is connected to multiple drivers.
+Drivers are: 
+   Output signal of FDE instance <fpga_inst/cell_x[0].cell_y[0].connnect_cell/CUR_STATE_3>
+   Output signal of FDE instance <fpga_inst/cell_x[0].cell_y[1].connnect_cell/CUR_STATE_3>
+   Output signal of FDE instance <fpga_inst/cell_x[0].cell_y[2].connnect_cell/CUR_STATE_3>
+   Output signal of FDE instance <fpga_inst/cell_x[0].cell_y[3].connnect_cell/CUR_STATE_3>
+   Output signal of FDE instance <fpga_inst/cell_x[1].cell_y[0].connnect_cell/CUR_STATE_3>
+   Output signal of FDE instance <fpga_inst/cell_x[1].cell_y[1].connnect_cell/CUR_STATE_3>
+   Output signal of FDE instance <fpga_inst/cell_x[1].cell_y[2].connnect_cell/CUR_STATE_3>
+   Output signal of FDE instance <fpga_inst/cell_x[1].cell_y[3].connnect_cell/CUR_STATE_3>
+   Output signal of FDE instance <fpga_inst/cell_x[2].cell_y[0].connnect_cell/CUR_STATE_3>
+   Output signal of FDE instance <fpga_inst/cell_x[2].cell_y[1].connnect_cell/CUR_STATE_3>
+   Output signal of FDE instance <fpga_inst/cell_x[2].cell_y[2].connnect_cell/CUR_STATE_3>
+   Output signal of FDE instance <fpga_inst/cell_x[2].cell_y[3].connnect_cell/CUR_STATE_3>
+   Output signal of FDE instance <fpga_inst/cell_x[3].cell_y[0].connnect_cell/CUR_STATE_3>
+   Output signal of FDE instance <fpga_inst/cell_x[3].cell_y[1].connnect_cell/CUR_STATE_3>
+   Output signal of FDE instance <fpga_inst/cell_x[3].cell_y[2].connnect_cell/CUR_STATE_3>
+   Output signal of FDE instance <fpga_inst/cell_x[3].cell_y[3].connnect_cell/CUR_STATE_3>
+
+ERROR:Xst:528 - Multi-source in Unit <tlv_pc_ifc> on signal <STATE<62>>; this signal is connected to multiple drivers.
+Drivers are: 
+   Output signal of FDE instance <fpga_inst/cell_x[0].cell_y[0].connnect_cell/CUR_STATE_2>
+   Output signal of FDE instance <fpga_inst/cell_x[0].cell_y[1].connnect_cell/CUR_STATE_2>
+   Output signal of FDE instance <fpga_inst/cell_x[0].cell_y[2].connnect_cell/CUR_STATE_2>
+   Output signal of FDE instance <fpga_inst/cell_x[0].cell_y[3].connnect_cell/CUR_STATE_2>
+   Output signal of FDE instance <fpga_inst/cell_x[1].cell_y[0].connnect_cell/CUR_STATE_2>
+   Output signal of FDE instance <fpga_inst/cell_x[1].cell_y[1].connnect_cell/CUR_STATE_2>
+   Output signal of FDE instance <fpga_inst/cell_x[1].cell_y[2].connnect_cell/CUR_STATE_2>
+   Output signal of FDE instance <fpga_inst/cell_x[1].cell_y[3].connnect_cell/CUR_STATE_2>
+   Output signal of FDE instance <fpga_inst/cell_x[2].cell_y[0].connnect_cell/CUR_STATE_2>
+   Output signal of FDE instance <fpga_inst/cell_x[2].cell_y[1].connnect_cell/CUR_STATE_2>
+   Output signal of FDE instance <fpga_inst/cell_x[2].cell_y[2].connnect_cell/CUR_STATE_2>
+   Output signal of FDE instance <fpga_inst/cell_x[2].cell_y[3].connnect_cell/CUR_STATE_2>
+   Output signal of FDE instance <fpga_inst/cell_x[3].cell_y[0].connnect_cell/CUR_STATE_2>
+   Output signal of FDE instance <fpga_inst/cell_x[3].cell_y[1].connnect_cell/CUR_STATE_2>
+   Output signal of FDE instance <fpga_inst/cell_x[3].cell_y[2].connnect_cell/CUR_STATE_2>
+   Output signal of FDE instance <fpga_inst/cell_x[3].cell_y[3].connnect_cell/CUR_STATE_2>
+
+ERROR:Xst:528 - Multi-source in Unit <tlv_pc_ifc> on signal <STATE<61>>; this signal is connected to multiple drivers.
+Drivers are: 
+   Output signal of FDE instance <fpga_inst/cell_x[0].cell_y[0].connnect_cell/CUR_STATE_1>
+   Output signal of FDE instance <fpga_inst/cell_x[0].cell_y[1].connnect_cell/CUR_STATE_1>
+   Output signal of FDE instance <fpga_inst/cell_x[0].cell_y[2].connnect_cell/CUR_STATE_1>
+   Output signal of FDE instance <fpga_inst/cell_x[0].cell_y[3].connnect_cell/CUR_STATE_1>
+   Output signal of FDE instance <fpga_inst/cell_x[1].cell_y[0].connnect_cell/CUR_STATE_1>
+   Output signal of FDE instance <fpga_inst/cell_x[1].cell_y[1].connnect_cell/CUR_STATE_1>
+   Output signal of FDE instance <fpga_inst/cell_x[1].cell_y[2].connnect_cell/CUR_STATE_1>
+   Output signal of FDE instance <fpga_inst/cell_x[1].cell_y[3].connnect_cell/CUR_STATE_1>
+   Output signal of FDE instance <fpga_inst/cell_x[2].cell_y[0].connnect_cell/CUR_STATE_1>
+   Output signal of FDE instance <fpga_inst/cell_x[2].cell_y[1].connnect_cell/CUR_STATE_1>
+   Output signal of FDE instance <fpga_inst/cell_x[2].cell_y[2].connnect_cell/CUR_STATE_1>
+   Output signal of FDE instance <fpga_inst/cell_x[2].cell_y[3].connnect_cell/CUR_STATE_1>
+   Output signal of FDE instance <fpga_inst/cell_x[3].cell_y[0].connnect_cell/CUR_STATE_1>
+   Output signal of FDE instance <fpga_inst/cell_x[3].cell_y[1].connnect_cell/CUR_STATE_1>
+   Output signal of FDE instance <fpga_inst/cell_x[3].cell_y[2].connnect_cell/CUR_STATE_1>
+   Output signal of FDE instance <fpga_inst/cell_x[3].cell_y[3].connnect_cell/CUR_STATE_1>
+
+ERROR:Xst:528 - Multi-source in Unit <tlv_pc_ifc> on signal <STATE<60>>; this signal is connected to multiple drivers.
+Drivers are: 
+   Output signal of FDE instance <fpga_inst/cell_x[0].cell_y[0].connnect_cell/CUR_STATE_0>
+   Output signal of FDE instance <fpga_inst/cell_x[0].cell_y[1].connnect_cell/CUR_STATE_0>
+   Output signal of FDE instance <fpga_inst/cell_x[0].cell_y[2].connnect_cell/CUR_STATE_0>
+   Output signal of FDE instance <fpga_inst/cell_x[0].cell_y[3].connnect_cell/CUR_STATE_0>
+   Output signal of FDE instance <fpga_inst/cell_x[1].cell_y[0].connnect_cell/CUR_STATE_0>
+   Output signal of FDE instance <fpga_inst/cell_x[1].cell_y[1].connnect_cell/CUR_STATE_0>
+   Output signal of FDE instance <fpga_inst/cell_x[1].cell_y[2].connnect_cell/CUR_STATE_0>
+   Output signal of FDE instance <fpga_inst/cell_x[1].cell_y[3].connnect_cell/CUR_STATE_0>
+   Output signal of FDE instance <fpga_inst/cell_x[2].cell_y[0].connnect_cell/CUR_STATE_0>
+   Output signal of FDE instance <fpga_inst/cell_x[2].cell_y[1].connnect_cell/CUR_STATE_0>
+   Output signal of FDE instance <fpga_inst/cell_x[2].cell_y[2].connnect_cell/CUR_STATE_0>
+   Output signal of FDE instance <fpga_inst/cell_x[2].cell_y[3].connnect_cell/CUR_STATE_0>
+   Output signal of FDE instance <fpga_inst/cell_x[3].cell_y[0].connnect_cell/CUR_STATE_0>
+   Output signal of FDE instance <fpga_inst/cell_x[3].cell_y[1].connnect_cell/CUR_STATE_0>
+   Output signal of FDE instance <fpga_inst/cell_x[3].cell_y[2].connnect_cell/CUR_STATE_0>
+   Output signal of FDE instance <fpga_inst/cell_x[3].cell_y[3].connnect_cell/CUR_STATE_0>
+
+
+Total REAL time to Xst completion: 15.00 secs
+Total CPU time to Xst completion: 14.78 secs
+ 
+--> 
+
+Total memory usage is 151128 kilobytes
+
+Number of errors   :    4 (   0 filtered)
+Number of warnings :  159 (   0 filtered)
+Number of infos    :    8 (   0 filtered)
+

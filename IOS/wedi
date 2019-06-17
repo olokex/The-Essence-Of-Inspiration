@@ -1,0 +1,157 @@
+#!/bin/sh
+export POSIXLY_CORRECT=yes
+
+if [ ! ${WEDI_RC} ]; then
+	echo "WEDI_RC is not set." >&2
+	exit 1
+fi
+
+if [ ! -f "${WEDI_RC}" ]; then
+    mkdir -p "$( dirname "$WEDI_RC" )"
+	CWR="${WEDI_RC}/wedirc"
+else
+	CWR=${WEDI_RC}
+fi
+
+if ! test realpath; then
+	echo "Realpath is not installed." >&2
+	exit 1
+fi
+
+# NEPOCHOPENO ZADANI CO SE VLASTNE MA NEBO NEMA DELAT SE SOUBORY CO JSOU SMAZANY
+
+if [ -f $CWR ]; then
+	REMOVE=""
+	while read  LINE
+	do
+		EXIST=$( echo $LINE | cut -d";" -f1)
+		if [ -f $EXIST ]; then
+		    REMOVE="$REMOVE $LINE"
+		fi
+	done < $CWR
+
+	rm $CWR
+
+	for each in $REMOVE; do
+		echo $each >> $CWR
+	done
+fi
+
+DATE=`date +%Y-%m-%d`
+
+if [ ! ${EDITOR} ]; then
+	if [ ! ${VISUAL} ]; then
+		EDITOR=vi
+	else
+		EDITOR=${VISUAL}
+	fi
+fi
+
+if [ $# -eq 0 ] && [ -f $CWR ]; then
+
+	NUMBER=$(cat $CWR | cut -d";" -f1 | grep -nx "$( realpath . )/[^/]*" | cut -d":" -f1 | tail -1)
+	WAY=$( cat $CWR | head -$NUMBER | tail -1 | cut -d";" -f1 )
+	${EDITOR} $WAY
+	echo "${WAY};$(basename $WAY);${DATE}" >> $CWR
+
+elif [ -f $1 ] && [ ! -z $1 ] && [ $# -le 1 ]; then
+
+	${EDITOR} $1
+	echo "$( realpath $1 );$( basename $( realpath $1 ) );${DATE}" >> ${CWR}
+
+elif [ -d $1 ] && [ -f $CWR ]; then
+	
+	if [ $# -ge 2 ]; then
+		echo "Bad arguments." >&2
+		exit 1
+	fi
+
+	NUMBER=$(cat $CWR | cut -d";" -f1 | grep -nx "$( realpath $1 )/[^/]*" | cut -d":" -f1 | tail -1)
+	WAY=$( cat $CWR | head -$NUMBER | tail -1 | cut -d";" -f1 )
+	${EDITOR} $WAY
+	echo "${WAY};$(basename $WAY);${DATE}" >> $CWR
+
+elif [ "$1" = "-m" ]; then
+	if [ -f $2 ] && [ ! -z $2 ] || [ ! -d $2 ] || [ $# -ge 3 ]; then
+		echo "Bad arguments." >&2
+		exit 1
+	fi
+	if [ -z $2 ]; then
+		DIR="$( realpath . )"
+	else
+		DIR="$( realpath $2 )"
+	fi
+
+	FILENAME=$( grep "${DIR}/[^/]*;" ${CWR} | cut -d";" -f2 | sort -u )
+	MAX=0
+	TEST2=0
+
+	for i in ${FILENAME}; do
+		TEST="$(realpath ${DIR} )/$i;"$i
+		TMP=$( grep -c ${TEST} ${CWR} )
+		if [ ${TMP} -gt ${MAX} ]; then
+			MAX=${TMP}
+			TEST2=${TEST}
+		fi
+	done
+
+	MYPATH=$( echo $TEST2 | cut -d";" -f1 )
+	NAME=$( basename ${MYPATH} )
+	${EDITOR} ${MYPATH}
+	echo "${MYPATH};${NAME};${DATE}" >> ${CWR}
+
+elif [ "$1" = "-l" ]; then
+	if [ -f $2 ] && [ ! -z $2 ] || [ ! -d $2 ] || [ -z $CWR ] || [ $# -ge 3 ]; then
+		echo "Bad arguments." >&2
+		exit 1
+	fi
+
+	if [ -z $2 ]; then
+		DIR="$( realpath . )"
+	else
+		DIR="$( realpath $2)"
+	fi
+
+	FILENAME=$( grep "${DIR}/[^/]*;" ${CWR} | cut -d";" -f2 | sort -u )
+	for i in ${FILENAME}; do
+		echo "$i"
+	done
+
+elif [ "$1" = "-a" ]; then
+	if [ -f $3 ] && [ ! -z $3 ] || [ $# -ge 4 ]; then
+		echo "Bad arguments." >&2
+		exit 1
+	fi
+
+	if [ -z $3 ]; then
+		DIR="$( realpath . )"
+	else
+		DIR="$( realpath $3 )"
+	fi
+
+	USERDATE=$2
+	awk -F';' -v date="$USERDATE" -v dir="$DIR" '
+	{ sub(/\/[^\/]+$/, "", $1); if ($1 == dir && $3 >= date) print $2; }
+	' < $CWR | sort -u
+ 
+elif [ "$1" = "-b" ]; then
+	if [ -f $3 ] && [ ! -z $3 ] || [ $# -ge 4 ]; then 
+		echo "Bad arguments." >&2
+		exit 1
+	fi
+
+	if [ -z $3 ]; then
+		DIR="$( realpath . )"
+	else
+		DIR="$( realpath $3 )"
+	fi
+
+	USERDATE=$2
+	awk -F';' -v date="$USERDATE" -v dir="$DIR" '
+	{ sub(/\/[^\/]+$/, "", $1); if ($1 == dir && $3 < date) print $2; }
+	' < $CWR | sort -u
+
+else
+	echo "Something went wrong." >&2
+	exit 1
+fi

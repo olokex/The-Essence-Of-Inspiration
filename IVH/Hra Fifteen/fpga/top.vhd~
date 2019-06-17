@@ -1,0 +1,94 @@
+
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.std_logic_arith.all;
+use ieee.std_logic_unsigned.all;
+use work.vga_controller_cfg.all;
+
+architecture main of tlv_pc_ifc is
+
+   signal vga_mode  : std_logic_vector(60 downto 0); -- default 640x480x60
+
+   signal irgb,crgb : std_logic_vector(8 downto 0);
+   alias red is irgb(8 downto 6);
+
+   signal row,rows : std_logic_vector(11 downto 0);
+   signal col,cols : std_logic_vector(11 downto 0);
+
+
+   alias col32 is cols(11 downto 5);
+   alias row32 is rows(11 downto 5);
+
+   signal sx: std_logic_vector(7 downto 0) := "00010000";
+
+   signal inx,iny: std_logic := '0';
+   
+
+begin
+
+   -- Nastaveni grafickeho rezimu (640x480, 60 Hz refresh)
+   setmode(r640x480x60, vga_mode);
+
+   vga: entity work.vga_controller(arch_vga_controller) 
+      generic map (REQ_DELAY => 1)
+      port map (
+         CLK    => CLK, 
+         RST    => RESET,
+         ENABLE => '1',
+         MODE   => vga_mode,
+
+         DATA_RED    => red,
+         DATA_GREEN  => irgb(5 downto 3),
+         DATA_BLUE   => irgb(2 downto 0),
+         ADDR_COLUMN => col,
+         ADDR_ROW    => row,
+
+         VGA_RED   => RED_V,
+         VGA_BLUE  => BLUE_V,
+         VGA_GREEN => GREEN_V,
+         VGA_HSYNC => HSYNC_V,
+         VGA_VSYNC => VSYNC_V
+      );
+
+  -- crgb <= "000000000";
+  crgb <= "111111111";
+  rows <= row;
+  cols <= col;
+
+   draw : process( CLK )
+   begin
+      if( rising_edge(CLK) ) then
+
+         if (inx = '0') then
+             if (col32 = conv_std_logic_vector(2,col32'length)) then
+                inx <= '1';
+             end if;
+         else
+             if (col32 = conv_std_logic_vector(18,col32'length)) then
+                inx <= '0';
+             end if;
+         end if;
+
+         if (iny = '0') then
+             if (row32 = conv_std_logic_vector(2,row32'length)) then
+                iny <= '1';
+             end if;
+         else
+             if (row32 = conv_std_logic_vector(13,col32'length)) then
+                iny <= '0';
+             end if;
+         end if;
+
+
+         irgb <= row(7 downto 5) & (inx and iny) & "00" & col(7 downto 5);
+   
+         if (inx = '1') and (iny='1') then
+           irgb <= crgb;
+         end if;
+
+         
+      end if ;
+   end process ; -- draw
+
+end main;
+

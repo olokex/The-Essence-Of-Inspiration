@@ -1,0 +1,519 @@
+Release 13.1 Map O.40d (nt)
+Xilinx Mapping Report File for Design 'fpga'
+
+Design Information
+------------------
+Command Line   : map -intstyle ise -p xc3s50-pq208-4 -cm area -ir off -pr off -c
+100 -o fpga_map.ncd fpga.ngd fpga.pcf 
+Target Device  : xc3s50
+Target Package : pq208
+Target Speed   : -4
+Mapper Version : spartan3 -- $Revision: 1.55 $
+Mapped Date    : Sun May 06 13:57:32 2018
+
+Design Summary
+--------------
+Number of errors:      0
+Number of warnings:   56
+Logic Utilization:
+  Number of Slice Flip Flops:           174 out of   1,536   11%
+  Number of 4 input LUTs:               580 out of   1,536   37%
+Logic Distribution:
+  Number of occupied Slices:            354 out of     768   46%
+    Number of Slices containing only related logic:     354 out of     354 100%
+    Number of Slices containing unrelated logic:          0 out of     354   0%
+      *See NOTES below for an explanation of the effects of unrelated logic.
+  Total Number of 4 input LUTs:         651 out of   1,536   42%
+    Number used as logic:               580
+    Number used as a route-thru:         71
+
+  The Slice Logic Distribution report is not meaningful if the design is
+  over-mapped for a non-slice resource or if Placement fails.
+
+  Number of bonded IOBs:                 62 out of     124   50%
+  Number of BUFGMUXs:                     2 out of       8   25%
+  Number of DCMs:                         1 out of       2   50%
+
+Average Fanout of Non-Clock Nets:                3.72
+
+Peak Memory Usage:  142 MB
+Total REAL time to MAP completion:  23 secs 
+Total CPU time to MAP completion:   3 secs 
+
+NOTES:
+
+   Related logic is defined as being logic that shares connectivity - e.g. two
+   LUTs are "related" if they share common inputs.  When assembling slices,
+   Map gives priority to combine logic that is related.  Doing so results in
+   the best timing performance.
+
+   Unrelated logic shares no connectivity.  Map will only begin packing
+   unrelated logic into a slice once 99% of the slices are occupied through
+   related logic packing.
+
+   Note that once logic distribution reaches the 99% level through related
+   logic packing, this does not mean the device is completely utilized.
+   Unrelated logic packing will then begin, continuing until all usable LUTs
+   and FFs are occupied.  Depending on your timing budget, increased levels of
+   unrelated logic packing may adversely affect the overall timing performance
+   of your design.
+
+Table of Contents
+-----------------
+Section 1 - Errors
+Section 2 - Warnings
+Section 3 - Informational
+Section 4 - Removed Logic Summary
+Section 5 - Removed Logic
+Section 6 - IOB Properties
+Section 7 - RPMs
+Section 8 - Guide Report
+Section 9 - Area Group and Partition Summary
+Section 10 - Timing Report
+Section 11 - Configuration String Information
+Section 12 - Control Set Information
+Section 13 - Utilization by Hierarchy
+
+Section 1 - Errors
+------------------
+
+Section 2 - Warnings
+--------------------
+WARNING:Security:42 - Your software subscription period has lapsed. Your current
+version of Xilinx tools will continue to function, but you no longer qualify for
+Xilinx software updates or new releases.
+WARNING:MapLib:701 - Signal X<25> connected to top level port X<25> has been
+   removed.
+WARNING:MapLib:701 - Signal X<26> connected to top level port X<26> has been
+   removed.
+WARNING:MapLib:701 - Signal X<6> connected to top level port X<6> has been
+   removed.
+WARNING:MapLib:701 - Signal X<7> connected to top level port X<7> has been
+   removed.
+WARNING:MapLib:701 - Signal X<8> connected to top level port X<8> has been
+   removed.
+WARNING:MapLib:701 - Signal X<9> connected to top level port X<9> has been
+   removed.
+WARNING:MapLib:701 - Signal X<10> connected to top level port X<10> has been
+   removed.
+WARNING:MapLib:701 - Signal X<11> connected to top level port X<11> has been
+   removed.
+WARNING:MapLib:701 - Signal X<12> connected to top level port X<12> has been
+   removed.
+WARNING:MapLib:701 - Signal X<13> connected to top level port X<13> has been
+   removed.
+WARNING:MapLib:701 - Signal X<14> connected to top level port X<14> has been
+   removed.
+WARNING:MapLib:701 - Signal X<20> connected to top level port X<20> has been
+   removed.
+WARNING:MapLib:701 - Signal X<15> connected to top level port X<15> has been
+   removed.
+WARNING:MapLib:701 - Signal X<16> connected to top level port X<16> has been
+   removed.
+WARNING:MapLib:701 - Signal X<21> connected to top level port X<21> has been
+   removed.
+WARNING:MapLib:701 - Signal X<22> connected to top level port X<22> has been
+   removed.
+WARNING:MapLib:701 - Signal X<17> connected to top level port X<17> has been
+   removed.
+WARNING:MapLib:701 - Signal X<23> connected to top level port X<23> has been
+   removed.
+WARNING:MapLib:701 - Signal X<18> connected to top level port X<18> has been
+   removed.
+WARNING:MapLib:701 - Signal X<24> connected to top level port X<24> has been
+   removed.
+WARNING:MapLib:701 - Signal X<19> connected to top level port X<19> has been
+   removed.
+WARNING:MapLib:701 - Signal AFBUS<11> connected to top level port AFBUS<11> has
+   been removed.
+WARNING:MapLib:701 - Signal AFBUS<10> connected to top level port AFBUS<10> has
+   been removed.
+WARNING:MapLib:701 - Signal AFBUS<9> connected to top level port AFBUS<9> has
+   been removed.
+WARNING:MapLib:701 - Signal AFBUS<8> connected to top level port AFBUS<8> has
+   been removed.
+WARNING:MapLib:701 - Signal AFBUS<7> connected to top level port AFBUS<7> has
+   been removed.
+WARNING:MapLib:701 - Signal AFBUS<6> connected to top level port AFBUS<6> has
+   been removed.
+WARNING:MapLib:701 - Signal AFBUS<5> connected to top level port AFBUS<5> has
+   been removed.
+WARNING:MapLib:701 - Signal AFBUS<4> connected to top level port AFBUS<4> has
+   been removed.
+WARNING:MapLib:701 - Signal AFBUS<3> connected to top level port AFBUS<3> has
+   been removed.
+WARNING:MapLib:701 - Signal AFBUS<2> connected to top level port AFBUS<2> has
+   been removed.
+WARNING:MapLib:701 - Signal AFBUS<1> connected to top level port AFBUS<1> has
+   been removed.
+WARNING:MapLib:701 - Signal AFBUS<0> connected to top level port AFBUS<0> has
+   been removed.
+WARNING:MapLib:701 - Signal P3M<7> connected to top level port P3M<7> has been
+   removed.
+WARNING:MapLib:701 - Signal P3M<6> connected to top level port P3M<6> has been
+   removed.
+WARNING:MapLib:701 - Signal P3M<5> connected to top level port P3M<5> has been
+   removed.
+WARNING:MapLib:701 - Signal P3M<4> connected to top level port P3M<4> has been
+   removed.
+WARNING:MapLib:701 - Signal P3M<3> connected to top level port P3M<3> has been
+   removed.
+WARNING:MapLib:701 - Signal P3M<2> connected to top level port P3M<2> has been
+   removed.
+WARNING:MapLib:701 - Signal P3M<1> connected to top level port P3M<1> has been
+   removed.
+WARNING:MapLib:701 - Signal LD<7> connected to top level port LD<7> has been
+   removed.
+WARNING:MapLib:701 - Signal LD<6> connected to top level port LD<6> has been
+   removed.
+WARNING:MapLib:701 - Signal LD<5> connected to top level port LD<5> has been
+   removed.
+WARNING:MapLib:701 - Signal LD<4> connected to top level port LD<4> has been
+   removed.
+WARNING:MapLib:701 - Signal LD<3> connected to top level port LD<3> has been
+   removed.
+WARNING:MapLib:701 - Signal LD<2> connected to top level port LD<2> has been
+   removed.
+WARNING:MapLib:701 - Signal LD<1> connected to top level port LD<1> has been
+   removed.
+WARNING:MapLib:701 - Signal LD<0> connected to top level port LD<0> has been
+   removed.
+WARNING:MapLib:701 - Signal RD<7> connected to top level port RD<7> has been
+   removed.
+WARNING:MapLib:701 - Signal RD<6> connected to top level port RD<6> has been
+   removed.
+WARNING:MapLib:701 - Signal RD<5> connected to top level port RD<5> has been
+   removed.
+WARNING:MapLib:701 - Signal RD<4> connected to top level port RD<4> has been
+   removed.
+WARNING:MapLib:701 - Signal RD<3> connected to top level port RD<3> has been
+   removed.
+WARNING:MapLib:701 - Signal RD<2> connected to top level port RD<2> has been
+   removed.
+WARNING:MapLib:701 - Signal RD<1> connected to top level port RD<1> has been
+   removed.
+WARNING:MapLib:701 - Signal RD<0> connected to top level port RD<0> has been
+   removed.
+
+Section 3 - Informational
+-------------------------
+INFO:Security:54 - 'xc3s50' is a WebPack part.
+INFO:LIT:243 - Logical network X<42> has no load.
+INFO:LIT:395 - The above info message is repeated 5 more times for the following
+   (max. 5 shown):
+   X<45>,
+   X<4>,
+   ACLK,
+   FCLK,
+   SPI_CS
+   To see the details of these info messages, please use the -detail switch.
+INFO:MapLib:562 - No environment variables are currently set.
+INFO:LIT:244 - All of the single ended outputs in this design are using slew
+   rate limited output drivers. The delay on speed critical single ended outputs
+   can be dramatically reduced by designating them as fast outputs.
+INFO:PhysDesignRules:772 - To achieve optimal frequency synthesis performance
+   with the CLKFX and CLKFX180 outputs of the DCM comp DCMclkgen/DCM_INST,
+   consult the device Interactive Data Sheet.
+
+Section 4 - Removed Logic Summary
+---------------------------------
+ 113 block(s) removed
+   2 block(s) optimized away
+  56 signal(s) removed
+
+Section 5 - Removed Logic
+-------------------------
+
+The trimmed logic reported below is either:
+   1. part of a cycle
+   2. part of disabled logic
+   3. a side-effect of other trimmed logic
+
+The signal "AFBUS<0>" is unused and has been removed.
+ Unused block "AFBUS_0_OBUFT" (TRI) removed.
+The signal "AFBUS<10>" is unused and has been removed.
+ Unused block "AFBUS_10_OBUFT" (TRI) removed.
+The signal "AFBUS<11>" is unused and has been removed.
+ Unused block "AFBUS_11_OBUFT" (TRI) removed.
+The signal "AFBUS<1>" is unused and has been removed.
+ Unused block "AFBUS_1_OBUFT" (TRI) removed.
+The signal "AFBUS<2>" is unused and has been removed.
+ Unused block "AFBUS_2_OBUFT" (TRI) removed.
+The signal "AFBUS<3>" is unused and has been removed.
+ Unused block "AFBUS_3_OBUFT" (TRI) removed.
+The signal "AFBUS<4>" is unused and has been removed.
+ Unused block "AFBUS_4_OBUFT" (TRI) removed.
+The signal "AFBUS<5>" is unused and has been removed.
+ Unused block "AFBUS_5_OBUFT" (TRI) removed.
+The signal "AFBUS<6>" is unused and has been removed.
+ Unused block "AFBUS_6_OBUFT" (TRI) removed.
+The signal "AFBUS<7>" is unused and has been removed.
+ Unused block "AFBUS_7_OBUFT" (TRI) removed.
+The signal "AFBUS<8>" is unused and has been removed.
+ Unused block "AFBUS_8_OBUFT" (TRI) removed.
+The signal "AFBUS<9>" is unused and has been removed.
+ Unused block "AFBUS_9_OBUFT" (TRI) removed.
+The signal "LD<0>" is unused and has been removed.
+ Unused block "LD_0_OBUFT" (TRI) removed.
+The signal "LD<1>" is unused and has been removed.
+ Unused block "LD_1_OBUFT" (TRI) removed.
+The signal "LD<2>" is unused and has been removed.
+ Unused block "LD_2_OBUFT" (TRI) removed.
+The signal "LD<3>" is unused and has been removed.
+ Unused block "LD_3_OBUFT" (TRI) removed.
+The signal "LD<4>" is unused and has been removed.
+ Unused block "LD_4_OBUFT" (TRI) removed.
+The signal "LD<5>" is unused and has been removed.
+ Unused block "LD_5_OBUFT" (TRI) removed.
+The signal "LD<6>" is unused and has been removed.
+ Unused block "LD_6_OBUFT" (TRI) removed.
+The signal "LD<7>" is unused and has been removed.
+ Unused block "LD_7_OBUFT" (TRI) removed.
+The signal "P3M<1>" is unused and has been removed.
+ Unused block "P3M_1_OBUFT" (TRI) removed.
+The signal "P3M<2>" is unused and has been removed.
+ Unused block "P3M_2_OBUFT" (TRI) removed.
+The signal "P3M<3>" is unused and has been removed.
+ Unused block "P3M_3_OBUFT" (TRI) removed.
+The signal "P3M<4>" is unused and has been removed.
+ Unused block "P3M_4_OBUFT" (TRI) removed.
+The signal "P3M<5>" is unused and has been removed.
+ Unused block "P3M_5_OBUFT" (TRI) removed.
+The signal "P3M<6>" is unused and has been removed.
+ Unused block "P3M_6_OBUFT" (TRI) removed.
+The signal "P3M<7>" is unused and has been removed.
+ Unused block "P3M_7_OBUFT" (TRI) removed.
+The signal "RD<0>" is unused and has been removed.
+ Unused block "RD_0_OBUFT" (TRI) removed.
+The signal "RD<1>" is unused and has been removed.
+ Unused block "RD_1_OBUFT" (TRI) removed.
+The signal "RD<2>" is unused and has been removed.
+ Unused block "RD_2_OBUFT" (TRI) removed.
+The signal "RD<3>" is unused and has been removed.
+ Unused block "RD_3_OBUFT" (TRI) removed.
+The signal "RD<4>" is unused and has been removed.
+ Unused block "RD_4_OBUFT" (TRI) removed.
+The signal "RD<5>" is unused and has been removed.
+ Unused block "RD_5_OBUFT" (TRI) removed.
+The signal "RD<6>" is unused and has been removed.
+ Unused block "RD_6_OBUFT" (TRI) removed.
+The signal "RD<7>" is unused and has been removed.
+ Unused block "RD_7_OBUFT" (TRI) removed.
+The signal "X<10>" is unused and has been removed.
+ Unused block "X_10_OBUFT" (TRI) removed.
+The signal "X<11>" is unused and has been removed.
+ Unused block "X_11_OBUFT" (TRI) removed.
+The signal "X<12>" is unused and has been removed.
+ Unused block "X_12_OBUFT" (TRI) removed.
+The signal "X<13>" is unused and has been removed.
+ Unused block "X_13_OBUFT" (TRI) removed.
+The signal "X<14>" is unused and has been removed.
+ Unused block "X_14_OBUFT" (TRI) removed.
+The signal "X<15>" is unused and has been removed.
+ Unused block "X_15_OBUFT" (TRI) removed.
+The signal "X<16>" is unused and has been removed.
+ Unused block "X_16_OBUFT" (TRI) removed.
+The signal "X<17>" is unused and has been removed.
+ Unused block "X_17_OBUFT" (TRI) removed.
+The signal "X<18>" is unused and has been removed.
+ Unused block "X_18_OBUFT" (TRI) removed.
+The signal "X<19>" is unused and has been removed.
+ Unused block "X_19_OBUFT" (TRI) removed.
+The signal "X<20>" is unused and has been removed.
+ Unused block "X_20_OBUFT" (TRI) removed.
+The signal "X<21>" is unused and has been removed.
+ Unused block "X_21_OBUFT" (TRI) removed.
+The signal "X<22>" is unused and has been removed.
+ Unused block "X_22_OBUFT" (TRI) removed.
+The signal "X<23>" is unused and has been removed.
+ Unused block "X_23_OBUFT" (TRI) removed.
+The signal "X<24>" is unused and has been removed.
+ Unused block "X_24_OBUFT" (TRI) removed.
+The signal "X<25>" is unused and has been removed.
+ Unused block "X_25_OBUFT" (TRI) removed.
+The signal "X<26>" is unused and has been removed.
+ Unused block "X_26_OBUFT" (TRI) removed.
+The signal "X<6>" is unused and has been removed.
+ Unused block "X_6_OBUFT" (TRI) removed.
+The signal "X<7>" is unused and has been removed.
+ Unused block "X_7_OBUFT" (TRI) removed.
+The signal "X<8>" is unused and has been removed.
+ Unused block "X_8_OBUFT" (TRI) removed.
+The signal "X<9>" is unused and has been removed.
+ Unused block "X_9_OBUFT" (TRI) removed.
+Unused block "AFBUS<0>" (PAD) removed.
+Unused block "AFBUS<10>" (PAD) removed.
+Unused block "AFBUS<11>" (PAD) removed.
+Unused block "AFBUS<1>" (PAD) removed.
+Unused block "AFBUS<2>" (PAD) removed.
+Unused block "AFBUS<3>" (PAD) removed.
+Unused block "AFBUS<4>" (PAD) removed.
+Unused block "AFBUS<5>" (PAD) removed.
+Unused block "AFBUS<6>" (PAD) removed.
+Unused block "AFBUS<7>" (PAD) removed.
+Unused block "AFBUS<8>" (PAD) removed.
+Unused block "AFBUS<9>" (PAD) removed.
+Unused block "LD<0>" (PAD) removed.
+Unused block "LD<1>" (PAD) removed.
+Unused block "LD<2>" (PAD) removed.
+Unused block "LD<3>" (PAD) removed.
+Unused block "LD<4>" (PAD) removed.
+Unused block "LD<5>" (PAD) removed.
+Unused block "LD<6>" (PAD) removed.
+Unused block "LD<7>" (PAD) removed.
+Unused block "P3M<1>" (PAD) removed.
+Unused block "P3M<2>" (PAD) removed.
+Unused block "P3M<3>" (PAD) removed.
+Unused block "P3M<4>" (PAD) removed.
+Unused block "P3M<5>" (PAD) removed.
+Unused block "P3M<6>" (PAD) removed.
+Unused block "P3M<7>" (PAD) removed.
+Unused block "P3M_0_IOBUF/OBUFT" (TRI) removed.
+Unused block "RD<0>" (PAD) removed.
+Unused block "RD<1>" (PAD) removed.
+Unused block "RD<2>" (PAD) removed.
+Unused block "RD<3>" (PAD) removed.
+Unused block "RD<4>" (PAD) removed.
+Unused block "RD<5>" (PAD) removed.
+Unused block "RD<6>" (PAD) removed.
+Unused block "RD<7>" (PAD) removed.
+Unused block "X<10>" (PAD) removed.
+Unused block "X<11>" (PAD) removed.
+Unused block "X<12>" (PAD) removed.
+Unused block "X<13>" (PAD) removed.
+Unused block "X<14>" (PAD) removed.
+Unused block "X<15>" (PAD) removed.
+Unused block "X<16>" (PAD) removed.
+Unused block "X<17>" (PAD) removed.
+Unused block "X<18>" (PAD) removed.
+Unused block "X<19>" (PAD) removed.
+Unused block "X<20>" (PAD) removed.
+Unused block "X<21>" (PAD) removed.
+Unused block "X<22>" (PAD) removed.
+Unused block "X<23>" (PAD) removed.
+Unused block "X<24>" (PAD) removed.
+Unused block "X<25>" (PAD) removed.
+Unused block "X<26>" (PAD) removed.
+Unused block "X<6>" (PAD) removed.
+Unused block "X<7>" (PAD) removed.
+Unused block "X<8>" (PAD) removed.
+Unused block "X<9>" (PAD) removed.
+
+Optimized Block(s):
+TYPE 		BLOCK
+GND 		XST_GND
+VCC 		XST_VCC
+
+To enable printing of redundant blocks removed and signals merged, set the
+detailed map report option and rerun map.
+
+Section 6 - IOB Properties
+--------------------------
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------+
+| IOB Name                           | Type             | Direction | IO Standard          | Diff  | Drive    | Slew | Reg (s)      | Resistor | IOB      |
+|                                    |                  |           |                      | Term  | Strength | Rate |              |          | Delay    |
++---------------------------------------------------------------------------------------------------------------------------------------------------------+
+| KIN<0>                             | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| KIN<1>                             | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| KIN<2>                             | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| KIN<3>                             | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| KOUT<0>                            | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| KOUT<1>                            | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| KOUT<2>                            | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| KOUT<3>                            | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| LE                                 | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| LEDF                               | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| LRS                                | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| LRW                                | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| P3M<0>                             | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| RA<0>                              | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| RA<1>                              | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| RA<2>                              | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| RA<3>                              | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| RA<4>                              | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| RA<5>                              | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| RA<6>                              | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| RA<7>                              | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| RA<8>                              | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| RA<9>                              | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| RA<10>                             | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| RA<11>                             | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| RA<12>                             | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| RA<13>                             | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| RA<14>                             | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| RCAS                               | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| RCKE                               | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| RCLK                               | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| RCS                                | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| RDQM                               | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| RRAS                               | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| RWE                                | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| SMCLK                              | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| SPI_CLK                            | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| SPI_DI                             | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| SPI_DO                             | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| SPI_FPGA_CS                        | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| X<0>                               | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| X<1>                               | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| X<2>                               | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| X<3>                               | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| X<5>                               | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| X<27>                              | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| X<28>                              | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| X<29>                              | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| X<30>                              | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| X<31>                              | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| X<32>                              | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| X<33>                              | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| X<34>                              | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| X<35>                              | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| X<36>                              | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| X<37>                              | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| X<38>                              | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| X<39>                              | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| X<40>                              | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| X<41>                              | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| X<43>                              | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| X<44>                              | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
++---------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Section 7 - RPMs
+----------------
+
+Section 8 - Guide Report
+------------------------
+Guide not run on this design.
+
+Section 9 - Area Group and Partition Summary
+--------------------------------------------
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+Area Group Information
+----------------------
+
+  No area groups were found in this design.
+
+----------------------
+
+Section 10 - Timing Report
+--------------------------
+This design was not run using timing mode.
+
+Section 11 - Configuration String Details
+-----------------------------------------
+Use the "-detail" map option to print out Configuration Strings
+
+Section 12 - Control Set Information
+------------------------------------
+No control set information for this architecture.
+
+Section 13 - Utilization by Hierarchy
+-------------------------------------
+Use the "-detail" map option to print out the Utilization by Hierarchy section.

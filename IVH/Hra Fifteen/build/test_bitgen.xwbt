@@ -1,0 +1,7 @@
+INFILE=C:\fitkitSVN\apps\demo\Hra_15\build\fpga\test.par.ncd
+OUTFILE=C:\fitkitSVN\apps\demo\Hra_15\build\test.bit
+FAMILY=Spartan3
+PART=xc3s50-4pq208
+WORKINGDIR=C:\fitkitSVN\apps\demo\Hra_15\build
+LICENSE=WebPack
+USER_INFO=174678435_176159374_0_976
