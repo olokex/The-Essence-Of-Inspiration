@@ -16,4 +16,4 @@ Pokud se někdo rozhodne **okopírovat** projekt 1:1, budiž jeho boj...
 |IOS||15 / 15|WEDI bash/shell|
 |IOS||13 / 15|The senate bus problem (synchronizace)|
 |IVH||80 / 100|Hra patnácka (Fifteen)|
-|ISJ||39.5 / 40|Projekty 1 až 8 (Popis ve složce)|
+|ISJ||39.5 / 40|Projekty 1 až 8 (popis ve složce)|
