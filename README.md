@@ -4,8 +4,8 @@ Projekty slouží na inspiraci, pokud si už nevíte rady. Například jak byly 
 
 Pokud se někdo rozhodne okopírovat projekt 1:1, budiž jeho boj...
 
-|Předmět|Rok|Body získané/max|
-|--:|--:|--:|
-|   |   |   |
-|   |   |   |
-|   |   |   |
+|Předmět|Rok |Body získané/max|
+|--:    |--: |             --:|
+|       |    |                |
+|       |    |                |
+|       |    |                |
