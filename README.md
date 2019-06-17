@@ -1,11 +1,11 @@
 # The Essence Of Inspiration
 
-Projekty slouží na inspiraci, pokud si už nevíte rady. Například jak byly _přísně_ hodnoceny, nebo co bylo zhruba očekáváno.
+Projekty slouží na inspiraci, pokud si už nevíte rady. Pokračování velmi moudré věty.
 
 Pokud se někdo rozhodne okopírovat projekt 1:1, budiž jeho boj...
 
 |Předmět|Rok |Body získané/max|
-|--:    |--: |             --:|
-|       |    |                |
-|       |    |                |
-|       |    |                |
+|--:    |--: |--:             |
+|IEL    |2017|11.5/12         |
+||||
+||||
