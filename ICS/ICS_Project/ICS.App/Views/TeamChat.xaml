@@ -1,0 +1,228 @@
+﻿<Page x:Class="ICS.App.Views.TeamChat"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:ICS.App"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="TeamChat">
+
+
+    <Grid Background="#232428">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="2.8*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.1*" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <Button x:Name="CreateNewTeamButton" Style="{StaticResource GreenButton}" Grid.Column="0" Grid.Row="0" FontWeight="DemiBold" FontSize="14" BorderThickness="0" Click="CreateNewTeamButton_OnClick">
+            Create new team
+        </Button>
+
+        <!-- SIDE MENU LIST OF TEAMS -->
+        <ListView x:Name="TeamList" BorderThickness="0,0,1,0" BorderBrush="Black" Grid.Column="0" Grid.Row="1" Background="#232428" Foreground="White" ScrollViewer.HorizontalScrollBarVisibility="Disabled" SelectionChanged="TeamList_OnSelectionChanged" SelectionMode="Single">
+            <ListView.Resources>
+                <Style TargetType="ScrollBar">
+                    <Setter Property="Background" Value="{x:Null}"/>
+                    <Setter Property="BorderThickness" Value="0"/>
+                </Style>
+            </ListView.Resources>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding TeamName}" TextTrimming="CharacterEllipsis" Margin="5" />
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+        <!-- HEADER SEARCH AND REFRESH -->
+        <Grid Grid.Column="1" Grid.Row="0" Margin="5">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="3*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <Button x:Name="RefreshButton" Style="{StaticResource PurpleButton}" BorderThickness="0" FontSize="13" Margin="3"  Click="RefreshButton_OnClick">
+                Refresh
+            </Button>
+
+            <TextBox x:Name="TextBoxSearchTeamChat" Style="{StaticResource TextInBox}" Grid.Column="1" FontSize="14" BorderThickness="2" Padding="2,0,0,0" VerticalContentAlignment="Center" >
+                Find title
+            </TextBox>
+
+            <Button x:Name="ButtonSearchTeamChat" Style="{StaticResource PurpleButton}" Grid.Column="2" BorderThickness="0" FontSize="13" Margin="3" Click="ButtonSearchTeamChat_OnClick">
+                Search
+            </Button>
+
+        </Grid>
+
+
+        <!-- CHAT -->
+        <Grid Grid.Column="1" Grid.Row="1" Background="#262525">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+
+
+            <!-- height u druhyho nastavit na 0 ktery se pak programove musi predelat -->
+            <!-- momentalne to slouzi jen jako simulace prekryvani -->
+            <ListView x:Name="ListViewPosts" Height="150" MaxHeight="325" Background="#262525" BorderThickness="0,0,0,2" BorderBrush="Black" SelectionChanged="ListViewPosts_OnSelectionChanged">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="auto"/>
+                                <ColumnDefinition Width="auto"/>
+                                <ColumnDefinition Width="auto"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+
+                            <TextBlock Grid.Column="0" Width="150" Text="{Binding Title}" TextTrimming="CharacterEllipsis" Margin="5" Foreground="#dfe0ec" FontWeight="DemiBold" FontSize="13"/>
+                            <TextBlock Grid.Column="1" Width="155" Text="{Binding AuthorName}" TextTrimming="CharacterEllipsis" Margin="5" Foreground="#dfe0ec" FontWeight="DemiBold" FontSize="13"/>
+                            <TextBlock Grid.Column="2" Text="{Binding Timestamp}" TextTrimming="CharacterEllipsis" Margin="5" HorizontalAlignment="Right" Foreground="#dfe0ec" FontWeight="DemiBold" FontSize="13"/>
+                            <TextBlock Grid.Row="1" Text="{Binding Content}" Width="410" Grid.ColumnSpan="3" HorizontalAlignment="Left" Margin="5" TextTrimming="CharacterEllipsis" Foreground="#dfe0ec" FontStyle="Italic" FontSize="11"/>
+                        </Grid>
+                    </DataTemplate>
+
+                </ListView.ItemTemplate>
+            </ListView>
+
+            <!-- COMMENT SECTION -->
+            <Grid Grid.Row="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="7*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <ListView x:Name="ListViewCommentsOfPost" Grid.Row="0" Grid.ColumnSpan="2" Height="160" Background="#262525" BorderThickness="0">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*" />
+                                    <RowDefinition Height="*" />
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="325" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+                                <TextBlock Grid.Column="0" Text="{Binding AuthorName}" TextTrimming="CharacterEllipsis" Margin="5" Foreground="#dfe0ec" FontWeight="DemiBold" FontSize="13"/>
+                                <TextBlock Grid.Column="1" Text="{Binding Timestamp}" TextTrimming="CharacterEllipsis" Margin="5" Foreground="#dfe0ec" FontWeight="DemiBold" FontSize="13"/>
+                                <TextBlock Grid.Row="1" Grid.ColumnSpan="2" Text="{Binding Content}" TextTrimming="CharacterEllipsis" Margin="5"  Foreground="#dfe0ec" FontStyle="Italic" FontSize="11"/>
+                            </Grid>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+
+                <TextBox x:Name="TextBoxNewCommentContent" Grid.Row="1" Margin="5" TextWrapping="Wrap" FontSize="12" Padding="2,2,0,0" VerticalContentAlignment="Top" FontStyle="Italic" Foreground="#2febecf0" Background="#232428" BorderBrush="#121317">
+                    Write comment...
+                </TextBox>
+                <Button x:Name="ButtonSendNewCommentToPost" Grid.Column="1" Grid.Row="1" Margin="0,5,5,5" Background="#673b9d" Foreground="#ebecf0" BorderThickness="0" FontSize="13" Click="ButtonSendNewCommentToPost_Click">
+                    Send
+                </Button>
+
+
+            </Grid>
+
+
+            <Grid Grid.Row="2" Margin="7,0,0,0" Background="#262525">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="4*" />
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="0.4*" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+
+
+                <TextBox x:Name="TextBoxTitleNewPost" Margin="0,3" TextWrapping="Wrap" FontSize="12" Padding="2,2,0,0" VerticalContentAlignment="Top" FontStyle="Italic" Foreground="#2febecf0" Background="#232428" BorderBrush="#121317">
+                    Title
+                </TextBox>
+
+
+                <TextBox x:Name="TextBoxNewPostContent" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" TextWrapping="Wrap" FontSize="14" Padding="2,2,0,0" VerticalContentAlignment="Top" FontStyle="Italic" Foreground="#2febecf0" Background="#232428" BorderBrush="#121317" Margin="0,0,0,40">
+                    Write new post...
+                </TextBox>
+                <Button x:Name="ButtonSendNewPost" Grid.Row="1" Grid.Column="2" Margin="4,0,0,40" Background="#673b9d" Foreground="#ebecf0" BorderThickness="0" FontSize="14" Click="ButtonSendNewPost_Click">
+                    Send
+                </Button>
+            </Grid>
+        </Grid>
+
+        <Button x:Name="SettingsButton" Style="{StaticResource RedButton}" Grid.Column="2" FontWeight="DemiBold" FontSize="14" BorderThickness="0" Click="SettingsButton_Click">
+            Settings
+        </Button>
+
+        <!-- SIDE PANEL MODERATOR AND MEMBER -->
+        <Border Grid.Column="2" Grid.Row="1" BorderThickness="1,0,0,0" BorderBrush="Black"  Background="#232428">
+            <Grid Grid.Column="2" Grid.Row="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                </Grid.RowDefinitions>
+                <TextBlock Grid.Row="1" VerticalAlignment="Center" FontSize="15" Margin="10,0" Foreground="Yellow">Team name:</TextBlock>
+                <TextBlock x:Name="TextBlockTeamNameTeamChat" Text="" Grid.Row="2" VerticalAlignment="Center" TextWrapping="Wrap" FontSize="13" Margin="10,0" Foreground="White"/>
+                <TextBlock Grid.Row="3" VerticalAlignment="Center" FontSize="15" Margin="10,0" Foreground="Yellow">Team description:</TextBlock>
+                <TextBlock x:Name="TextBlockTeamDescriptionTeamChat" Text="" Grid.Row="4" VerticalAlignment="Center" TextWrapping="Wrap" FontSize="13" Margin="10,0" Foreground="White"/>
+                <!--Příprava na rozšíření o adminy
+                <TextBlock VerticalAlignment="Center" Margin="10,0" FontSize="15" Foreground="Yellow">Moderator:</TextBlock>
+
+                <ListView MaxHeight="175" BorderThickness="0" Grid.Row="1" x:Name="lvDataBindings" Foreground="White" Background="#232428" ScrollViewer.HorizontalScrollBarVisibility="Disabled" ScrollViewer.CanContentScroll="True">
+                    <ListView.Resources>
+                        <Style TargetType="ScrollBar">
+                            <Setter Property="Height" Value="150" />
+                            <Setter Property="Background" Value="White"/>
+                            <Setter Property="BorderThickness" Value="1"/>
+                        </Style>
+
+                    </ListView.Resources>
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Name}" TextTrimming="CharacterEllipsis" Margin="5"/>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>-->
+
+                <TextBlock Grid.Row="5" VerticalAlignment="Center" FontSize="15" Margin="10,0" Foreground="Yellow">Members:</TextBlock>
+                <ListView MaxHeight="150" Background="#232428" BorderThickness="0" Grid.Row="6" x:Name="ListViewMembers" Foreground="White" ScrollViewer.HorizontalScrollBarVisibility="Disabled" SelectionChanged="ListViewMembers_OnSelectionChanged">
+                    <ListView.Resources>
+                        <Style TargetType="ScrollBar">
+                            <Setter Property="Height" Value="150" />
+                            <Setter Property="Background" Value="White"/>
+                            <Setter Property="BorderThickness" Value="1"/>
+                        </Style>
+
+                    </ListView.Resources>
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Name}" TextTrimming="CharacterEllipsis" Margin="5"/>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </Grid>
+        </Border>
+
+    </Grid>
+</Page>

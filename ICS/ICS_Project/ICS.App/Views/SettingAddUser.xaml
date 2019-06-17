@@ -1,0 +1,106 @@
+﻿<Page x:Class="ICS.App.Views.SettingAddUser"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:ICS.App"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Add user" >
+    <DockPanel Height="450" Width="802">
+        <Border BorderBrush="Black" BorderThickness="1">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="3*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <!--  -->
+                <Grid Grid.RowSpan="2" x:Name="View">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <Grid Grid.Row="0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="2.5*" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="2.8*" />
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="*" />
+                        </Grid.RowDefinitions>
+
+                        <Button Style="{StaticResource PurpleButton}" x:Name="SettingsAddUserButtonFindUser" Grid.Column="2" Grid.Row="1" BorderThickness="0" Margin="7" FontSize="13" Click="SettingsAddUserButtonFindUser_Click">
+                            Find user
+                        </Button>
+                        <TextBox x:Name="TextBoxUsernameFindSettindAddUserToTeam" Style="{StaticResource TextInBox}" Grid.Column="1" Grid.Row="1" Margin="5" Text="Username" FontSize="16" BorderThickness="2" Padding="2,0,0,0" VerticalContentAlignment="Center" />
+
+                    </Grid>
+
+                    <Grid Grid.Row="1">
+                        <Grid Grid.Row="1" Margin="15">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="3*" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="2.8*" />
+                                <RowDefinition Height="*" />
+                            </Grid.RowDefinitions>
+                            <Grid Grid.ColumnSpan="2">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="0.5*" />
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="0.5*" />
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*" />
+                                    <RowDefinition Height="*" />
+                                    <RowDefinition Height="*" />
+                                </Grid.RowDefinitions>
+                                <TextBlock x:Name="TextBlockAddUserFoundUserName" Text="" Grid.Column="1" Foreground="Snow" Margin="5,10"/>
+                                <TextBlock x:Name="TextBlockAddUserFoundUserDescription" Text="" Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="2" Grid.RowSpan="2" Margin="5,10" TextTrimming="WordEllipsis" Foreground="Snow"/>
+                            </Grid>
+                            
+                            
+                            <Button Style="{StaticResource GreenButton}" x:Name="SettingsAddUserButtonAddUser" Grid.Row="1" Grid.Column="1" FontWeight="DemiBold" FontSize="14" BorderThickness="0" Click="SettingsAddUserButtonAddUser_Click">
+                                Add user
+                            </Button>
+                        </Grid>
+                    </Grid>
+                </Grid>
+
+                <!-- side menu tlacitka -->
+                <StackPanel Background="#232428" Grid.Column="1" Grid.RowSpan="2" Orientation="Vertical">
+                    <Button Style="{StaticResource RightMenuButton}" x:Name="SettingsAddUserButtonSettings">
+                        Add user to team
+                    </Button>
+                    <Button Style="{StaticResource RightMenuButton}" x:Name="SettingsAddUserButtonKickUser" Click="SettingsAddUserButtonKickUser_Click">
+                        Kick user
+                    </Button>
+                    <Button Style="{StaticResource RightMenuButton}" x:Name="SettingsAddUserButtonCreateNewUser" Click="SettingsAddUserButtonCreateNewUser_Click">
+                        Create new user
+                    </Button>
+                    <Button Style="{StaticResource RightMenuButton}" Background="#673b9d" Margin="0,5" x:Name="SettingsAddUserButtonReturn" Click="SettingsAddUserButtonReturn_Click">
+                        Back to the future
+                    </Button>
+                    <Button Style="{StaticResource RightMenuButton}" x:Name="SettingsAddUserLogout" Background="#9d3342" Click="SettingsAddUserLogout_Click">
+                        Logout
+                    </Button>
+
+                </StackPanel>
+
+            </Grid>
+        </Border>
+    </DockPanel>
+
+</Page>

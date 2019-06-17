@@ -1,0 +1,26 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:ICS.App.Style">
+    <Style x:Key="GreenButton" TargetType="Button">
+        <Setter Property="Background" Value="#339d6f"/>
+        <Setter Property="Foreground" Value="#ebecf0"/>
+    </Style>
+    <Style x:Key="PurpleButton" TargetType="Button">
+        <Setter Property="Background" Value="#673b9d"/>
+        <Setter Property="Foreground" Value="#ebecf0"/>
+    </Style>
+    <Style x:Key="RedButton" TargetType="Button">
+        <Setter Property="Background" Value="#9d3342"/>
+        <Setter Property="Foreground" Value="#ebecf0"/>
+    </Style>
+    <Style x:Key="RightMenuButton" TargetType="Button">
+        <Setter Property="Background" Value="#232428"/>
+        <Setter Property="Foreground" Value="#ebecf0"/>
+        <Setter Property="HorizontalContentAlignment" Value="Left"/>
+        <Setter Property="Padding" Value="10, 15, 10, 10"/>
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="FontWeight" Value="DemiBold"/>
+        <Setter Property="FontSize" Value="16"/>
+
+    </Style>
+</ResourceDictionary>

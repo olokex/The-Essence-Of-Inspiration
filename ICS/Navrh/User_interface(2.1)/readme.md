@@ -1,0 +1,1 @@
+Druhá varianta menu která obsahuje možnost vyhodit uživatele z týmu.
