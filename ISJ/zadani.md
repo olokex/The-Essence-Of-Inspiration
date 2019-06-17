@@ -1,8 +1,9 @@
 # Zadání pro projekty do ISJ
 
-### 1
+Kvůli formátování MD jsem vše dal jako kód.
 
-Popis:
+# 1
+```
 Stáhněte si soubor https://www.fit.vutbr.cz/study/courses/ISJ/private/isj_proj01_xnovak00.py a místo xnovak00 dejte do názvu svůj login.
 
 Dopište definici regulárního výrazu word_parse tak, aby do skupin rozděloval slova z řetězce, oddělovaného mezerami, za nimiž nenásleduje konstrukce (P...), a slova, za nimiž tato konstrukce následuje (v tomto případě do další skupiny obsah závorky).
@@ -21,9 +22,9 @@ Dopište definici regulárního výrazu punct tak, aby odpovídal pozici za čá
 
 Nic jiného v kódu neměňte (i kdyby se vám nelíbil nedostatek komentářů apod.).
 Cvičné hodnocení můžete vyzkoušet v systému http://athena3.fit.vutbr.cz:8088/proj1, ale pro získání bodů za projekt musíte výsledný skript (se správným názvem) odevzdat prostřednictví WIS.
-
-### 2
-
+```
+## 2
+```
 Stáhněte si soubor https://www.fit.vutbr.cz/study/courses/ISJ/private/isj_proj02_xnovak00.py a místo xnovak00 dejte do názvu svůj login.
 
 V kódu doplňte pravé strany přiřazení vyznačených proměnných (jmen) tak, aby výsledky testů odpovídaly očekávaným hodnotám.
@@ -32,18 +33,18 @@ Kód je formálně rozdělen do funkcí, ale to je jen pro potřeby oddělení j
 
 Nic jiného v kódu neměňte (i kdyby se vám nelíbil nedostatek komentářů apod.).
 Cvičné hodnocení můžete vyzkoušet v systému http://athena3.fit.vutbr.cz:8088/proj2, ale pro získání bodů za projekt musíte výsledný skript (se správným názvem) odevzdat prostřednictví WIS.
-
-### 3
-
+```
+## 3
+```
 Stáhněte si soubor https://www.fit.vutbr.cz/study/courses/ISJ/private/isj_proj03_xnovak00.py a místo xnovak00 dejte do názvu svůj login.
 
 V kódu doplňte pravé strany přiřazení tak, aby výsledky testů odpovídaly očekávaným hodnotám.
 
 Nic jiného v kódu neměňte (i kdyby se vám nelíbil nedostatek komentářů apod.).
 Cvičné hodnocení můžete vyzkoušet v systému http://athena3.fit.vutbr.cz:8088/proj3, ale pro získání bodů za projekt musíte výsledný skript (se správným názvem) odevzdat prostřednictví WIS.
-
-### 4
-
+```
+## 4
+```
 Do souboru, nazvaného podle konvence isj_proj04_xnovak00.py, napište definice následujících funkcí:
 
 can_be_a_set_member_or_frozenset(item) - vrátí vstupní položku item, pokud tato může být prvkem množiny v Pythonu, v opačném případě frozenset(item)
@@ -70,9 +71,9 @@ Jako první řádek skriptu uveďte tzv. shebang (viz https://en.wikipedia.org/w
 #!/usr/bin/env python3
 Nezapomeňte na dokumentační řetězce všech funkcí.
 Dále každou logickou část kódu jednotlivých funkcí okomentujte, např. checking whether the item can be a member of a set
-
-### 5
-
+```
+## 5
+```
 Do souboru, nazvaného podle konvence isj_proj05_xnovak00.py, implementujte třídu Polynomial, která bude pracovat s polynomy reprezentovanými pomocí seznamů. Například 2x^3 - 3x + 1 bude  reprezentováno jako [1,-3,0,2] (seznam začíná nejnižším řádem, i když se polynomy většinou zapisují opačně).
 
 Instance třídy bude možné vytvářet několika různými způsoby:
@@ -144,9 +145,9 @@ def test():
 
 if __name__ == '__main__':
     test()
-
-### 6
-
+```
+## 6
+```
 Do souboru, nazvaného podle konvence isj_proj06_xnovak00.py, implementujte:
 
 - funkci first_nonrepeating, která dostane na vstup řetězec a vrátí první neopakující se znak ze vstupního řetězce:
@@ -159,9 +160,9 @@ případně jen ['(2+5)*6-6'], pokud se vám podaří odstraňovat výrazy kvůl
 případně i delší seznam, jehož prvky se budou lišit jen uzávorkováním.
 
 Řešení si můžete zkontrolovat v novém systému na adrese http://isj.fit.vutbr.cz:8090/proj. Případné problémy s kontrolním systémem prosím hlaste Juraji Kyseľovi - xkysel12@stud.fit.vutbr.cz - který systém vytváří. Odevzdání opět prostřednictvím WIS.
-
-### 7
-
+```
+## 7
+```
 Do souboru, nazvaného podle konvence isj_proj07_xnovak00.py, implementujte:
 
 1. dekorátor @limit_calls s parametry max_calls a error_message_tail (defaultní hodnoty 2 a 'called too often') pro obecné funkce tak, aby např.:
@@ -201,9 +202,9 @@ Begin
 Test1
 Test2
 End
-
-### 8 (4.5 bodu z 5)
-
+```
+## 8 (4.5 bodu z 5)
+```
 S využitím modulu cProfile zjistěte, kolikrát je volána funkce lev() ve skriptu dostupném na https://www.fit.vutbr.cz/study/courses/ISJ/private/lev.py.
 Výsledek uložte do souboru lev.cProfile_output.
 
@@ -211,3 +212,4 @@ Pomocí time zjistěte, jak dlouho běží skript dostupný na https://www.fit.v
 Výstup z time ./`id -u -n`_nonpalindrom_words_existing_reversed.py words.txt odevzdejte jako words.time_output.
 Změřte čas běhu skriptů dostupných na adresách https://www.fit.vutbr.cz/study/courses/ISJ/private/sekv.py a https://www.fit.vutbr.cz/study/courses/ISJ/private/para.py a odevzdejte je jako sekv.time_output a para.time_output. Do souboru why.txt napište třípísmennou zkratku, která vysvětlí, proč se reálný čas běhu paralelní verze neblíží polovině běhu sekvenční verze. Soubor why.txt odevzdejte. 
 Upravte skript para.py tak, aby reálný čas zpracování odpovídal zhruba polovině času běhu sekvenční verze. Upravenou verzi pojmenujte ve formatu login_para.py (tedy např. xnovak01_para.py) a odevzdejte.
+```
