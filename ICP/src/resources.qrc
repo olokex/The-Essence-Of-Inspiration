@@ -1,0 +1,17 @@
+<RCC>
+    <qresource prefix="/">
+        <file>resources/COMIC.TTF</file>
+        <file>resources/b_bishop.png</file>
+        <file>resources/b_king.png</file>
+        <file>resources/b_knight.png</file>
+        <file>resources/b_pawn.png</file>
+        <file>resources/b_queen.png</file>
+        <file>resources/b_rook.png</file>
+        <file>resources/w_bishop.png</file>
+        <file>resources/w_king.png</file>
+        <file>resources/w_knight.png</file>
+        <file>resources/w_pawn.png</file>
+        <file>resources/w_queen.png</file>
+        <file>resources/w_rook.png</file>
+    </qresource>
+</RCC>
