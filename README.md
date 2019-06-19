@@ -26,4 +26,4 @@ Pokud se někdo rozhodne **okopírovat** projekt 1:1, budiž jeho boj...
 |ISS    |2018/2019|11.5 / 12       |Projekt (hodnocení a zadání ve složce)          |
 |INP    |2018/2019|10 / 10         |Iniciály na led displayi (zadání ve složce)     |
 |INP    |2018/2019|23 / 23         |CPU pro brainfuck (hodnocení a zadání ve složce)|
-|IFJ    |2018/2019|11.5 / 12       |Projekt (hodnocení ve složce)                   |
+|IFJ    |2018/2019|14.22 / 15       |Projekt (hodnocení ve složce)                   |
