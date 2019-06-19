@@ -1,3 +1,4 @@
+```
 Následující procentuální hodnocení je FINÁLNÍ hodnocení Vašeho projektu.
 
 Projekt byl nejdříve automaticky přeložen a na výsledném binárním souboru byly
@@ -83,3 +84,4 @@ DEFINED 0% (0/50)
 FUNEXP 0% (0/150)
 IFTHEN 0% (0/100)
 Celkem bez rozšíření: 81% (1259/1551)
+```
