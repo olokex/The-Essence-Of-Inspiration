@@ -1,4 +1,4 @@
-Komentář učitele k hodnocení:
+```Komentář učitele k hodnocení:
 PŘÍKLAD  MAX          VAŠE BODY
 1              0.5           0.5           
 2              1              1              
@@ -15,4 +15,5 @@ PŘÍKLAD  MAX          VAŠE BODY
 13             1              1              Tady počítáte ten integrál správně! Násobíte každou hodnotu `binsize`, pak sčítáte. Podobně to mělo být v Př.9.
 14             1              1              Zkuste použít np.outer(x1,x2) místo x1*x2 při počítání té korelace. Tím vytvoříte matici, která bude mít na každém políčku součin 'souřadnic' toho políčka. Tak, jak to děláte vy, vytváříte vektor, který je součinem x1 a x2, který se při násobení s maticí bins nakopíruje tak, aby měl stejný tvar jako ta matice, což není výsledek, který chcete.
                
-TOTAL                    11.5      pěkné! 
+TOTAL                    11.5      pěkné!
+```
