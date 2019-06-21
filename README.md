@@ -2,7 +2,7 @@
 
 Projekty slouží na **inspiraci**, pokud si už nevíte rady. Neručím, že kód je 100 % dobře, i když byl tak ohodnocen. Místy úroveň kódu je hodna [této stránky](http://www.hovnokod.cz/) (téměř vždy).
 
-> _Není to plagiát, to je open source_
+>## _Není to plagiát, to je open source_
 
 Pokud se někdo rozhodne **okopírovat** projekt 1:1, budiž jeho boj...
 
