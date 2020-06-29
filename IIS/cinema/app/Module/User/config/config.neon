@@ -1,0 +1,42 @@
+services:
+    userRepository:
+        class: App\Module\User\Repository\UserRepository
+
+    loginAuthenticator:
+        class: App\Module\User\Service\LoginAuthenticator
+
+    loginFormControlFactory:
+        implement: App\Module\User\Component\LoginFormControl\ILoginFormControlFactory
+
+    loginContainerFactory:
+        implement: App\Module\User\Container\LoginContainer\ILoginContainerFactory
+
+    identityFactory:
+        implement: App\Module\User\Factory\IIdentityFactory
+
+    registrationFormControlFactory:
+        implement: App\Module\User\Component\RegistrationFormControl\IRegistrationFormControlFactory
+
+    registrationContainerFactory:
+        implement: App\Module\User\Container\RegistrationContainer\IRegistrationContainerFactory
+
+    registrationService:
+        class: App\Module\User\Service\RegistrationService
+
+    registrationValidator:
+        class: App\Module\User\Service\RegistrationValidator
+
+    roleRepository:
+        class: App\Module\User\Repository\RoleRepository
+
+    settingFormControlFactory:
+        implement: App\Module\User\Component\SettingFormControl\ISettingFormControlFactory
+
+    settingContainerFactory:
+        implement: App\Module\User\Container\SettingContainer\ISettingContainerFactory
+
+    userService:
+        class: App\Module\User\Service\UserService
+
+    userListFactory:
+        class: App\Module\User\Factory\UserListFactory

@@ -1,0 +1,16 @@
+{block head}
+	<link href="{$basePath}/css/contentEdit.css" rel="stylesheet" type="text/css" />
+{/block}
+
+{block content}
+	<div class="content-edit">
+		<div class="head">
+			{if $content}
+				<h1><i class="fa fa-edit"></i> Úprava obsahu</h1>
+			{else}
+				<h1><i class="fa fa-plus"></i> Přidání obsahu</h1>
+			{/if}
+		</div>
+		{control contentForm}
+	</div>
+{/block}

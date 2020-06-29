@@ -1,0 +1,27 @@
+services:
+    hallListFactory:
+        class: App\Module\Hall\Factory\HallListFactory
+
+    hallRepository:
+        class: App\Module\Hall\Repository\HallRepository
+
+    hallService:
+        class: App\Module\Hall\Service\HallService
+
+    seatService:
+        class: App\Module\Hall\Service\SeatService
+
+    hallEditFormFactory:
+       implement: App\Module\Hall\Component\HallEditFormControl\IHallEditFormControlFactory
+
+    hallEditContainerFactory:
+        implement: App\Module\Hall\Container\HallEditContainer\IHallEditContainerFactory
+
+    seatRepository:
+        class: App\Module\Hall\Repository\SeatRepository
+
+    reservationRepository:
+        class: App\Module\Reservation\Repository\ReservationRepository
+
+    reservationListFactory:
+        class: App\Module\Reservation\Factory\ReservationListFactory

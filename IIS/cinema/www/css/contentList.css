@@ -1,0 +1,90 @@
+.content-list {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+}
+
+.head {
+    width: 40%;
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.content-list h1 {
+    text-align: left;
+    font-size: 30px;
+    border-bottom: 6px solid #fc8c03;
+    margin-bottom: 25px;
+    padding: 13px 0;
+}
+
+.abutton {
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px 20px;
+    background-color: #00a100;
+    border: 1px solid #00a100;
+    text-align: center;
+    vertical-align: middle;
+    border-radius: 3px;
+    color: white;
+    font-weight: bolder;
+}
+
+.abutton:hover {
+    color: white;
+    background-color: #007d00;
+    border-color: #007d00;
+}
+
+.datagrid.datagrid-contentList {
+    margin-top: 50px;
+}
+
+#snippet-contentList-table {
+    text-align: center;
+    margin-right: auto;
+    margin-left: auto;
+    width: 90%;
+    table-layout:fixed;
+    font-size: 16px;
+    border-collapse: collapse;
+}
+
+#snippet-contentList-table th {
+    color: #fc8c03;
+    font-size: 18px;
+    border-bottom: 2px solid grey;
+    border-right: 2px solid grey;
+}
+
+#snippet-contentList-table th:last-child {
+    border-right: none;
+}
+
+#snippet-contentList-table td {
+    color: #d6d6d6;
+    padding: 10px;
+    font-size: 16px;
+    border-spacing: 0 10px;
+    border-bottom: 1px solid grey;
+    border-right: 2px solid grey;
+    overflow-x: auto;
+}
+
+#snippet-contentList-table td:last-child {
+    border-right: none;
+}
+
+#snippet-contentList-table tr:last-child > td {
+    border-bottom: none;
+}
+
+#snippet-contentList-table a {
+    color: #fc8c03;
+    text-decoration: underline;
+    font-weight: bolder;
+}

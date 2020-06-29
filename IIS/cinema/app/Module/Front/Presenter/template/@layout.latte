@@ -1,0 +1,22 @@
+<html lang="cs">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <title>Kino</title>
+        <link href="{$basePath}/css/main.css" rel="stylesheet" type="text/css" />
+        <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+        {include head}
+    </head>
+    <body>
+        <div n:foreach="$flashes as $flash" n:class="flash, $flash->type">{$flash->message}</div>
+        <nav>
+            <a class="cinema-name" n:href=":Homepage:Homepage:default">Kino u tří kamarádů</a>
+            {control mainMenu}
+        </nav>
+        {include content}
+        <!--Footer here-->
+        {block scripts}
+            <script src="https://nette.github.io/resources/js/3/netteForms.min.js"></script>
+        {/block}
+    </body>
+</html>

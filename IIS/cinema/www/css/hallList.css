@@ -1,0 +1,99 @@
+.hall-list {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+}
+
+.head {
+    width: 40%;
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.hall-list h1 {
+    text-align: left;
+    font-size: 30px;
+    border-bottom: 6px solid #fc8c03;
+    margin-bottom: 25px;
+    padding: 13px 0;
+}
+
+.abutton {
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px 20px;
+    background-color: #00a100;
+    text-align: center;
+    vertical-align: middle;
+    border: 2px solid #00a100;
+    border-radius: 3px;
+    color: white;
+    font-weight: bolder;
+}
+
+.abutton:hover {
+    color: white;
+    background-color: #007d00;
+    border-color: #007d00;
+}
+
+.datagrid.datagrid-hallList {
+    margin-top: 50px;
+}
+
+#snippet-hallList-table {
+    text-align: center;
+    margin-right: auto;
+    margin-left: auto;
+    width: 90%;
+    table-layout:fixed;
+    font-size: 16px;
+    border-collapse: collapse;
+}
+
+#snippet-hallList-table th {
+    color: #fc8c03;
+    font-size: 18px;
+    border-bottom: 2px solid grey;
+    border-right: 2px solid grey;
+}
+
+#snippet-hallList-table th:last-child {
+    border-right: none;
+}
+
+#snippet-hallList-table td {
+    color: #d6d6d6;
+    padding: 10px;
+    font-size: 16px;
+    border-spacing: 0 10px;
+    border-bottom: 1px solid grey;
+    border-right: 2px solid grey;
+    overflow-x: auto;
+}
+
+#snippet-hallList-table td:last-child {
+    border-right: none;
+}
+
+#snippet-hallList-table tr:last-child > td {
+    border-bottom: none;
+}
+
+#snippet-hallList-table td:last-child a {
+    color: white;
+    font-weight: bolder;
+    padding: 3px 6px;
+    background-color: #a10096;
+    border: 2px solid #a10096;
+    border-radius: 3px;
+}
+
+#snippet-hallList-table td:last-child a:hover {
+    color: white;
+    background-color: #7b0070;
+    border: 2px solid #7b0070;
+}

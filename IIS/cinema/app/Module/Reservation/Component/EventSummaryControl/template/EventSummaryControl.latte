@@ -1,0 +1,28 @@
+<div class="event-summary">
+    <table>
+        <tr>
+            <th>Název</th>
+            <td>{$event->getContent()->getTitle()}</td>
+        </tr>
+        <tr>
+            <th>Typ</th>
+            <td>{$event->getContent()->getType()->getTitle()}</td>
+        </tr>
+        <tr>
+            <th>Žánr</th>
+            <td>{$event->getContent()->getGenresAsString()}</td>
+        </tr>
+        <tr>
+            <th>Čas konání</th>
+            <td>{$event->getDateTime()->format('j.n.Y H:i:s')}</td>
+        </tr>
+        <tr>
+            <th>Sál</th>
+            <td>{$event->getHall()->getTitle()}</td>
+        </tr>
+        <tr>
+            <th>Cena za sedadlo</th>
+            <td>{$event->getFormattedPrice()}</td>
+        </tr>
+    </table>
+</div>

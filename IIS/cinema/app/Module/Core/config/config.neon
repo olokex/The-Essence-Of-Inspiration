@@ -1,0 +1,12 @@
+services:
+    entityIdRouteFactory:
+        class: App\Module\Core\Route\EntityIdRouteFactory
+
+    formFactory:
+        class: App\Module\Core\Form\FormFactory
+
+    user:
+        class: App\Module\Core\Security\User
+
+    dataGridFactory:
+        class: App\Module\Core\Datagrid\DataGridFactory

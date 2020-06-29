@@ -1,0 +1,58 @@
+Společná část popisu:
+Vypracujte síťovou aplikaci podle zadání.
+Odevzdejte Váš projekt jako archív s názvem odpovídající Vašemu loginu. Projekty odevzdané po termínu nebuou hodnoceny. 
+Odevzdáváte zdrojové soubory projektu - projekt může být napsán v jazyce C, Python nebo Java.  Projekt musí být spustitelný na referenčním stroji (merlin.fit.vutbr.cz)
+Projekt musí obsahovat soubor Makefile pro přeložení make build (není-li potřebné jako prázdný target) a pro spuštění serveru make run pomocí make (gmake) (http://archiv.linuxsoft.cz/article.php?id_article=722)
+Projekt musí být přeložitelný a spustitelný na referenčním stroji (merlin.fit.vutbr.cz)
+Součástí projektu je také stručná dokumentace ve formátu plain text, Markdown, nebo PDF. 
+Popis varianty:
+ZADANÍ
+
+Úkolem je vytvořit program - klienta rozhraní OpenWeatherMap, který bude schopen prostřednictvím HTTP dotazů získávat vybrané informace z datového zdroje. Pro přístup je nutná bezplatná registrace a získání klíče, který se používá v dotazech pro autentizaci. Způsob používání OpenWatherMap API si nastudujte z on-line zdroje (odkaz níže).
+
+Klient se bude spouštět pomocí souboru Makefile následujícím způsobem:
+
+make run api_key=<API klíč> city=<Město>
+
+
+Výsledkem bude informace o aktuálním počasí a následující informace: popis počasí, teplota, vlhkost, tlak, rychlost a směr větru. Používejte metrické jednotky při uvádění všech hodnot.
+
+Pro správnou komunikaci je nutné vytvořit korektní HTTP dotaz. Jestliže si nejste jisti podívejte se na správnou komunikaci jejím odchycením a zobrazením ve Wiresharku. 
+
+V případě, že budete zjišťovat jak vypadá odpověď nezapomeňte dát celé URL do uvozovek (jistě víte proč):
+curl "http://api.openweathermap.org/data/2.5/weather?q=London,uk&APPID=b498767252de12f92504d2cca9c3fdc1"
+
+
+PŘÍKLAD
+
+$ make run api_key=b498767252de12f92574d288a9c4fdc2 city=Prague
+
+Prague
+overcast clouds
+temp:28.5°C
+humidity:89%
+preassure:1013 hPa
+wind-speed: 7.31km/h
+wind-deg: 187
+
+
+Pro implementaci klienta je nutné využít knihovny soketů. Není přípustné využívat knihovny pro zpracování HTTP a podobně - cílem je lightweight klient, který má minimum závislostí. 
+
+
+HODNOCENÍ
+Hodnotí se "kvalita" implementace (3/4 hodnocení), tedy:
+splnění zadání a funkčnost implementace
+jednoduchost kódu
+množství závislostí na dalších knihovnách (rozumný balanc mezi tím co si napsat sám a co použít z knihoven)
+
+Dále se pak hodnotí dokumentace (1/4) hodnocení.
+
+
+
+DOPORUČENÍ
+Zadání nepostihuje ani nemůže postihovat veškeré možnosti, které Vás napadnou při řešení nabo mohou nastat. V takovém případě je nutné navrhnou přijatelné a logické řešení. V případě, že si řešením nejste jisti se optejte prostřednictvím fóra.
+
+
+ODKAZY
+Protokol HTTP RFC7231 - https://tools.ietf.org/html/rfc7231
+Dokumentace OpenWeatherMap API: https://openweathermap.org/current

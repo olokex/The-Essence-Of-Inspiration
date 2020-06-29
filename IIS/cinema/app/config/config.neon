@@ -1,0 +1,58 @@
+parameters:
+    connection:
+        hostname: localhost
+        database: cinema
+        username: cinema
+        password: cinema
+        driver: mysqli
+
+application:
+	errorPresenter: Error
+	mapping:
+	    *: ['App\Module', '*\Presenter', '*Presenter']
+
+session:
+    expiration: 14 days
+
+services:
+    dibiConnection:
+        class: Dibi\Connection
+        arguments:
+            - %connection%
+
+dbal:
+    debug:
+        panel: %debugMode%
+    connection:
+        host: 127.0.0.1
+        driver: mysqli
+        dbname: cinema
+        user: cinema
+        password: cinema
+
+orm.annotations:
+    paths: []
+    excludePaths: []
+    ignore: []
+    defaultCache: filesystem
+
+images:
+    enable: true
+    aliases:
+        thumb: "resize:350,350"
+
+extensions:
+    console: Contributte\Console\DI\ConsoleExtension(true)
+    dbal: Nettrine\DBAL\DI\DbalExtension
+    orm: Nettrine\ORM\DI\OrmExtension
+    orm.annotations: Nettrine\ORM\DI\OrmAnnotationsExtension
+    orm.console: Nettrine\ORM\DI\OrmConsoleExtension
+    core: App\Module\Core\CoreExtension
+    route: App\Module\Core\Extension\RouteExtension
+    front: App\Module\Front\FrontExtension
+    homepage: App\Module\Homepage\HomepageExtension
+    user: App\Module\User\UserExtension
+    reservation: App\Module\Reservation\ReservationExtension
+    content: App\Module\Content\ContentExtension
+    hall: App\Module\Hall\HallExtension
+    images: WebChemistry\Images\DI\ImagesExtension

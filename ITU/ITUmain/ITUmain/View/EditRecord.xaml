@@ -1,0 +1,455 @@
+﻿<Page x:Class="ITUmain.View.EditRecord"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:ITUmain.View"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="EditRecord">
+
+    <Grid Background="#3b3b3b">
+        <!-- main grid definition, rest of it is filled with another specific components -->
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.085*" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <!-- button bar TOP -->
+        <Grid Grid.ColumnSpan="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.5*"/>
+                <ColumnDefinition Width="0.5*"/>
+                <ColumnDefinition Width="0.5*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="0.25*"/>
+            </Grid.ColumnDefinitions>
+
+            <Button Content="Přidat" FontWeight="Bold" FontSize="35" Background="#108c0a" Foreground="White" Click="EditRecordButtonClickAdd"/>
+            <Button Grid.Column="1" FontWeight="Bold" Content="Hledat" FontSize="35" Background="#006ab5" Foreground="White" Click="EditRecordButtonClickOverview"/>
+            <!--<Button Grid.Column="2" Content="XXX" FontSize="25" Background="#656565"/>-->
+            <Button Grid.Column="4" Content="Zavřít" FontSize="35" FontWeight="Bold" Background="#cc0000" Foreground="White" Click="Button_Click"/>
+        </Grid>
+
+
+        <!-- COMPUTER -->
+        <!-- fill data -->
+        <Grid Grid.Row="1" x:Name="EditRecordComputer" Grid.Column="1" Margin="10"  Background="#313131" Visibility="Hidden">
+
+            <Grid.Resources>
+                <Style TargetType="Label">
+                    <Setter Property="FontSize" Value="18" />
+                    <Setter Property="Margin" Value="0" />
+                    <Setter Property="VerticalAlignment" Value="Bottom" />
+                    <Setter Property="Foreground" Value="White" />
+                </Style>
+                <Style TargetType="TextBox">
+                    <Setter Property="VerticalContentAlignment" Value="Center" />
+                    <Setter Property="Margin" Value="5" />
+                </Style>
+            </Grid.Resources>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.15*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="0.7*" />
+                <ColumnDefinition Width="0.15*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1.5*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="5*" />
+                <RowDefinition Height="2*" />
+            </Grid.RowDefinitions>
+
+            <Label Content="Počítač" Grid.Column="1" VerticalAlignment="Center" FontSize="38" />
+
+
+            <Label Grid.Row="1" Grid.Column="1" Content="Název"/>
+            <Label Grid.Row="3" Grid.Column="1" Content="Výrobce"/>
+            <Label Grid.Row="5" Grid.Column="1" Content="Výrobní číslo"/>
+            <Label Grid.Row="7" Grid.Column="1" Content="Stav"/>
+            <Label Grid.Row="9" Grid.Column="1" Content="Cena"/>
+
+            <Label Grid.Row="1" Grid.Column="2" Content="Procesor"/>
+            <Label Grid.Row="3" Grid.Column="2" Content="Operační paměť"/>
+            <Label Grid.Row="5" Grid.Column="2" Content="Grafická karta"/>
+            <Label Grid.Row="7" Grid.Column="2" Content="Velikost hlavní paměti"/>
+            <Label Grid.Row="9" Grid.Column="2" Content="Velikost (výška x šířka x délka)"/>
+
+            <!--<Label Grid.Row="1" Grid.Column="3" Content="Čtečka"/>-->
+            <Label Grid.Row="1" Grid.Column="3" Content="Operační systém"/>
+            <Label Grid.Row="3" Grid.Column="3" Content="Porty"/>
+            <!--<Label Grid.Row="5" Grid.Column="3" Content="Mechanika"/>-->
+
+
+            <TextBox Name="ECName" Text="{Binding Name}" Grid.Row="2" Grid.Column="1" />
+            <TextBox Name="ECMan" Text="{Binding Manufacturer}" Grid.Row="4" Grid.Column="1" />
+            <TextBox Name="ECManNum" Text="{Binding ManufactureNumber}" Grid.Row="6" Grid.Column="1" />
+            <TextBox Name="ECCon" Text="{Binding Condition}" Grid.Row="8" Grid.Column="1" />
+            <TextBox Name="ECPrice" Text="{Binding Price}" Grid.Row="10" Grid.Column="1" Margin="5"/>
+            <TextBox Name="ECCpu" Text="{Binding CPU}" Grid.Row="2" Grid.Column="2" />
+            <TextBox Name="ECRam" Text="{Binding RAM}" Grid.Row="4" Grid.Column="2" />
+            <TextBox Name="ECGpu" Text="{Binding GPU}" Grid.Row="6" Grid.Column="2" />
+            <TextBox Name="ECMem" Text="{Binding Memory}" Grid.Row="8" Grid.Column="2" />
+            <TextBox Name="ECDim" Text="{Binding Dimensions}" Grid.Row="10" Grid.Column="2" />
+            <TextBox Name="ECOS" Text="{Binding OS}" Grid.Row="2" Grid.Column="3" />
+            <TextBox Name="ECPorts" Text="{Binding Ports}" Grid.Row="4" Grid.Column="3" />
+            <!--<TextBox Text="{Binding }" Grid.Row="6" Grid.Column="3" />-->
+            <!--<TextBox Text="{Binding }" Grid.Row="8" Grid.Column="3" />-->
+
+
+            <!-- bottom labels for author -->
+            <Grid Grid.Row="17" Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.45*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Label Grid.Row="0" Content="Editoval: "/>
+                <Label Grid.Row="0" Grid.Column="1" Content="{Binding Author}" />
+                <Label Grid.Row="1" Content="Dne: "/>
+                <Label Grid.Row="1" Grid.Column="1" Content="{Binding Date}" />
+            </Grid>
+            <Button Grid.Column="4" Grid.Row="17" Content="Editovat" FontSize="25" FontWeight="Bold" Background="#d95700" Foreground="White" Margin="0,10,0,10" Click="EditRecordButtonEditComputer"/>
+        </Grid>
+
+
+        <!-- NOTEBOOK -->
+        <Grid Grid.Row="1" x:Name="EditRecordNotebook" Background="#313131" Visibility="Hidden">
+            <Grid.Resources>
+                <Style TargetType="Label">
+                    <Setter Property="FontSize" Value="14" />
+                    <Setter Property="Margin" Value="0" />
+                    <Setter Property="VerticalAlignment" Value="Bottom" />
+                    <Setter Property="Foreground" Value="White" />
+                </Style>
+                <Style TargetType="TextBox">
+                    <Setter Property="VerticalContentAlignment" Value="Center" />
+                    <Setter Property="Margin" Value="5" />
+                </Style>
+            </Grid.Resources>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.15*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="0.7*" />
+                <ColumnDefinition Width="0.15*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1.5*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="5*" />
+                <RowDefinition Height="2*" />
+            </Grid.RowDefinitions>
+
+
+            <!-- udelat binding aby se zobrazovalo co je prave v comboboxu vybrano -->
+            <Label Content="Notebook" Grid.Column="1" VerticalAlignment="Center" FontSize="25" />
+
+
+            <!-- binding na comboboxy -->
+            <!-- first column -->
+            <Label Grid.Row="1" Grid.Column="1" Content="Název"/>
+            <Label Grid.Row="3" Grid.Column="1" Content="Výrobce"/>
+            <Label Grid.Row="5" Grid.Column="1" Content="Výrobní číslo"/>
+            <Label Grid.Row="7" Grid.Column="1" Content="Stav"/>
+            <!--<Label Grid.Row="9" Grid.Column="1" Content="Mechanika"/>-->
+            <Label Grid.Row="9" Grid.Column="1" Content="Čtečka"/>
+            <Label Grid.Row="11" Grid.Column="1" Content="Cena"/>
+            <!-- second column -->
+            <Label Grid.Row="1" Grid.Column="2" Content="Procesor"/>
+            <Label Grid.Row="3" Grid.Column="2" Content="Operační paměť"/>
+            <Label Grid.Row="5" Grid.Column="2" Content="Grafická karta"/>
+            <!--<Label Grid.Row="7" Grid.Column="2" Content="Základní deska"/>-->
+            <!-- TODO přeogranizovat (není v seznamu?) -->
+            <Label Grid.Row="7" Grid.Column="2" Content="Velikost hlavní paměti"/>
+            <Label Grid.Row="9" Grid.Column="2" Content="Velikost (výška x šířka x délka)"/>
+            <Label Grid.Row="11" Grid.Column="2" Content="Numerická klávesnice"/>
+            <!-- third column -->
+            <Label Grid.Row="1" Grid.Column="3" Content="Display"/>
+            <Label Grid.Row="3" Grid.Column="3" Content="Operační systém"/>
+            <Label Grid.Row="5" Grid.Column="3" Content="Výdrž"/>
+            <Label Grid.Row="7" Grid.Column="3" Content="Váha"/>
+            <Label Grid.Row="9" Grid.Column="3" Content="Web kamera"/>
+            <Label Grid.Row="11" Grid.Column="3" Content="Porty"/>
+
+            <!-- first column -->
+            <TextBox Name="ENNam" Text="{Binding Name}" Grid.Row="2" Grid.Column="1" />
+            <TextBox Name="ENMan" Text="{Binding Manufacturer}" Grid.Row="4" Grid.Column="1" />
+            <TextBox Name="ENManNum" Text="{Binding ManufactureNumber}" Grid.Row="6" Grid.Column="1" />
+            <TextBox Name="ENCond" Text="{Binding Condition}" Grid.Row="8" Grid.Column="1" />
+            <TextBox Name="ENFing" Text="{Binding FingerPrintReader}" Grid.Row="10" Grid.Column="1" />
+            <TextBox Name="ENPrice" Text="{Binding Price}" Grid.Row="12" Grid.Column="1" />
+            <!--<TextBox Text="{Binding Price}" Grid.Row="14" Grid.Column="1" Margin="5"/>-->
+            <!-- second column -->
+            <TextBox Name="ENCpu" Text="{Binding CPU}" Grid.Row="2" Grid.Column="2" />
+            <TextBox Name="ENRam" Text="{Binding RAM}" Grid.Row="4" Grid.Column="2" />
+            <TextBox Name="ENGpu" Text="{Binding GPU}" Grid.Row="6" Grid.Column="2" />
+            <TextBox Name="ENMem" Text="{Binding Memory}" Grid.Row="8" Grid.Column="2" />
+            <TextBox Name="ENDim" Text="{Binding Dimensions}" Grid.Row="10" Grid.Column="2" />
+            <TextBox Name="ENNumpad" Text="{Binding Numpad}" Grid.Row="12" Grid.Column="2" />
+            <!--<TextBox Text="{Binding }" Grid.Row="14" Grid.Column="2" />-->
+            <!-- third column -->
+            <TextBox Name="ENDisp" Text="{Binding Display}" Grid.Row="2" Grid.Column="3" />
+            <TextBox Name="ENOS" Text="{Binding OS}" Grid.Row="4" Grid.Column="3" />
+            <TextBox Name="ENBat" Text="{Binding BatteryCappacity}" Grid.Row="6" Grid.Column="3" />
+            <TextBox Name="ENWeight" Text="{Binding Weight}" Grid.Row="8" Grid.Column="3" />
+            <TextBox Name="ENCam" Text="{Binding Camera}" Grid.Row="10" Grid.Column="3" />
+            <TextBox Name="ENPorts" Text="{Binding Ports}" Grid.Row="12" Grid.Column="3" />
+
+            <!-- bottom labels for author -->
+            <Grid Grid.Row="17" Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.45*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Label Grid.Row="0" Content="Editoval: "/>
+                <Label Grid.Row="0" Grid.Column="1" Content="{Binding Author}" />
+                <Label Grid.Row="1" Content="Dne: "/>
+                <Label Grid.Row="1" Grid.Column="1" Content="{Binding Date}" />
+            </Grid>
+            <Button Grid.Column="4" Grid.Row="17" Content="Editovat" FontSize="25" FontWeight="Bold" Background="#d95700" Foreground="White" Margin="0,10,0,10" Click="EditRecordButtonEditNotebook"/>
+        </Grid>
+
+
+
+        <!-- MONITOR -->
+        <Grid x:Name="EditRecordMonitor" Grid.Row="1" Grid.Column="1" Margin="10"  Background="#313131" Visibility="Hidden">
+
+            <Grid.Resources>
+                <Style TargetType="Label">
+                    <Setter Property="FontSize" Value="14" />
+                    <Setter Property="Margin" Value="0" />
+                    <Setter Property="VerticalAlignment" Value="Bottom" />
+                    <Setter Property="Foreground" Value="White" />
+                </Style>
+                <Style TargetType="TextBox">
+                    <Setter Property="VerticalContentAlignment" Value="Center" />
+                    <Setter Property="Margin" Value="5" />
+                </Style>
+            </Grid.Resources>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.15*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="0.7*" />
+                <ColumnDefinition Width="0.15*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1.5*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="5*" />
+                <RowDefinition Height="2*" />
+            </Grid.RowDefinitions>
+
+            <Label Content="Monitor" Grid.Column="1" VerticalAlignment="Center" FontSize="25" />
+
+            <Label Grid.Row="1" Grid.Column="1" Content="Název"/>
+            <Label Grid.Row="3" Grid.Column="1" Content="Výrobce"/>
+            <Label Grid.Row="5" Grid.Column="1" Content="Výrobní číslo"/>
+            <Label Grid.Row="7" Grid.Column="1" Content="Stav"/>
+            <Label Grid.Row="9" Grid.Column="1" Content="Cena"/>
+
+            <Label Grid.Row="1" Grid.Column="2" Content="Rozměry"/>
+            <Label Grid.Row="3" Grid.Column="2" Content="Panel"/>
+            <Label Grid.Row="5" Grid.Column="2" Content="Rozlišení"/>
+            <Label Grid.Row="7" Grid.Column="2" Content="Frekvence"/>
+            <Label Grid.Row="9" Grid.Column="2" Content="Odezva"/>
+
+            <Label Grid.Row="1" Grid.Column="3" Content="Rozhraní"/>
+            <Label Grid.Row="3" Grid.Column="3" Content="Vesa"/>
+            <Label Grid.Row="5" Grid.Column="3" Content="Reproduktory"/>
+            <Label Grid.Row="7" Grid.Column="3" Content="Kabeláž"/>
+
+
+            <TextBox Name="EMNam" Text="{Binding Name}" Grid.Row="2" Grid.Column="1" />
+            <TextBox Name="EMMan" Text="{Binding Manufacturer}" Grid.Row="4" Grid.Column="1" />
+            <TextBox Name="EMManNum" Text="{Binding ManufactureNumber}" Grid.Row="6" Grid.Column="1" />
+            <TextBox Name="EMCon" Text="{Binding Condition}" Grid.Row="8" Grid.Column="1" />
+            <TextBox Name="EMPrice" Text="{Binding Price}" Grid.Row="10" Grid.Column="1" Margin="5"/>
+            <TextBox Name="EMDim" Text="{Binding Dimensions}" Grid.Row="2" Grid.Column="2" />
+            <TextBox Name="EMPanelType" Text="{Binding PanelType}" Grid.Row="4" Grid.Column="2" />
+            <TextBox Name="EMRes" Text="{Binding Resolution}" Grid.Row="6" Grid.Column="2" />
+            <TextBox Name="EMFreq" Text="{Binding Frequency}" Grid.Row="8" Grid.Column="2" />
+            <TextBox Name="EMResp" Text="{Binding ResponseTime}" Grid.Row="10" Grid.Column="2" />
+            <TextBox Name="EMConnectors" Text="{Binding Connectors}" Grid.Row="2" Grid.Column="3" />
+            <TextBox Name="EMVesa" Text="{Binding Vesa}" Grid.Row="4" Grid.Column="3" />
+            <TextBox Name="EMSpeak" Text="{Binding Speakers}" Grid.Row="6" Grid.Column="3" />
+            <TextBox Name="EMCables" Text="{Binding CablesIncluded}" Grid.Row="8" Grid.Column="3" />
+
+
+            <!-- bottom labels for author -->
+            <Grid Grid.Row="17" Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.45*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Label Grid.Row="0" Content="Editoval: "/>
+                <Label Grid.Row="0" Grid.Column="1" Content="{Binding Author}" />
+                <Label Grid.Row="1" Content="Dne: "/>
+                <Label Grid.Row="1" Grid.Column="1" Content="{Binding Date}" />
+            </Grid>
+            <Button Grid.Column="4" Grid.Row="17" Content="Editovat" FontSize="25" FontWeight="Bold" Background="#d95700" Foreground="White" Margin="0,10,0,10" Click="EditRecordButtonEditMonitor"/>
+        </Grid>
+
+
+
+        <!-- TELEPHONE -->
+        <Grid x:Name="EditRecordTelephone" Grid.Row="1" Grid.Column="1" Margin="10" Background="#313131" Visibility="Hidden">
+
+            <Grid.Resources>
+                <Style TargetType="Label">
+                    <Setter Property="FontSize" Value="14" />
+                    <Setter Property="Margin" Value="0" />
+                    <Setter Property="VerticalAlignment" Value="Bottom" />
+                    <Setter Property="Foreground" Value="White" />
+                </Style>
+                <Style TargetType="TextBox">
+                    <Setter Property="VerticalContentAlignment" Value="Center" />
+                    <Setter Property="Margin" Value="5" />
+                </Style>
+            </Grid.Resources>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.15*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="0.7*" />
+                <ColumnDefinition Width="0.15*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1.5*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="5*" />
+                <RowDefinition Height="2*" />
+            </Grid.RowDefinitions>
+
+            <Label Content="Telefon" Grid.Column="1" VerticalAlignment="Center" FontSize="25" />
+
+
+            <Label Grid.Row="1" Grid.Column="1" Content="Název"/>
+            <Label Grid.Row="3" Grid.Column="1" Content="Výrobce"/>
+            <Label Grid.Row="5" Grid.Column="1" Content="Výrobní číslo"/>
+            <Label Grid.Row="7" Grid.Column="1" Content="Stav"/>
+            <Label Grid.Row="9" Grid.Column="1" Content="Cena"/>
+
+            <Label Grid.Row="1" Grid.Column="2" Content="Procesor"/>
+            <Label Grid.Row="3" Grid.Column="2" Content="Operační paměť"/>
+            <Label Grid.Row="5" Grid.Column="2" Content="Typ panelu"/>
+            <Label Grid.Row="7" Grid.Column="2" Content="Váha"/>
+            <Label Grid.Row="9" Grid.Column="2" Content="Display"/>
+
+            <Label Grid.Row="1" Grid.Column="3" Content="DUAL-SIM"/>
+            <Label Grid.Row="3" Grid.Column="3" Content="SD-karta"/>
+            <Label Grid.Row="5" Grid.Column="3" Content="Fotoaparát"/>
+            <Label Grid.Row="7" Grid.Column="3" Content="Rychlost nabíjení"/>
+            <Label Grid.Row="9" Grid.Column="3" Content="Barva"/>
+
+
+            <TextBox Name="ETNam" Text="{Binding Name}" Grid.Row="2" Grid.Column="1" />
+            <TextBox Name="ETMan" Text="{Binding Manufacturer}" Grid.Row="4" Grid.Column="1" />
+            <TextBox Name="ETManNum" Text="{Binding ManufactureNumber}" Grid.Row="6" Grid.Column="1" />
+            <TextBox Name="ETCon" Text="{Binding Condition}" Grid.Row="8" Grid.Column="1" />
+            <TextBox Name="ETPrice" Text="{Binding Price}" Grid.Row="10" Grid.Column="1" Margin="5"/>
+            <TextBox Name="ETCpu" Text="{Binding CPU}" Grid.Row="2" Grid.Column="2" />
+            <TextBox Name="ETRam" Text="{Binding RAM}" Grid.Row="4" Grid.Column="2" />
+            <TextBox Name="ETDisplay" Text="{Binding Display}" Grid.Row="6" Grid.Column="2" />
+            <TextBox Name="ETWeight" Text="{Binding Weight}" Grid.Row="8" Grid.Column="2" />
+            <TextBox Name="ETSize" Text="{Binding Size}" Grid.Row="10" Grid.Column="2" />
+            <TextBox Name="ETDual" Text="{Binding DualSim}" Grid.Row="2" Grid.Column="3" />
+            <TextBox Name="ETSdCard" Text="{Binding SdCard}" Grid.Row="4" Grid.Column="3" />
+            <TextBox Name="ETCam" Text="{Binding Camera}" Grid.Row="6" Grid.Column="3" />
+            <TextBox Name="ETChar" Text="{Binding ChargingTime}" Grid.Row="8" Grid.Column="3" />
+            <TextBox Name="ETCol" Text="{Binding Colour}" Grid.Row="10" Grid.Column="3" />
+
+
+            <!-- bottom labels for author -->
+            <Grid Grid.Row="17" Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.45*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Label Grid.Row="0" Content="Editoval: "/>
+                <Label Grid.Row="0" Grid.Column="1" Content="{Binding Author}" />
+                <Label Grid.Row="1" Content="Dne: "/>
+                <Label Grid.Row="1" Grid.Column="1" Content="{Binding Date}" />
+            </Grid>
+            <Button Grid.Column="4" Grid.Row="17" Content="Editovat" FontWeight="Bold" FontSize="25" Background="#d95700" Foreground="White" Margin="0,10,0,10" Click="EditRecordButtonEditTelephone"/>
+        </Grid>
+    </Grid>
+</Page>

@@ -1,0 +1,92 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background-color: rgb(70, 70, 75);
+    color: white;
+}
+
+a {
+    text-decoration: none;
+    flex: 1;
+    color: white;
+}
+
+.cinema-name {
+    margin-left: 10%;
+    height: 100%;
+    font-weight: bolder;
+    font-size: 20px;
+    text-transform: capitalize;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(30, 30, 35);
+}
+
+nav li {
+    box-sizing: border-box;
+    display: inline-block;
+    padding: 12px;
+    cursor: pointer;
+}
+
+nav li:hover {
+    background-color: rgb(80, 80, 85);
+}
+
+nav li:hover ul{
+    left: auto;
+    right: 0;
+}
+
+.dropdown {
+    margin-right: 15px;
+    position: relative;
+}
+
+.dropdown-content {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    text-align: left;
+    display: none;
+}
+
+.dropdown-content li {
+    background-color:rgb(30, 30, 35);
+    width: 100%;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.flash.info {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0);
+    top: 50px;
+    padding: 5px;
+    border-radius: 3px;
+    background-color: green;
+}
+
+.fa.fa-remove {
+    display: none;
+}
+
+::-webkit-scrollbar {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #fc8c03;
+    border-radius: 3px;
+}

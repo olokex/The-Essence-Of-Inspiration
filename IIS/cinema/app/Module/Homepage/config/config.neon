@@ -1,0 +1,12 @@
+services:
+    homepageEventListFactory:
+        class: App\Module\Homepage\Factory\EventListFactory
+
+    eventSearchFormControlFactory:
+        implement: App\Module\Homepage\Component\EventSearchFormControl\IEventSearchFormControlFactory
+
+    eventSearchContainerFactory:
+        implement: App\Module\Homepage\Container\EventSearchContainer\IEventSearchContainerFactory
+
+    eventSearchQueryBuilder:
+        class: App\Module\Homepage\QueryBuilder\EventSearchQueryBuilder

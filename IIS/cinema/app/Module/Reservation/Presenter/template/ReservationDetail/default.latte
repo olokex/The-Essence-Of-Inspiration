@@ -1,0 +1,17 @@
+{block head}
+	<link href="{$basePath}/css/reservationForm.css" rel="stylesheet" type="text/css" />
+{/block}
+
+{block content}
+	<div class="reservation-box">
+		<h1><i class="fa fa-info-circle"></i> Rezervace</h1>
+		<h3><i class="fa fa-film"></i> Shrnutí</h3>
+		{control eventSummary}
+
+		<h3><i class="fa fa-id-card"></i> Vaše kontaktní informace</h3>
+		{control contactInfoSummary}
+
+		<h3><i class="fa fa-wheelchair"></i> Máte zarezervovány následující sedadla:</h3>
+		{control ticketSummary}
+	</div>
+{/block}

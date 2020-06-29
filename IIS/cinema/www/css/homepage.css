@@ -1,0 +1,137 @@
+body {
+    background-color: rgb(50, 50, 55);
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+}
+
+.search-box {
+    margin-left: auto;
+    margin-right: auto;
+    width: 40%;
+    text-align: center;
+    min-width: 600px;
+}
+
+.search-box h3 {
+    text-align: left;
+    font-size: 30px;
+    border-bottom: 6px solid #fc8c03;
+    margin-bottom: 25px;
+    padding: 13px 0;
+}
+
+.search-box th{
+    font-size: 18px;
+    padding-right: 10px;
+}
+
+.search-box td{
+    font-size: 16px;
+    padding-right: 10px;
+}
+
+.search-box table {
+    border-spacing: 0 10px;
+    width: 90%;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.search-box input {
+    border: none;
+    border-bottom: 1px solid #eb8100;
+    outline: none;
+    background: none;
+    color: white;
+    font-size: 18px;
+    width: 98%;
+    float: left;
+    margin: 0;
+}
+
+.search-box textarea {
+    border: none;
+    border-bottom: 1px solid #eb8100;
+    outline: none;
+    background: none;
+    color: white;
+    font-size: 18px;
+    width: 98%;
+    float: left;
+    margin: 0;
+}
+
+.search-box select {
+    background-color: rgb(50, 50, 55);
+    border: none;
+    border-bottom: 1px solid #eb8100;
+    outline: none;
+    color: white;
+    font-size: 18px;
+    width: 98%;
+    float: left;
+    margin: 0;
+}
+
+input.button {
+    display: inline-block;
+    width: 40%;
+    text-align: center;
+    background: none;
+    border: 2px solid #fc8c03;
+    color: #fc8c03;
+    padding: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    margin: 12px 0;
+    border-radius: 0px;
+    font-weight: bolder;
+}
+
+input.button:hover {
+    color: white;
+    background-color: #fc8c03;
+}
+
+#snippet-eventList-table {
+    font-size: 16px;
+    width: 90%;
+    text-align: center;
+    border-collapse: collapse;
+    margin-top: 40px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#snippet-eventList-table th {
+    color: #fc8c03;
+    font-size: 18px;
+    border-bottom: 2px solid grey;
+    border-right: 2px solid grey;
+}
+
+#snippet-eventList-table th:last-child {
+    border-right: none;
+}
+
+#snippet-eventList-table td {
+    color: #d6d6d6;
+    padding: 10px;
+    border-spacing: 0 10px;
+    border-bottom: 1px solid grey;
+    border-right: 2px solid grey;
+}
+
+#snippet-eventList-table td:last-child {
+    border-right: none;
+}
+
+#snippet-eventList-table tr:last-child > td {
+    border-bottom: none;
+}
+
+#snippet-eventList-table a {
+    color: #eb8100;
+    text-decoration: underline;
+}

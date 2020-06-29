@@ -1,0 +1,39 @@
+services:
+    contentRepository:
+        class: App\Module\Content\Repository\ContentRepository
+
+    contentListFactory:
+        class: App\Module\Content\Factory\ContentListFactory
+
+    contentFormControlFactory:
+        implement: App\Module\Content\Component\ContentFormControl\IContentFormControlFactory
+
+    contentContainerFactory:
+        implement: App\Module\Content\Container\ContentContainer\IContentContainerFactory
+
+    genreRepository:
+        class: App\Module\Content\Repository\GenreRepository
+
+    typeRepository:
+        class: App\Module\Content\Repository\TypeRepository
+
+    contentService:
+        class: App\Module\Content\Service\ContentService
+
+    eventFormControlFactory:
+        implement: App\Module\Content\Component\EventFormControl\IEventFormControlFactory
+
+    eventContainerFactory:
+        implement: App\Module\Content\Container\EventContainer\IEventContainerFactory
+
+    eventService:
+        class: App\Module\Content\Service\EventService
+
+    eventListFactory:
+        class: App\Module\Content\Factory\EventListFactory
+
+    eventRepository:
+        class: App\Module\Content\Repository\EventRepository
+
+    imageService:
+        class: App\Module\Content\Service\ImageService

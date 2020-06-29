@@ -7,6 +7,9 @@ Projekty slouží na **inspiraci**, pokud si už nevíte rady. Neručím, že k�
 
 Pokud se někdo rozhodne **okopírovat** projekt 1:1, budiž jeho boj...
 
+
+Většinou hodnocení/zadání je možno naléz v dané složce.
+
 |Předmět|Rok      |Body získané/max|Varianta                                        |
 |--     |:--:     |:--:            |--                                              |
 |IEL    |2017/2018|11.5 / 12       |Semestrální Projekty                            |
@@ -33,3 +36,11 @@ Pokud se někdo rozhodne **okopírovat** projekt 1:1, budiž jeho boj...
 |INI    |2018/2019|50 / 50         |Jednotlivé části ve složce                      |
 |IPS    |2018/2019|10 / 10         |Synchronizace vláken/procesů při regexu         |
 |IPS    |2018/2019|10 / 10         |Vlastní malloc pomocí mmap                      |
+|IDS    |2018/2019|30 / 30         |Evidence výpočetní techniky                     |
+|IPK    |2018/2019|18 / 20         |Klient pro OpenWeatherMap API                   |
+|IPK    |2019/2020|13 / 20         |Sniffer paketů (není IPv6, citace v doc)        |
+|EVO    |2019/2020|15 / 16         |Evoluce obvodů pro přibližné výpočty            |
+|IMP    |2019/2020|14 / 14         |FITkitu3: Countdown se 7-segmentovým displejem  |
+|ISA    |2019/2020|10.6 / 20       |Whois tazatel (bez IPv6)                        |
+|IIS    |2019/2020|24 / 30         |Kino: rezervace vstupenek na kulturní události  |
+|ITU    |2019/2020|38 / 55         |Evidence výpočetní techniky                     |

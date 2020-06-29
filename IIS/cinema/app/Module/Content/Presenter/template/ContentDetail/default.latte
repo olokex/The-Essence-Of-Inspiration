@@ -1,0 +1,56 @@
+{block head}
+    <link href="{$basePath}/css/contentDetail.css" rel="stylesheet" type="text/css"/>
+{/block}
+
+{block content}
+    <div class="content-detail">
+        <div class="head">
+            <h1><i class="fa fa-film"></i> {$content->getTitle()}</h1>
+        </div>
+
+        <div class="content-description">
+        <div class="content-info">
+            <table>
+                <tr>
+                    <th>Název:</th>
+                    <td>{$content->getTitle()}</td>
+                </tr>
+                <tr>
+                    <th>Popis:</th>
+                    <td>{$content->getDescription()}</td>
+                </tr>
+                <tr>
+                    <th>Typ:</th>
+                    <td>{$content->getType()->getTitle()}</td>
+                </tr>
+                <tr>
+                    <th>Žánr:</th>
+                    <td>{$content->getGenresAsString()}</td>
+                </tr>
+                <tr>
+                    <th>Délka:</th>
+                    <td>{$content->getLength()}</td>
+                </tr>
+                <tr>
+                    <th>Hodnocení:</th>
+                    <td>{$content->getRating()}</td>
+                </tr>
+                <tr>
+                    <th>Účinkující:</th>
+                    <td>{$content->getPerformers()}</td>
+                </tr>
+            </table>
+            <a n:if="$canEdit" n:href=":Content:ContentEdit:default, $content">Upravit</a>
+        </div>
+
+        <div n:if="$image" class="image-box">
+            <img n:img="$image, thumb">
+        </div>
+        </div>
+        <div class="event-list">
+		    <h3><i class="fa fa-calendar"></i> Události</h3>
+            <a id="add-event" n:if="$canEdit" n:href=":Content:EventAdd:default, $content">Přidat</a>
+            {control eventList}
+        </div>
+    </div>
+{/block}

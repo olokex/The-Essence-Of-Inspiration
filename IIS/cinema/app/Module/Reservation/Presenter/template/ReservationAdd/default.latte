@@ -1,0 +1,12 @@
+{block head}
+	<link href="{$basePath}/css/reservationForm.css" rel="stylesheet" type="text/css" />
+{/block}
+
+{block content}
+	<div class="reservation-box">
+		<h1><i class="fa fa-plus"></i> Rezervace</h1>
+		<h3><i class="fa fa-film"></i> Shrnutí</h3>
+		{control eventSummary}
+		{control reservationForm}
+	</div>
+{/block}

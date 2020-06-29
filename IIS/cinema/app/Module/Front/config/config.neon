@@ -1,0 +1,3 @@
+services:
+    mainMenuControlFactory:
+        implement: App\Module\Front\Component\MainMenuControl\IMainMenuControlFactory

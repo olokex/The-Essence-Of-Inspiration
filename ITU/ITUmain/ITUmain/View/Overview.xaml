@@ -1,0 +1,264 @@
+﻿<Page x:Class="ITUmain.View.Overview"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:ITUmain.View"
+      mc:Ignorable="d" 
+      Title="Přehled">
+    <Grid Background="#3b3b3b">
+        <!-- main grid definition, rest of it is filled with another specific components -->
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.25*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.085*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="0.10*" />
+        </Grid.RowDefinitions>
+
+        <!-- button bar TOP -->
+        <Grid Grid.ColumnSpan="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.56*"/>
+                <ColumnDefinition Width="0.5*"/>
+                <ColumnDefinition Width="0.5*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="0.25*"/>
+            </Grid.ColumnDefinitions>
+
+            <Button Content="Přidat" FontSize="28" Background="#108c0a" FontWeight="Bold" Foreground="White" Click="OverviewButtonClickAdd"/>
+            <!-- <Button Grid.Column="1" Content="HLEDAT" FontSize="25" Background="#656565"/> -->
+            <!-- <Button Grid.Column="2" Content="XXX" FontSize="25" Background="#656565"/> -->
+            <Button Grid.Column="4" Content="Zavřít" FontSize="28" Background="#cc0000" FontWeight="Bold" Foreground="White" Click="Button_Click"/>
+        </Grid>
+
+        <!-- search field -->
+        <Grid Grid.Row="1" Background="#3b3b3b" Visibility="Visible">
+            <!-- style for labels and comboboxes -->
+            <Grid.Resources>
+                <Style TargetType="Label">
+                    <Setter Property="FontSize" Value="18" />
+                    <Setter Property="Foreground" Value="White" />
+                    <Setter Property="Margin" Value="10,5,0,0" />
+                    <Setter Property="VerticalAlignment" Value="Bottom" />
+                </Style>
+                <Style TargetType="ComboBox">
+                    <Setter Property="Margin" Value="10,3,10,0" />
+                    <Setter Property="IsEditable" Value="True" />
+                    <Setter Property="VerticalContentAlignment" Value="Center" />
+                    <Setter Property="FontSize" Value="17" />
+                </Style>
+            </Grid.Resources>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1.25*"/>
+                <RowDefinition Height="0.15*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="0.35*"/>
+            </Grid.RowDefinitions>
+
+            <Label Content="Vyhledávání" HorizontalAlignment="Center" FontSize="28"/>
+            <Rectangle Grid.Row="1" Grid.RowSpan="23" Fill="#313131" RadiusX="10" RadiusY="10" Margin="5" />
+
+            <!-- Type of search - select -->
+            <Label Grid.Row="2" Content="Typ" />
+            <Label Grid.Row="4" Content="Název" />
+            <Label Grid.Row="6" Content="Výrobce" />
+            <Label Grid.Row="8" Content="Výrobní číslo" />
+            <Label Grid.Row="10" Content="Uživatel" />
+            <Label Grid.Row="12" Content="Stav" />
+            <Label Grid.Row="14" Content="Cena" />
+            <Label Grid.Row="16" Content="Datum" />
+
+            <!-- TODO doplnit binding vasek <3 -->
+            <ComboBox Grid.Row="3">
+                <ComboBoxItem IsSelected="True">Počítač</ComboBoxItem>
+                <ComboBoxItem>Notebook</ComboBoxItem>
+                <ComboBoxItem>Telefon</ComboBoxItem>
+                <ComboBoxItem>Monitor</ComboBoxItem>
+            </ComboBox>
+            <TextBox Grid.Row="5" Margin="10,3,10,0" VerticalContentAlignment="Center"></TextBox>
+            <ComboBox Grid.Row="7">
+                <ComboBoxItem IsSelected="True">HP</ComboBoxItem>
+                <ComboBoxItem>Asus</ComboBoxItem>
+            </ComboBox>
+            <TextBox Grid.Row="9" Margin="10,3,10,0" VerticalContentAlignment="Center"></TextBox>
+            <ComboBox Grid.Row="11">
+                <ComboBoxItem IsSelected="True">Pavelka</ComboBoxItem>
+                <ComboBoxItem>Lorenz</ComboBoxItem>
+            </ComboBox>
+            <ComboBox Grid.Row="13">
+                <ComboBoxItem IsSelected="True">Nový</ComboBoxItem>
+                <ComboBoxItem>Použitý</ComboBoxItem>
+            </ComboBox>
+            <ComboBox Grid.Row="15">
+                <ComboBoxItem IsSelected="True">0</ComboBoxItem>
+                <ComboBoxItem>1</ComboBoxItem>
+                <ComboBoxItem>2</ComboBoxItem>
+                <ComboBoxItem>3</ComboBoxItem>
+                <ComboBoxItem>4</ComboBoxItem>
+                <ComboBoxItem>5</ComboBoxItem>
+                <ComboBoxItem>6</ComboBoxItem>
+                <ComboBoxItem>7</ComboBoxItem>
+                <ComboBoxItem>8</ComboBoxItem>
+                <ComboBoxItem>9</ComboBoxItem>
+                <ComboBoxItem>10</ComboBoxItem>
+                <ComboBoxItem>11</ComboBoxItem>
+                <ComboBoxItem>12</ComboBoxItem>
+                <ComboBoxItem>13</ComboBoxItem>
+                <ComboBoxItem>14</ComboBoxItem>
+                <ComboBoxItem>15</ComboBoxItem>
+                <ComboBoxItem>16</ComboBoxItem>
+                <ComboBoxItem>17</ComboBoxItem>
+                <ComboBoxItem>18</ComboBoxItem>
+                <ComboBoxItem>19</ComboBoxItem>
+                <ComboBoxItem>20</ComboBoxItem>
+                <ComboBoxItem>21</ComboBoxItem>
+                <ComboBoxItem>22</ComboBoxItem>
+                <ComboBoxItem>23</ComboBoxItem>
+                <ComboBoxItem>24</ComboBoxItem>
+                <ComboBoxItem>25</ComboBoxItem>
+                <ComboBoxItem>26</ComboBoxItem>
+                <ComboBoxItem>27</ComboBoxItem>
+                <ComboBoxItem>28</ComboBoxItem>
+                <ComboBoxItem>29</ComboBoxItem>
+                <ComboBoxItem>30</ComboBoxItem>
+                <ComboBoxItem>31</ComboBoxItem>
+                <ComboBoxItem>32</ComboBoxItem>
+                <ComboBoxItem>33</ComboBoxItem>
+                <ComboBoxItem>34</ComboBoxItem>
+                <ComboBoxItem>35</ComboBoxItem>
+                <ComboBoxItem>36</ComboBoxItem>
+                <ComboBoxItem>37</ComboBoxItem>
+                <ComboBoxItem>38</ComboBoxItem>
+                <ComboBoxItem>39</ComboBoxItem>
+                <ComboBoxItem>40</ComboBoxItem>
+                <ComboBoxItem>41</ComboBoxItem>
+                <ComboBoxItem>42</ComboBoxItem>
+                <ComboBoxItem>43</ComboBoxItem>
+                <ComboBoxItem>44</ComboBoxItem>
+                <ComboBoxItem>45</ComboBoxItem>
+                <ComboBoxItem>46</ComboBoxItem>
+                <ComboBoxItem>47</ComboBoxItem>
+                <ComboBoxItem>48</ComboBoxItem>
+                <ComboBoxItem>49</ComboBoxItem>
+            </ComboBox>
+            <Grid Grid.Row="17" Margin="5">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <ComboBox Text="od"></ComboBox>
+                <ComboBox Text="do" Grid.Column="1"></ComboBox>
+            </Grid>
+        </Grid>
+
+        <!-- bottom buttons underneath search -->
+        <Button Grid.Row="2" Content="Hledat" Background="#96007d" FontWeight="Bold" Foreground="White" FontSize="25" Margin="10,5"/>
+
+        <Grid Grid.Row="1" Grid.Column="1" Grid.RowSpan="2" Background="#454545">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0.05*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <Grid.Resources>
+                <Style TargetType="Label">
+                    <Setter Property="HorizontalAlignment" Value="Center" />
+                    <Setter Property="VerticalAlignment" Value="Center" />
+                    <Setter Property="FontSize" Value="20" />
+                    <Setter Property="Foreground" Value="White" />
+                    <Setter Property="FontWeight" Value="Bold" />
+                </Style>
+            </Grid.Resources>
+
+            <!-- labels layout - history header -->
+            <Label Content="Název" />
+            <Label Grid.Column="1" Content="Typ"/>
+            <Label Grid.Column="2" Content="Výrobce"/>
+            <Label Grid.Column="3" Content="Výrobní číslo"/>
+            <Label Grid.Column="4" Content="Datum"/>
+            <Label Grid.Column="5" Content="Stav"/>
+            <Button Grid.Column="7" Content="Odstranit" Background="#cc0000" FontWeight="Bold" Foreground="White" FontSize="20" Click="OverviewButtonDeleteClick"/>
+            <Border Grid.ColumnSpan="8" BorderBrush="LightGray" BorderThickness="0,0,0,1" />
+
+            <ListView Grid.Row="1" Grid.ColumnSpan="7" Background="#454545" BorderThickness="0" x:Name="OverviewShowItems" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" SelectionChanged="OverviewListviewSelectedItem">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <DataTemplate.Resources>
+                            <Style TargetType="TextBlock">
+                                <Setter Property="TextTrimming" Value="CharacterEllipsis" />
+                                <Setter Property="Margin" Value="3" />
+                                <Setter Property="Foreground" Value="White" />
+                                <Setter Property="Padding" Value="5,0" />
+                                <Setter Property="HorizontalAlignment" Value="Center" />
+                                <Setter Property="FontSize" Value="18" />
+                            </Style>
+                            <Style TargetType="Border">
+                                <Setter Property="BorderThickness" Value="1,0,1,0" />
+                                <Setter Property="BorderBrush" Value="LightCyan" />
+                            </Style>
+                        </DataTemplate.Resources>
+
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+
+                            <Border Grid.Column="1" />
+                            <Border Grid.Column="3" />
+                            <Border Grid.Column="5" />
+
+
+                            <TextBlock Text="{Binding Name}" Grid.Column="0" />
+                            <TextBlock Text="{Binding TypeOfDevice}" Grid.Column="1" />
+                            <TextBlock Text="{Binding Manufacturer}" Grid.Column="2" />
+                            <TextBlock Text="{Binding ManufactureNumber}" Grid.Column="3" />
+                            <TextBlock Text="{Binding Date}" Grid.Column="4" />
+                            <TextBlock Text="{Binding Condition}" Grid.Column="5" />
+                            <CheckBox IsChecked="{Binding Checked, Mode=TwoWay}" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="10,0" Grid.Column="6" >
+                                <CheckBox.LayoutTransform>
+                                    <ScaleTransform ScaleX="3" ScaleY="2" />
+                                </CheckBox.LayoutTransform>
+                            </CheckBox>
+                        </Grid>
+
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+        </Grid>
+    </Grid>
+</Page>

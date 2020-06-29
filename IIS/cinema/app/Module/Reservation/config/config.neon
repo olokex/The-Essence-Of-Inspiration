@@ -1,0 +1,30 @@
+services:
+    eventSummaryControlFactory:
+        implement: App\Module\Reservation\Component\EventSummaryControl\IEventSummaryControlFactory
+
+    reservationFormControlFactory:
+        implement: App\Module\Reservation\Component\ReservationFormControl\IReservationFormControlFactory
+
+    reservationContactInfoContainerFactory:
+        implement: App\Module\Reservation\Container\ReservationContactInfoContainer\IReservationContactInfoContainerFactory
+
+    reservationSeatContainerFactory:
+        implement: App\Module\Reservation\Container\ReservationSeatContainer\IReservationSeatContainerFactory
+
+    reservationSeatProvider:
+        class: App\Module\Reservation\Provider\ReservationSeatProvider\ReservationSeatProvider
+
+    reservationService:
+        class: App\Module\Reservation\Service\ReservationService
+
+    ticketService:
+        class: App\Module\Reservation\Service\TicketService
+
+    reservationListFactory:
+        class: App\Module\Reservation\Factory\ReservationListFactory
+
+    ticketSummaryControlFactory:
+        implement: App\Module\Reservation\Component\TicketSummaryControl\ITicketSummaryControlFactory
+
+    contactInfoSummaryControlFactory:
+        implement: App\Module\Reservation\Component\ContactInfoSummaryControl\IContactInfoSummaryControlFactory

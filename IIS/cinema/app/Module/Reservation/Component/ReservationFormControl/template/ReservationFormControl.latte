@@ -1,0 +1,43 @@
+{form form}
+	{foreach $form->getErrors() as $error}
+        <p style="color: red">{$error}</p>
+    {/foreach}
+
+
+    {formContainer contactInfo}
+        <h3><i class="fa fa-id-card"></i> Kontaktní údaje</h3>
+        <table>
+            {foreach $formContainer->getComponents() as $component}
+                <tr>
+                    <th>{label $component}</th>
+                    <td>{input $component}</td>
+                </tr>
+            {/foreach}
+        </table>
+    {/formContainer}
+
+    {formContainer seats}
+        <h3><i class="fa fa-wheelchair"></i> Sedadla</h3>
+        <table border=1px>
+        <tr>
+        <th width=20px></th>
+            {foreach $seatInRowRange as $seatNumber}
+                <th width=20px, align="center"><div>{$seatNumber}</div></th>
+            {/foreach}
+        </tr>
+
+        <div class="seat-matrix">
+            {foreach $seats as $rowNumber => $seatRow}
+                <tr>
+                    <th align="center"> <div>{$rowNumber}</div></th>
+                    {foreach $seatRow as $seatId => $label}
+                        <th width=20px> <label n:name=seats:$seatId><input n:name=seats:$seatId></label> </th>
+                    {/foreach}
+                </tr>
+                </div>
+            {/foreach}
+        </div>
+        </table>
+    {/formContainer}
+    {input send}
+{/form}

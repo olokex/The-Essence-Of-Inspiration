@@ -1,0 +1,11 @@
+<ul>
+    <li class="dropdown">Menu
+        <ul class="dropdown-content">
+            {foreach $menuItems as $title => $link}
+                <a href="{$link}">
+                    <li>{$title}</li>
+                </a>
+            {/foreach}
+        </ul>
+    </li>
+</ul>

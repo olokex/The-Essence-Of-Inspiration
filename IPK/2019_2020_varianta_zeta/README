@@ -1,0 +1,29 @@
+Popis:
+    Zadání úlohy bylo naprogramovat sniffer paketů na daném rozhraní. Byly zde i možnosti
+    lehké filtrace v podobě UDP/TCP protokolu, a daného portu. Výpis v podobě hexdump.
+
+Překlad:
+    Pro přeložení projektu stačí zadat make, nebo make all a mít knihovnu pcap.
+    Předpokládá se g++ ve verzi 7.5.0 a vyšší (výchozí virtualní stroj - bez problému).
+    Je potřeba špouštět se sudo, a nebo mít nastavená práva.
+
+Spuštění:
+    je následovné (případně spustit program ./ipk-sniffer -h)
+    ./ipk-sniffer -i rozhrani [-p ­­port] [--tcp|-t] [--udp|-u] [-n num]
+
+Ukázky spuštění:
+    ./ipk-sniffer -i eth0 -p 23 --tcp -n 2
+    ./ipk-sniffer -i eth0 --udp
+    ./ipk-sniffer -i eth0 data_only
+
+Rozšíření:
+    Přidán volitelný přepínač data_only, kdy se vytisknou pouze data z UDP/TCP paketu.
+
+Omezení:
+    V momentální fázi nepodporuje IPv6.
+
+Seznam souborů:
+    Makefile
+    ipk-sniffer.cpp
+    manual.pdf
+    README

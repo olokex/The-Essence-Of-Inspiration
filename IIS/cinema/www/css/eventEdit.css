@@ -1,0 +1,75 @@
+.event-box {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    width: 40%;
+}
+
+.head {
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.event-box h1 {
+    text-align: left;
+    font-size: 30px;
+    border-bottom: 6px solid #fc8c03;
+    margin-bottom: 25px;
+    padding: 13px 0;
+}
+
+.event-box form {
+    width: 100%;
+}
+
+.event-box table {
+    text-align: left;
+    width: 100%;
+    padding: 10px;
+    font-size: 18px;
+}
+
+.event-box td {
+    color: #d6d6d6;
+    padding: 7px 7px 7px 10px;
+    border-spacing: 0 10px;
+}
+
+.event-box input {
+    border: none;
+    border-bottom: 1px solid #eb8100;
+    outline: none;
+    background: none;
+    color: white;
+    font-size: 18px;
+    width: 100%;
+    margin: 0;
+}
+
+.event-box select {
+    background-color: transparent;
+    color: white;
+    font-size: 18px;
+    border: none;
+}
+
+.event-box option {
+    background-color: rgb(70, 70, 75);
+}
+
+input.button {
+    background-color: #a10096;
+    border: 2px solid #a10096;
+    border-radius: 3px;
+    margin-top: 20px;
+    height: 40px;
+    width: 60%;
+    font-weight: bolder;
+    cursor: pointer;
+}
+
+input.button:hover {
+    background-color: #7b0070;
+    border: 2px solid #7b0070;
+}

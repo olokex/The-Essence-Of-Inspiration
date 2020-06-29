@@ -1,0 +1,21 @@
+<div>
+    <table class="seats-summary">
+        <tr>
+            <th>Řada</th>
+            <th>Sedadlo</th>
+        </tr>
+        {foreach $tickets as $ticket}
+            <div>
+                <tr>
+                    {if $ticket->getSeat()}
+                        <td>{$ticket->getSeat()->getRow()}</td>
+                        <td>{$ticket->getSeat()->getNumber()}</td>
+                    {else}
+                        <td>-</td>
+                        <td>-</td>
+                    {/if}
+                </tr>
+            </div>
+        {/foreach}
+    </table>
+</div>

@@ -1,0 +1,13 @@
+{block head}
+	<link href="{$basePath}/css/contentList.css" rel="stylesheet" type="text/css" />
+{/block}
+
+{block content}
+	<div class="content-list">
+		<div class="head">
+			<h1><i class="fa fa-film"></i> Správa obsahu</h1>
+		</div>
+		<a class="abutton" n:href=":Content:ContentEdit:default">Přidat nový</a>
+		{control contentList}
+	</div>
+{/block}

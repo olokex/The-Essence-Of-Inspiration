@@ -1,0 +1,97 @@
+.reservation-list {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+}
+
+.hidden {
+    display: none;
+}
+
+.head {
+    width: 40%;
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.reservation-list h1 {
+    text-align: left;
+    font-size: 30px;
+    border-bottom: 6px solid #fc8c03;
+    margin-bottom: 25px;
+    padding: 13px 0;
+}
+
+.datagrid.datagrid-reservationList {
+    margin-top: 50px;
+}
+
+#snippet-reservationList-table {
+    text-align: center;
+    margin-right: auto;
+    margin-left: auto;
+    width: 90%;
+    table-layout:fixed;
+    font-size: 16px;
+    border-collapse: collapse;
+}
+
+#snippet-reservationList-table th {
+    color: #fc8c03;
+    font-size: 18px;
+    border-bottom: 2px solid grey;
+    border-right: 2px solid grey;
+}
+
+#snippet-reservationList-table th:last-child {
+    border-right: none;
+}
+
+#snippet-reservationList-table td {
+    color: #d6d6d6;
+    padding: 10px;
+    font-size: 16px;
+    border-spacing: 0 10px;
+    border-bottom: 1px solid grey;
+    border-right: 2px solid grey;
+    overflow-x: auto;
+    width: auto;
+}
+
+#snippet-reservationList-table td:last-child {
+    border-right: none;
+}
+
+#snippet-reservationList-table tr:last-child > td {
+    border-bottom: none;
+}
+
+#snippet-reservationList-table td:last-child a {
+    color: white;
+    font-weight: bolder;
+    padding: 3px 10px;
+    background-color: #fc8c03;
+    border: 2px solid #fc8c03;
+    border-radius: 3px;
+    display: inline-block;
+    margin: 1px;
+}
+
+#snippet-reservationList-table td:last-child a:hover {
+    color: white;
+    background-color: #ce6803;
+    border: 2px solid #ce6803;
+}
+
+#snippet-reservationList-table td:first-child a {
+    color: #fc8c03;
+    font-size: 18px;
+    text-decoration: underline;
+    font-weight: bolder;
+}
+
+.hidden {
+    display: none !important;
+}

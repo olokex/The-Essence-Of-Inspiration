@@ -1,0 +1,11 @@
+{block head}
+	<link href="{$basePath}/css/homepage.css" rel="stylesheet" type="text/css" />
+{/block}
+
+{block content}
+	<div class="search-box">
+		<h3><i class="fa fa-search"></i> Hledat</h3>
+		{control eventSearchForm}
+	</div>
+		{control eventList}
+{/block}

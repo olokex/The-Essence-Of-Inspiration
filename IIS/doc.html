@@ -1,0 +1,164 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>Projekt IIS</title>
+    <style type="text/css">
+        table { border-collapse: collapse; }
+        td, th { border: 1px solid black; padding: 0.3em 0.5em; text-align: left; }
+        dt { font-weight: bold; margin-top: 0.5em; }
+    </style>
+</head>
+<body>
+
+<h1>1. Kino: rezervace vstupenek na kulturní události</h1> <!-- Nahradte názvem svého zadání -->
+
+<dl>
+    <dt>Autoři</dt>
+    <dd><!-- Nahraďte skutečným jménem a e-mailem autora a popisem činnosti -->
+        <a href="mailto:xsedla1e@stud.fit.vutbr.cz">xsedla1e@stud.fit.vutbr.cz</a> -
+        implementace, konfigurace serveru, výběr technologií
+    </dd>
+    <dd><!-- Nahraďte skutečným jménem a e-mailem autora a popisem činnosti -->
+        <a href="mailto:xsadil07@stud.fit.vutbr.cz">xsadil07@stud.fit.vutbr.cz</a> - 
+        implementace, vytváření css, dekompozice
+    </dd>
+  <dd><!-- Nahraďte skutečným jménem a e-mailem autora a popisem činnosti -->
+        <a href="mailto:xhomol21@stud.fit.vutbr.cz">xhomol21@stud.fit.vutbr.cz</a> - 
+        implementace, databáze, dokumentace
+    </dd>
+    <dt>URL aplikace</dt>
+    <dd><a href="http://167.172.184.213">Kino U tří kamarádů</a>(http://167.172.184.213)</dd>
+</dl>
+
+<h2>Uživatelé systému pro testování</h2>
+<table>
+    <tr>
+        <th>Login</th><th>Heslo</th><th>Role</th>
+    </tr>
+    <tr>
+        <td>admin@cinema.cz</td><td>admin</td><td>Administrátor</td>
+    </tr>
+    <tr>
+        <td>redaktor@cinema.cz</td><td>redaktor</td><td>Redaktor</td>
+    </tr>
+    <tr>
+        <td>pokladni@cinema.cz</td><td>pokladni</td><td>Pokladní</td>
+    </tr>
+    <tr>
+        <td>divak@cinema.cz</td><td>divak</td><td>Divák</td>
+    </tr>
+</table>
+
+<p>Use-case by měl být přesně, tak jak je definováno v zadání.</p>
+
+<h2>Implementace</h2>
+<p>
+  Jako architekturu návrhu jsme se rozhodli použít Model-View-Controller. Každá z těchto komponent je navržena tak, aby zvládla specifické aspekty vývoje aplikace. Složka app obsahuje jednotlivé moduly rozdělené do vlastních souborů, kde je řešena jejich implementace a logika. Jedná se o soubory config, Module a Presenters. Config obsahuje hlavní konfigureci celého projektu. Module se skládá z několika podsloužek, kde každá z nich je zaměřena na učitou část programu, např. Reservation rezervuje a ukládá do systému místa v sálu, s tím může dále pracovat pokladní a její nadřízení. Rezervace se dá ukládat, mazat, editovat. Presenters obsahuje ve výchozí struktuře třídy prezentérů, u nás je v něm pouze chybový prezentér. Složka vendor je automaticky vygenerovaná a obsahuje externí balíčky a knihovny. Složka WWW je výchozí rozhraní přístupné zvenčí. Obsahuje css složku se styly pro jednotlivé stránky a img složku s obrázky, kořenový soubor projektu index.php a .htaccess, který umožňuje upravit některé vlastnosti serveru, aniž by to musel upravit správce serveru. Složka temp uchovává dočasné soubory např. cache. Složka log obsahuje logy, errorové logy. Skrze složku console lze nastavit dodatečné ovládání projektu přes konzoli, ale v programu není třeba. Jako vhodné omezení pro rezervaci, jsme se rozhodli povolit rezervaci maximálně 5 sedadel. V projektu jsme použili obrázky, ale kvůli omezení velikosti odevzdávaného archivu jsou pouze na referenčním serveru. </p>
+
+<h3>Databáze</h3>
+    <h4>ERD databáze:</h4>
+        <img src="docPictures/ERD.png" alt="ERD" height="800" width="570">
+    <h4>USE CASE:</h4>
+        <img src="docPictures/USEcase.png" alt="USE CASE" height="800" width="650">
+<h2>Instalace</h2>
+
+<ul>
+    <li>softwarové požadavky</li>
+        <ul>
+            <li>PHP 7.3 (včetně modulu pro Apache, MySQL)</li>
+            <li>MySQL server 5.7</li>
+            <li>Apache 2.4 (včetně modulu pro PHP)</li>
+            <li>Composer <em>(Dependency Manager for PHP)</em></li>
+        </ul>
+    <li>postup instalace na server,</li>
+        <ul>
+            <li>composer install</li>
+            <li>vytvořit složky <b>temp</b> a <b>log</b></li>
+            <li>v MySQL zadat
+            <code><br/>CREATE database cinema;
+                <br/>use cinema;
+                <br/>CREATE USER cinema@localhost IDENTIFIED BY 'cinema';
+                <br/>GRANT ALL PRIVILEGES ON cinema.* TO cinema@localhost;
+            </code>
+          </li>
+          <li>použít příkaz na vytvoření databáze v kořenovém adresáři: 
+            <code><br/>console/index.php orm:schema-tool:create</code>
+            <br/>případně:
+            <code><br/>console/index.php orm:schema-tool:update --force</code>
+          </li>
+          <li>pro ukázku vložit záznamy: 
+                <code>
+                    <br/>INSERT INTO cinema.role (id, title) VALUES (1, 'Admin');
+                    <br/>INSERT INTO cinema.role (id, title) VALUES (2, 'Redaktor');
+                    <br/>INSERT INTO cinema.role (id, title) VALUES (3, 'Pokladní');
+                    <br/>INSERT INTO cinema.role (id, title) VALUES (4, 'Divák');
+                    <br/>
+                    <br/>INSERT INTO cinema.type (title) VALUES ('Film');
+                    <br/>INSERT INTO cinema.type (title) VALUES ('Divadlo');
+                    <br/>INSERT INTO cinema.type (title) VALUES ('Přednáška');
+                    <br/>
+                    <br/>INSERT INTO cinema.genre (title) VALUES ('Komedie');
+                    <br/>INSERT INTO cinema.genre (title) VALUES ('Drama');
+                    <br/>INSERT INTO cinema.genre (title) VALUES ('Historie');
+                    <br/>INSERT INTO cinema.genre (title) VALUES ('Životopisný');
+                    <br/>INSERT INTO cinema.genre (title) VALUES ('Thriller');
+                    <br/>INSERT INTO cinema.genre (title) VALUES ('Horor');
+                    <br/>INSERT INTO cinema.genre (title) VALUES ('Akční');
+                    <br/>INSERT INTO cinema.genre (title) VALUES ('Dobrodružný');
+                    <br/>INSERT INTO cinema.genre (title) VALUES ('Detektivní');
+                    <br/>INSERT INTO cinema.genre (title) VALUES ('Kriminální');
+                    <br/>INSERT INTO cinema.genre (title) VALUES ('Hudební');
+                    <br/>INSERT INTO cinema.genre (title) VALUES ('Katastrofický');
+                    <br/>INSERT INTO cinema.genre (title) VALUES ('Postapokaliptický');
+                    <br/>INSERT INTO cinema.genre (title) VALUES ('Sci-fi');
+                    <br/>INSERT INTO cinema.genre (title) VALUES ('Rodinný');
+                    <br/>INSERT INTO cinema.genre (title) VALUES ('Dětský');
+                    <br/>INSERT INTO cinema.genre (title) VALUES ('Pohádka');
+                    <br/>INSERT INTO cinema.genre (title) VALUES ('Fantasy');
+                    <br/>INSERT INTO cinema.genre (title) VALUES ('Adaptace');
+                    <br/>INSERT INTO cinema.genre (title) VALUES ('Hrdinové');
+                    <br/>INSERT INTO cinema.genre (title) VALUES ('Technologie');
+                    <br/>INSERT INTO cinema.genre (title) VALUES ('Filosofie');
+                    <br/>INSERT INTO cinema.genre (title) VALUES ('Western');
+                    <br/>INSERT INTO cinema.genre (title) VALUES ('Parodie');
+                    <br/>INSERT INTO cinema.genre (title) VALUES ('Milostný');
+                    <br/>INSERT INTO cinema.genre (title) VALUES ('Dokumentární');
+                    <br/>INSERT INTO cinema.genre (title) VALUES ('Animovaný');
+                    <br/>INSERT INTO cinema.genre (title) VALUES ('Sportovní');
+                    <br/>INSERT INTO cinema.genre (title) VALUES ('Tragédie');
+                </code>
+          </li>
+          <li>na vygenerovaní je možné použít script  v kořenovém adresáři projektu jako sudo <code>altCreateDB.sh</code></li>
+          <li>jelikož heslo uživatelů je hashované, nelze vložit do databáze a je třeba uřivateleregistrovat manuálně dle parametrů výše uvedené tabulky a poté jim nastavit roli v databázi příkazem <br/><code>UPDATE user SET role_id = x WHERE email = 'y'</code> kde x je ID role a y je email uživatele
+          </li>
+          <li>alternativně lze výchozím uživatelům změnit roli připraveným scriptem jako sudo <code>altSetRoles.sh</code>
+          </li>
+          <li> nastavit soubor <code>/etc/php/7.3/apache2/ini.php</code> a v souboru odkomentovat <code>                    extension=mysqli</code> a <code> extension=pdo_mysql</code>
+          </li>
+          <li>Pro nasazení na server jsme editovali následující soubory:
+                <br/><code>/etc/apache2/sites-enabled/000-default.conf</code>
+                <br/><img src="docPictures/1.png" alt="sites_enabled">
+                <br/><code>/etc/apache2/sites-available/000-default.conf</code>
+                <br/><img src="docPictures/2.png" alt="sites_available">
+                <br/><code>/etc/apache2/sites-available/default-ssl.conf</code>
+                <br/><img src="docPictures/3.png" alt="sites-available">
+                <br/><code>/var/www/html/cinema/www/.htaccess</code>
+                <br/><img src="docPictures/4.png" alt=".htaccess">
+                <br/><code>/etc/apache2/apache2.conf</code>
+                <br/><img src="docPictures/5.png" alt="apache2.conf">
+                <br/>
+                <br/> a použili příkaz <code>a2enmod rewrite</code>
+            </li>
+        </ul>
+  </ul>
+   
+</ul>
+
+<h2>Známé problémy</h2>
+<p>Žádné problémy nebyly objeveny. V případě jakéhokoliv dotazu neváhejte poslat dotaz na jeden z uvedených emailů.</p>
+
+</body>
+</html>
